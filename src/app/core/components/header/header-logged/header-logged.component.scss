@@ -1,0 +1,39 @@
+.header__link--logged{
+  color:#fff;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+
+  &::after{
+    margin-left: 5px;
+    content: '▼';
+  }
+}
+.logged{
+  position: relative;
+
+  &__dropdown{
+    transition: opacity 0.3s;
+    border: 1px solid #e1bf97;
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.12);
+  }
+}
+.dropdown__item{
+  background-color: #fff;
+  padding: 10px;
+  display: block;
+  color: #e1bf97;
+  transition: all 0.2s;
+
+  &:hover{
+    background-color: #ebebeb;
+    color: #68544f;
+  }
+}
+.dropdown--shown{
+  opacity: 1;
+}

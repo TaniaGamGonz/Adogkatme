@@ -1,0 +1,83 @@
+.container--login {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+
+  & .align--column {
+    align-items: flex-start;
+  }
+}
+
+.form__login {
+  border-bottom: 1px solid rgba(173, 173, 173, 0.5);
+}
+
+.form-group--login {
+  position: relative;
+}
+
+.form-group__control--login {
+  padding: 0 17px 5px;
+}
+
+.form-group__label--inside {
+  position: absolute;
+  transform: translate(15px, -48px);
+  background-color: #fff;
+  padding: 0 3px;
+  color: #363636;
+  background-color: #fff;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+.form-group__control--login:placeholder-shown~.form-group__label--inside {
+
+  position: absolute;
+  font-size: 1rem;
+  transform: translate(19px, -28px);
+  color: rgba(173, 173, 173, 0.7);
+}
+.form-group__label--outside {
+  position: absolute;
+  font-size: 1rem;
+  transform: translate(19px, -28px);
+  color: rgba(173, 173, 173, 0.7);
+}
+.btn--sm {
+  max-width: 8rem;
+  margin: 20px 0;
+}
+.btn--fb {
+  position: relative;
+  margin: 20px 0;
+  align-self: flex-start;
+  padding: 15px 50px 15px 20px;
+  background-color: #3b5999;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+
+  &:hover{
+    background-color: darken(#3b5999, 15%);
+
+    &::after{
+      background-color: darken(#3b5999, 15%);
+    }
+  }
+
+  &::after {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 9px;
+    right: 12px;
+    background-color: #3b5999;
+    background-image: url(../../../assets/svg/facebook.svg);
+  }
+}
+.link--login {
+  margin-left: 5px;
+}

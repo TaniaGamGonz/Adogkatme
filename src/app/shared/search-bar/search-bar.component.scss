@@ -1,0 +1,33 @@
+.search-bar{
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-end;
+  max-width: 80%;
+  border: 1px solid #e1bf97;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 0;
+  margin-left: 0px;
+}
+.form-group__control--search-bar{
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  border-radius: 0;
+  border-right: 1px solid #e1bf97;
+  height: auto;
+  width: auto;
+  &:last-of-type(1){
+    border: 0;
+  }
+
+}
+.btn--search-bar{
+  border-radius: 0;
+  transition: background-color 0.3s;
+  &:hover{
+    background-color: darken( #e1bf97, 15%);
+  }
+}
+

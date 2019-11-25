@@ -1,0 +1,87 @@
+.container--perfil {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.perfil-datos {
+  width: 25%;
+  height: 100vh;
+}
+
+.img {
+  height: 250px;
+  width: 200px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+  position: relative;
+
+  ::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 50px;
+    height: 100px;
+    background-image: url(../../../assets/svg/silver.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.h3--perfil {
+  color: #b7bcd6;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.perfil {
+
+
+  &__item {
+    color: #47505a;
+    padding: 5px 0;
+  }
+
+  &__list--menu {
+    margin: 20px 0;
+
+    & .link {
+      padding: 5px 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.logros {
+  position: relative;
+
+
+& .perfil__list {
+  padding-left: 100px;
+}
+
+&::before {
+  content: '';
+  position: absolute;
+  bottom: 18px;
+  width: 80px;
+  height: 80px;
+  background-image: url(../../../assets/svg/silver.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+}
+
+.perfil--mascotas {
+  flex: 1 0 70%;
+}
+
+.favoritos {
+  margin-bottom: 50px;
+}
+
+.btn--delete {
+  background-color: transparent;
+  color: #e1bf97;
+}

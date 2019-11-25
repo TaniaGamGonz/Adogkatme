@@ -1,0 +1,45 @@
+.card{
+  align-self:center;
+  justify-self: start;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.12);
+  max-width: 250px;
+  position: relative;
+  cursor:pointer;
+  transition: transform 0.2s;
+
+  &:hover{
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.3);
+    transform:scale(1.07);
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+  }
+  &__body{
+    padding: 8px 0 30px 20px;
+    position: relative;
+    background-color: #fff;
+  }
+  &__title{
+    font-size: 1.5rem;
+  }
+  &__info{
+    color: rgba(54, 54, 54, 0.68);
+    line-height: 1.5;
+  }
+  &__icon{
+    position: absolute;
+  }
+}
+.ubic-card{
+  position: relative;
+}
+.icon--heart{
+  top: 10px;
+  right: 10px;
+}
+.icon--ubic{
+  bottom: 8px;
+  left: -22px;
+}

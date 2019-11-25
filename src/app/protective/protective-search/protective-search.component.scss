@@ -1,0 +1,30 @@
+.form-protective {
+  display: inline-flex;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-end;
+  max-width: 80%;
+  border: 1px solid #e1bf97;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 0;
+  margin-left: 0px;
+}
+
+
+
+.form-group__control--protective {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    border-radius: 0;
+    border-right: 1px solid #e1bf97;
+    height: auto;
+    width: auto;
+}
+
+.btn--protective {
+  border-radius: 0;
+  transition: background-color 0.3s;
+}

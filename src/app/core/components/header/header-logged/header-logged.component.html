@@ -1,0 +1,9 @@
+<div class="logged">
+    <button type="button" class="header__link--logged btn" (click)="showMenu()">Bienvenida, Tania</button>
+    <ul class="logged__dropdown" [ngClass]="{'dropdown--shown': isMenuShown===true }">
+        <li><a href="#" class="dropdown__item">Mi perfil</a></li>
+        <li><a href="#" class="dropdown__item">Protectoras</a></li>
+        <li><a href="#" class="dropdown__item">Búsqueda</a></li>
+        <li><a href="#" class="dropdown__item">Cerrar sesión</a></li>
+    </ul>
+</div>

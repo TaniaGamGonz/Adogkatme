@@ -1,0 +1,45 @@
+ /*MENU*/
+ .nav{
+  border-bottom: 1px solid #e1bf97;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__list{
+    display:flex;
+  }
+  &__item{
+    display:flex;
+    height: 40px;
+    border-right: 1px solid #e1bf97;
+  }
+  &__link{
+    display:flex;
+    align-items: center;
+    padding: 0 20px;
+    text-transform: uppercase;
+    color:#e1bf97;
+    transition: background-color 0.3s;
+    &:hover{
+      color: #fff;
+      background-color: #e1bf97;
+
+  }
+}
+}
+.btn--search{
+ background-color: transparent;
+  height: 40px;
+  color:  #e1bf97;
+  position: relative;
+  padding-left: 35px;
+
+  &::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    height: 30px;
+    width: 30px;
+    background-image: url(../../../../assets/svg/magnifier-tool.svg);
+  }
+}

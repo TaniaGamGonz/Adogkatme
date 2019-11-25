@@ -1,0 +1,20 @@
+.logo{
+  position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.7rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 19px;
+  margin-top: 8px;
+
+  &__icon{
+    position: absolute;
+    left: -20px;
+    top: -10px;
+    transform: rotate(30deg);
+  }
+  &__text{
+    position: relative;
+    z-index: 5;
+  }
+}
