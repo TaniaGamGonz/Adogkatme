@@ -1,0 +1,11 @@
+.form-group--checkbox .textarea{
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+input[name="Alergias"]:checked ~.textarea{
+  opacity: 1;
+}
+.container--adopcion-sanitario{
+  margin-bottom: 20px;
+}
