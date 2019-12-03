@@ -1,0 +1,15 @@
+.error{
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/assets/images/error404img.jpg");
+  background-size: cover;
+  padding: 50px 20px;
+  color: #fff;
+
+  &__title{
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+}
+
+

@@ -25,7 +25,8 @@ const COMPONENTS = [
   ],
   exports: [
     ...COMPONENTS,
-   ImageUploadModule
+    ImageUploadModule,
+    CommonModule,
   ]
 
 })

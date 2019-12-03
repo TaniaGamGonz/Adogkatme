@@ -10,6 +10,7 @@
   padding: 0;
   margin-left: 0px;
 }
+
 .form-group__control--search-bar{
   border: 0;
   background-color: transparent;
@@ -21,8 +22,8 @@
   &:last-of-type(1){
     border: 0;
   }
-
 }
+
 .btn--search-bar{
   border-radius: 0;
   transition: background-color 0.3s;
