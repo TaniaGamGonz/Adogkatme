@@ -16,6 +16,9 @@
     justify-content: space-between;
     padding: 5px 20px;
   }
+  &__img {
+    width: 100%;
+  }
   &__body{
     padding: 8px 0 30px 20px;
     position: relative;
@@ -40,6 +43,6 @@
   right: 10px;
 }
 .icon--ubic{
-  bottom: 8px;
+  top: -5px;
   left: -22px;
 }

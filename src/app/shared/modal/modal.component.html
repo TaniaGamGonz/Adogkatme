@@ -1,0 +1,14 @@
+<div [ngClass]="{'modal--show': isShow===true}" class="modal">
+  <div class="modal__body">
+    <h3 class="modal__title">Recupera tu contraseña</h3>
+    <a rol="button" class="modal__close link" (click)="toggleModal()">&times;</a>
+    <p class="modal__info">Escribenos tu e-mail y te enviaremos un correo de recuperación</p>
+    <form action="">
+      <div class="form-group">
+        <label for="recoverEmail" class="form-group__label">Email</label>
+        <input type="email" name="recoverEmail" id="recoverEmail" class="form-group__control">
+      </div>
+      <button type="submit" class="btn">Recuperar</button>
+    </form>
+  </div>
+</div>

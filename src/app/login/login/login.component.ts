@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/core/services/modal.service';
 
 @Component({
   selector: 'login',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalService : ModalService,
+  ) { }
 
   ngOnInit() {
+
+  }
+
+  toggleModal(){
+    this.modalService.toggleModal();
   }
 
 }
