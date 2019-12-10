@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -8,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [LoginComponent],
   imports: [
     SharedModule,
+    RouterModule
   ],
   exports: [
     LoginComponent,

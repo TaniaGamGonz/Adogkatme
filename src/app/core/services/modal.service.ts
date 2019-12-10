@@ -6,13 +6,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ModalService {
 
+  public isOpen = false;
+
   constructor() {
 
   }
-  public isShow$ = new BehaviorSubject<boolean>(false);
+  public isShown$ = new BehaviorSubject<string>('');
 
-  public toggleModal(){
-    this.isShow$.next(!this.isShow$.getValue())
+ //PAra varios modales, poner un nombre en cada modal y en vez de pasar true o false pasar el nombre de la modal a mostrar
+  public toggleModal(modalName){
+    this.isShown$.next(modalName);
   }
 
 

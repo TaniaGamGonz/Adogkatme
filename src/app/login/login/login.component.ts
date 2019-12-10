@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   toggleModal(){
-    this.modalService.toggleModal();
+    this.modalService.toggleModal('loginModal');
   }
 
 }
