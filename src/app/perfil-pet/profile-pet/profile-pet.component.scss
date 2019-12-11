@@ -1,11 +1,16 @@
 .container--pet {
   padding: 20px;
+  font-size: 14px;
 }
 
 .perfil-pet {
   display: flex;
   padding: 20px 0;
 }
+.container--pet .h3{
+  display: inline;
+}
+
 
 .pet {
   &__media {
@@ -31,22 +36,19 @@
     padding-left: 1rem;
   }
 
-  &-info .align--row {
+  &-info .align--space-between {
     width: 100%;
   }
 
-  &-info .h3,
-  &-info &-contact {
-    flex-basis: 0;
-    flex-grow: 1;
-  }
 
   &-contact::after {
     content: '';
     display: block;
     clear: both;
   }
-
+  &-list__item{
+    padding: 5px 0;
+  }
   &__list {
     padding: 15px 20px;
 
@@ -58,13 +60,6 @@
       padding-bottom: 5px;
     }
 
-    &:first-child {
-      font-family: 'Roboto Condensed', sans-serif;
-      text-transform: uppercase;
-      color: #000;
-      font-weight: 600;
-      line-height: 1.4;
-    }
   }
 
   &-list__item,
@@ -73,8 +68,16 @@
   }
 
   &__description {
+    line-height: 1.7;
+  }
+  &-list__item:nth-of-type(1) {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
     line-height: 1.4;
   }
+
 }
 
 

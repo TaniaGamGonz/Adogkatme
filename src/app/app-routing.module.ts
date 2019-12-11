@@ -7,6 +7,9 @@ import { ErrorComponent } from './core/components/error/error.component';
 import { RegisterPetComponent } from './register-pet/register-pet.component';
 import { RegisterComponent } from './register/register/register.component';
 import { AditionalRegisterComponent } from './register/aditional-register/aditional-register.component';
+import { ProfileComponent } from './perfil/profile/profile.component';
+import { ProtectiveProfileComponent } from './protective/protective-profile/protective-profile.component';
+import { ProfilePetComponent } from './perfil-pet/profile-pet/profile-pet.component';
 
 
 
@@ -18,6 +21,9 @@ const routes: Routes = [
     loadChildren: () => import('./register-pet/register-pet.module').then(mod => mod.RegisterPetModule), },
   { path: 'registro', component: RegisterComponent},
   { path: 'registro-adicional', component: AditionalRegisterComponent },
+  { path: 'perfil', component: ProfileComponent},
+  { path: 'mascota', component: ProfilePetComponent},
+  { path: 'protectoras/:idProtective', component: ProtectiveProfileComponent},
   { path: '**', component: ErrorComponent },
 ];
 
