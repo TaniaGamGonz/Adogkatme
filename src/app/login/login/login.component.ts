@@ -11,7 +11,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private modalService : ModalService,
   ) { }
-
   ngOnInit() {
 
   }
@@ -19,5 +18,6 @@ export class LoginComponent implements OnInit {
   toggleModal(){
     this.modalService.toggleModal('loginModal');
   }
+
 
 }

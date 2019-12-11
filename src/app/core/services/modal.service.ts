@@ -13,7 +13,7 @@ export class ModalService {
   }
   public isShown$ = new BehaviorSubject<string>('');
 
-  public toggleModal(modalName){
+  public toggleModal(modalName: string){
     this.isShown$.next(modalName);
   }
 
