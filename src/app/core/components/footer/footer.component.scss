@@ -1,8 +1,10 @@
+@import '../../../../scss/partials/variables';
+
 
 .footer{
   padding: 20px 25px;
-   background-color: #e1bf97;
-   color:#fff;
+   background-color: $color-primary;
+   color:$grey-100;
 
   & .align--row{
     justify-content:space-around;
@@ -27,11 +29,12 @@
     font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: 1px;
-    color:#fff;
+    cursor: pointer;
+    color:$grey-100;
     transition: color 0.2s;
 
     &:hover{
-      color: #68544f;
+      color: $color-secondary;
     }
   }
 }

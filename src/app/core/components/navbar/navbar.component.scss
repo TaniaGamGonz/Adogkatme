@@ -1,6 +1,9 @@
- /*MENU*/
+@import '../../../../scss/partials/variables';
+@import '../../../../scss/partials/px-to-rem';
+
+
  .nav{
-  border-bottom: 1px solid #e1bf97;
+  border-bottom: 1px solid $color-primary;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,27 +12,28 @@
   }
   &__item{
     display:flex;
-    height: 40px;
-    border-right: 1px solid #e1bf97;
+    height: rem(40px);
+    border-right: 1px solid $color-primary;
   }
   &__link{
     display:flex;
     align-items: center;
     padding: 0 20px;
     text-transform: uppercase;
-    color:#e1bf97;
+    color:$color-primary;
     transition: background-color 0.3s;
     &:hover{
-      color: #fff;
-      background-color: #e1bf97;
+      color: $grey-100;
+      background-color: $color-primary;
 
   }
 }
 }
 .btn--search{
  background-color: transparent;
-  height: 40px;
-  color:  #e1bf97;
+  height: rem(40px);
+  color:  $color-primary;
+  transition: color 0.2s;
   position: relative;
   padding-left: 35px;
 
@@ -38,8 +42,13 @@
     position: absolute;
     top: 5px;
     left: 2px;
-    height: 30px;
-    width: 30px;
+    height: rem(30px);
+    width: rem(30px);
     background-image: url(../../../../assets/svg/magnifier-tool.svg);
   }
 }
+
+.btn--search:hover{
+   color:  $color-secondary;
+ }
+

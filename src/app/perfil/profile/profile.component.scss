@@ -1,45 +1,51 @@
+@import '../../../scss/partials/px-to-rem';
+@import '../../../scss/partials/variables';
+
 .container--perfil {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 0;
+}
+
+.h2 {
+  margin-top: 0;
 }
 
 .perfil-datos {
   width: 25%;
-  height: 100vh;
 }
 
 .img {
-  height: 250px;
-  width: 200px;
-  background-color: #ccc;
+  height: rem(250px);
+  width: rem(200px);
+  background-color: $grey-95;
   margin-bottom: 20px;
   position: relative;
 
   &__change {
-    content: '';
     position: absolute;
-    top: -10px;
+    background-color: transparent;
+    top: -20px;
+    outline: 0;
+    border: 0;
     left: -10px;
-    width: 50px;
-    height: 100px;
-    background-image: url(../../../assets/svg/silver.svg);
+    cursor: pointer;
+    width: rem(50px);
+    height: rem(50px);
+    background-image: url(../../../assets/svg/camera.svg);
     background-size: contain;
     background-repeat: no-repeat;
   }
 }
 
 .h3--perfil {
-  color: #b7bcd6;
+  color: $color-default;
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .perfil {
-
-
   &__item {
-    color: #47505a;
+    color: $color-text-default;
     padding: 5px 0;
   }
 
@@ -48,7 +54,6 @@
 
     & .link {
       padding: 5px 0;
-      cursor: pointer;
     }
   }
 }
@@ -56,21 +61,20 @@
 .logros {
   position: relative;
 
+  & .perfil__list {
+    padding-left: 100px;
+  }
 
-& .perfil__list {
-  padding-left: 100px;
-}
-
-&::before {
-  content: '';
-  position: absolute;
-  bottom: 18px;
-  width: 80px;
-  height: 80px;
-  background-image: url(../../../assets/svg/silver.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 18px;
+    width: rem(80px);
+    height: rem(80px);
+    background-image: url(../../../assets/svg/silver.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 .perfil--mascotas {
@@ -79,9 +83,4 @@
 
 .favoritos {
   margin-bottom: 50px;
-}
-
-.btn--delete {
-  background-color: transparent;
-  color: #e1bf97;
 }

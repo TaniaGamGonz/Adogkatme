@@ -1,3 +1,4 @@
+//TODO: Mejorar el aspecto
 .form-group--checkbox .textarea{
   margin-top: 10px;
   opacity: 0;
@@ -5,7 +6,4 @@
 }
 input[name="Alergias"]:checked ~.textarea{
   opacity: 1;
-}
-.container--adopcion-sanitario{
-  margin-bottom: 20px;
 }

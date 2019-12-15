@@ -1,0 +1,32 @@
+//Colors
+$color-primary: #e1bf97;
+$color-secondary:#68544f;
+$color-default:#b7bcd6;
+$color-success: #90ce6a;
+$grey-100:#fff;
+$grey-95:#ebebeb;
+$grey-90:#adadad;
+$grey-70: #9f9f9f;
+$grey-0: #000;
+$modal-shadow: rgba(0, 0, 0, 0.15);
+
+//Text
+$color-title-primary: $color-primary;
+$color-title-secondary: $color-default;
+$ff-text: 'Roboto', sans-serif;
+$ff-title:'Roboto Condensed', sans-serif;
+$fz-text: rem(16px);
+$color-text-default: #47505a;
+$color-text-secondary: rgba(54, 54, 54, 0.68);
+$color-text-disabled: rgba(173, 173, 173, 0.7);
+
+//Color borders
+$color-border: $color-default;
+$color-border-bottom: rgba(173, 173, 173, 0.5);
+
+//Colors button
+$color-button-fb: #3b5999;
+
+//Box-shadow
+$box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.12);
+$box-shadow-hover:0px 4px 11px rgba(0, 0, 0, 0.3);

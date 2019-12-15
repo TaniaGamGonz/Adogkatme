@@ -1,3 +1,5 @@
+@import '../../../scss/partials/px-to-rem';
+
 .h2{
     margin-right: 10px;
     margin-bottom: 30px;
@@ -8,6 +10,6 @@
 }
 .cards--container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(rem(265px), 1fr));
   row-gap: 20px;
 }

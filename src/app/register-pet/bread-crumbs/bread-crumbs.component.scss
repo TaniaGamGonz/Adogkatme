@@ -1,21 +1,21 @@
+@import '../../../scss/partials/variables';
 
 .bread-crumbs{
   width: 60%;
   margin: 0 auto;
-  padding: 20px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .bread-crumbs__list{
   display: flex;
   justify-content: space-around;
 }
 .bread-crumbs__item{
-  color:#b7bcd6;
+  color:$color-default;
   position: relative;
 }
 
 .bread-crumbs__item--selected{
-  color:#e1bf97;
+  color:$color-primary;
 }
 
 .paw{

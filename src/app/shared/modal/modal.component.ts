@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription = this.modalService.isShown$.subscribe(data => {
       if (data !== '' && data === this.nombre) {
         this.isShow = !this.isShow;

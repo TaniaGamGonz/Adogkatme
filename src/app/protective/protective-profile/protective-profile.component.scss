@@ -1,0 +1,56 @@
+@import '../../../scss/partials/px-to-rem';
+@import '../../../scss/partials/variables';
+
+.container--protectora {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.h2 {
+  margin-top: 0;
+  font-size: rem(20px);
+}
+
+.perfil-datos {
+  width: 25%;
+}
+
+.img {
+  height: rem(250px);
+  width: rem(200px);
+  background-color: $grey-95;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.h3 {
+  color: $color-default;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.perfil {
+  &__item {
+    color: $color-text-default;
+    padding: 5px 0;
+  }
+
+  &__list--menu {
+    margin: 20px 0;
+
+    & .link {
+      padding: 5px 0;
+    }
+  }
+}
+
+.perfil--protectora {
+  flex: 1 0 70%;
+}
+.description {
+  font-size: rem(14px);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+

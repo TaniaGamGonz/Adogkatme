@@ -1,10 +1,8 @@
 <section class="result-search">
   <div class="align--row">
-    <h2 class="h2">Nuevos reclutas</h2>
-    <a href="#" class="link">Ver más reclutas...</a>
+    <ng-content select="[title]"></ng-content>
   </div>
   <div class="cards--container">
-    <pet-card></pet-card>
-    <protective-card></protective-card>
+    <ng-content></ng-content>
   </div>
 </section>

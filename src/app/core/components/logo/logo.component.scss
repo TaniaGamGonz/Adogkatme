@@ -1,8 +1,11 @@
+
+@import '../../../../scss/partials/variables';
+
 .logo{
   position: relative;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.7rem;
-  color: #fff;
+  color: $grey-100;
   text-transform: uppercase;
   margin-left: 19px;
   margin-top: 8px;

@@ -1,23 +1,18 @@
-.container--register {
-  margin-bottom: 20px;
-}
-.form--register {
-  border-bottom: 1px solid #ccc;
-  padding: 20px 0;
-}
+@import '../../../scss/partials/variables';
+@import '../../../scss/partials/px-to-rem';
 
-.h1--register{
-  margin-top: 20px;
+.form--register {
+  border-bottom: 1px solid $color-border-bottom;
+  padding-bottom: 20px;
 }
 
 .form-group__control--age {
-  max-width: 100px;
+  max-width: rem(100px);
 }
-
 .btn--sm {
   padding: 10px 15px;
 }
-
+//TODO: Hacer el formulario de protectora con transform.
 .form--protector {
   margin-top: 10px;
   margin-left: -19px;
@@ -36,7 +31,7 @@
   display: inline-block;
   margin-top: 20px;
   padding: 15px 50px 15px 20px;
-  background-color: #3b5999;
+  background-color: $color-button-fb;
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -49,7 +44,7 @@
     position: absolute;
     top: 9px;
     right: 12px;
-    background-color: #3b5999;
+    background-color: $color-button-fb;
     background-image: url(../../../assets/svg/facebook.svg);
   }
 }

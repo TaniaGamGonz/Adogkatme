@@ -1,8 +1,8 @@
 <main class="height-100">
   <div class="container">
-    <h1 class="h1 h1--perfil">Perfil</h1>
-    <div class="container--perfil ">
-      <aside class="perfil-datos perfil-datos-protectora">
+    <h1 class="h1">Perfil</h1>
+    <div class="container--protectora">
+      <aside class=" perfil-datos">
         <div class="img"> </div>
         <ul class="perfil__list">
           <li class="perfil__item">Patitas felices</li>
@@ -15,10 +15,10 @@
           <li class="link">Contactar</li>
         </ul>
       </aside>
-      <div class="perfil--mascotas">
+      <div class="perfil--protectora">
         <div class="historia">
-          <h3 class="h3 h3--perfil">Sobre nosotros</h3>
-          <p class="pet__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nesciunt
+          <h3 class="h3">Sobre nosotros</h3>
+          <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nesciunt
             pariatur deleniti fugit, impedit, accusantium laudantium veniam aliquid quibusdam laborum iusto id rem
             explicabo optio excepturi repellendus aut eveniet nihil?
             Quisquam ex neque libero nisi quasi reprehenderit similique dolor. Temporibus ut a fugiat obcaecati dolorem.
@@ -31,148 +31,17 @@
             fugit assumenda, amet quis voluptatibus nesciunt quo quibusdam? Ea, quasi dolores asperiores voluptatum
             quisquam quaerat!</p>
         </div>
-
-        <div class="favoritos">
-          <h3 class="h3 h3--perfil">Mascotas para adoptar</h3>
-          <div class="cards--container">
-            <article class="card">
-              <img class="card__img" src="img/cloe.svg" width="250" alt="Animal en adopción">
-              <div class="card__header">
-                <h3 class="h3 card__title">Cloe</h3>
-                <span class="ubic-card">
-                  Madrid
-                  <svg class="card__icon icon--ubic" width="20" height="20" alt="Icono ubicación">
-                    <use xlink:href="#ubic"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="card__body">
-                <ul class="card__info">
-                  <li>5 Años</li>
-                  <li>Bien de salud</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn--delete">Eliminar de favoritos</button>
-              <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </article>
-            <article class="card">
-              <img class="card__img" src="img/cloe.svg" width="250" alt="Animal en adopción">
-              <div class="card__header">
-                <h3 class="h3 card__title">Cloe</h3>
-                <span class="ubic-card">
-                  Madrid
-                  <svg class="card__icon icon--ubic" width="20" height="20" alt="Icono ubicación">
-                    <use xlink:href="#ubic"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="card__body">
-                <ul class="card__info">
-                  <li>5 Años</li>
-                  <li>Bien de salud</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn--delete">Eliminar de favoritos</button>
-              <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </article>
-            <article class="card">
-              <img class="card__img" src="img/cloe.svg" width="250" alt="Animal en adopción">
-              <div class="card__header">
-                <h3 class="h3 card__title">Cloe</h3>
-                <span class="ubic-card">
-                  Madrid
-                  <svg class="card__icon icon--ubic" width="20" height="20" alt="Icono ubicación">
-                    <use xlink:href="#ubic"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="card__body">
-                <ul class="card__info">
-                  <li>5 Años</li>
-                  <li>Bien de salud</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn--delete">Eliminar de favoritos</button>
-              <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </article>
-          </div>
+        <div class="adopcion">
+          <deck-cards>
+            <h2 class="h2" title>Mascotas para adoptar</h2>
+            <pet-card></pet-card>
+          </deck-cards>
         </div>
-        <div class="en-adopcion">
-          <h3 class="h3 h3--perfil">Mascotas para acogida</h3>
-          <div class="cards--container">
-            <article class="card">
-              <img class="card__img" src="img/cloe.svg" width="250" alt="Animal en adopción">
-              <div class="card__header">
-                <h3 class="h3 card__title">Cloe</h3>
-                <span class="ubic-card">
-                  Madrid
-                  <svg class="card__icon icon--ubic" width="20" height="20" alt="Icono ubicación">
-                    <use xlink:href="#ubic"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="card__body">
-                <ul class="card__info">
-                  <li>5 Años</li>
-                  <li>Bien de salud</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn--delete">Eliminar perfil de mascota</button>
-              <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </article>
-            <article class="card">
-              <img class="card__img" src="img/cloe.svg" width="250" alt="Animal en adopción">
-              <div class="card__header">
-                <h3 class="h3 card__title">Cloe</h3>
-                <span class="ubic-card">
-                  Madrid
-                  <svg class="card__icon icon--ubic" width="20" height="20" alt="Icono ubicación">
-                    <use xlink:href="#ubic"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="card__body">
-                <ul class="card__info">
-                  <li>5 Años</li>
-                  <li>Bien de salud</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn--delete">Eliminar de favoritos</button>
-              <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </article>
-            <article class="card">
-              <img class="card__img" src="img/cloe.svg" width="250" alt="Animal en adopción">
-              <div class="card__header">
-                <h3 class="h3 card__title">Cloe</h3>
-                <span class="ubic-card">
-                  Madrid
-                  <svg class="card__icon icon--ubic" width="20" height="20" alt="Icono ubicación">
-                    <use xlink:href="#ubic"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="card__body">
-                <ul class="card__info">
-                  <li>5 Años</li>
-                  <li>Bien de salud</li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn--delete">Eliminar de favoritos</button>
-              <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </article>
-          </div>
+        <div class="acogida">
+          <deck-cards>
+            <h2 class="h2" title>Mascotas para acoger</h2>
+            <pet-card></pet-card>
+          </deck-cards>
         </div>
       </div>
     </div><!-- //.container--perfil-->

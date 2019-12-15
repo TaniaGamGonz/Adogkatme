@@ -1,6 +1,10 @@
+@import '../../../../scss/partials/variables';
+@import '../../../../scss/partials/px-to-rem';
+
+
 .header{
-  background-color: #e1bf97;
-  height: 60px;
+  background-color: $color-primary;
+  height: rem(60px);
 
   & .align--space-between{
   height: 100%;
