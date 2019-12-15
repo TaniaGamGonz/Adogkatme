@@ -1,0 +1,12 @@
+@import '../../../scss/partials/variables';
+@import '../../../scss/partials/px-to-rem';
+
+.form--register {
+  border-bottom: 1px solid $color-border-bottom;
+  padding-bottom: 20px;
+}
+
+.form-group__control--age {
+  max-width: rem(100px);
+}
+
