@@ -10,6 +10,8 @@ import { AditionalRegisterComponent } from './register/aditional-register/aditio
 import { ProfileComponent } from './perfil/profile/profile.component';
 import { ProtectiveProfileComponent } from './protective/protective-profile/protective-profile.component';
 import { ProfilePetComponent } from './perfil-pet/profile-pet/profile-pet.component';
+import { RegisterUserComponent } from './register/register-user/register-user.component';
+import { RegisterProtectiveComponent } from './register/register-protective/register-protective.component';
 
 
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'adopcion', component: RegisterPetComponent,
     loadChildren: () => import('./register-pet/register-pet.module').then(mod => mod.RegisterPetModule), },
   { path: 'registro', component: RegisterComponent},
+  { path: 'registro-usuario', component: RegisterUserComponent},
+  { path: 'registro-protectora', component: RegisterProtectiveComponent},
   { path: 'registro-adicional', component: AditionalRegisterComponent },
   { path: 'perfil', component: ProfileComponent},
   { path: 'mascota', component: ProfilePetComponent},

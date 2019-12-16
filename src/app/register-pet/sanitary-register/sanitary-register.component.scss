@@ -1,4 +1,14 @@
-//TODO: Mejorar el aspecto
+.form--adopcion-sanitario{
+  display: flex;
+}
+.form-group--checkbox{
+  flex-basis: 49%;
+}
+.checkbox{
+  display: inline-block;
+  width: 50%;
+}
+
 .form-group--checkbox .textarea{
   margin-top: 10px;
   opacity: 0;

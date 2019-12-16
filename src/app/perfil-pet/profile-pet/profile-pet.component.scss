@@ -70,7 +70,7 @@
   }
 
   &-list__item:nth-of-type(1) {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: $ff-title;
     text-transform: uppercase;
     color: $grey-0;
     font-weight: 600;
@@ -86,7 +86,7 @@
 }
 
 .contact__name {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $ff-title;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 10px;

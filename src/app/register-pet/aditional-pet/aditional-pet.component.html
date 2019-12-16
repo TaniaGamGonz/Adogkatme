@@ -19,7 +19,8 @@
           <input type="checkbox" id="r-01" name="health" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
-        <div class="form-group">
+        <div class="align--row">
+        <div class="form-group d-inlineB">
           <label for="Independencia" class="form-group__label">Independencia</label>
           <select id="Independencia" class="form-group__control">
             <option selected>Seleccionar...</option>
@@ -39,6 +40,7 @@
             <option value="">Poco ruido</option>
             <option value="">Mucho ruido</option>
           </select>
+        </div>
         </div>
       </fieldset>
       <fieldset class="from-group form-group--checkbox">
@@ -80,11 +82,11 @@
           <span class="checkbox__custom"></span>
         </label>
       </fieldset>
-      <div class="form-group">
-        <label for="ruido" class="form-group__label">
+      <div class="form-group motivoAdopcion">
+        <label for="motivoAdopcion" class="form-group__label">
           ¿Motivo de la adopcion?
         </label>
-        <select id="ruido" class="form-group__control">
+        <select id="motivoAdopcion" class="form-group__control">
           <option selected>Seleccionar...</option>
           <option value="">Divorcio</option>
           <option value="">Nacimiento de bebé</option>
@@ -93,9 +95,7 @@
           <option value="">Tiempo</option>
         </select>
       </div>
-
-
       <div class="form-btn--container">
-        <button type="submit" class="btn">Enviar!</button>
+        <button type="submit" class="btn" routerLinkActive="bread-crumbs__item--selected">Enviar!</button>
       </div>
     </form>
