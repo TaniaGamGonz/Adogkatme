@@ -1,0 +1,157 @@
+
+
+$base-color: $color-primary;
+$btn-background: $grey-100;
+$btn-border: $color-default;
+$btn-text-color: $color-text-default;
+$btn-arrow: $color-text-default;
+
+
+$token-background: $base-color;
+$token-text-color: $grey-100;
+$token-remove-color: $grey-100;
+
+$box-shadow-color: rgba(0, 0, 0, 0.12);
+$list-hover-background: darken($btn-background, 20%);
+$label-color: $color-text-default;
+$selected-background: $grey-95;
+
+.c-btn{
+    background: $btn-background;
+    border: 1px solid $btn-border;
+    color: $btn-text-color;
+    border-radius: 4px ;
+    min-height: 40px;
+    outline: 0;
+
+}
+.selected-list{
+    .c-list{
+        .c-token{
+            background: $token-background;
+            .c-label{
+               color: $token-text-color;
+            }
+            .c-remove {
+                svg {
+                    fill: $token-remove-color;
+                }
+            }
+
+        }
+    }
+    .c-angle-down, .c-angle-up{
+        svg {
+            fill: $btn-arrow;
+        }
+    }
+}
+.dropdown-list{
+    ul{
+        li{
+          transition: background 0.2s;
+        }
+        li:hover{
+            background: $list-hover-background;
+        }
+    }
+}
+.dropdown .arrow-up, .dropdown .arrow-down {
+  border-bottom: 15px solid $grey-100;
+}
+
+.dropdown .arrow-2{
+    border-bottom: 15px solid $color-default;
+}
+.dropdown-list .list-area{
+    border: 1px solid $color-default;
+    background: $grey-100;
+    box-shadow: 0px 1px 5px $box-shadow-color;
+}
+.select-all{
+    border-bottom: 1px solid $color-default;
+}
+.list-area .list-filter{
+    border-bottom: 1px solid $color-default;
+    .c-search{
+        svg {
+            fill: $color-primary;
+        }
+    }
+    .c-clear {
+        svg {
+            fill: $color-primary ;
+        }
+    }
+}
+
+.pure-checkbox {
+    input[type="checkbox"]:focus + label:before, input[type="checkbox"]:hover + label:before{
+        border-color: $base-color;
+        background-color: #f2f2f2;
+    }
+    input[type="checkbox"] + label{
+        color: $label-color;
+    }
+    input[type="checkbox"] + label:before{
+        color: $base-color;
+        border: 1px solid $base-color;
+    }
+    input[type="checkbox"] + label:after{
+        background-color: $base-color;
+    }
+    input[type="checkbox"]:disabled + label:before{
+        border-color: $color-default;
+    }
+    input[type="checkbox"]:disabled:checked + label:before{
+        background-color: $color-default;
+    }
+    input[type="checkbox"] + label:after{
+        border-color: #ffffff;
+    }
+    input[type="radio"]:checked + label:before{
+        background-color: $grey-100;
+    }
+    input[type="checkbox"]:checked + label:before{
+        background: $base-color;
+    }
+}
+.single-select-mode .pure-checkbox {
+    input[type="checkbox"]:focus + label:before, input[type="checkbox"]:hover + label:before{
+        border-color: $base-color;
+        background-color: #f2f2f2;
+    }
+    input[type="checkbox"] + label{
+        color: $label-color;
+    }
+    input[type="checkbox"] + label:before{
+        color: transparent !important;
+        border: 0px solid $base-color;
+    }
+    input[type="checkbox"] + label:after{
+        background-color: transparent !important;
+    }
+    input[type="checkbox"]:disabled + label:before{
+        border-color: $color-default;
+    }
+    input[type="checkbox"]:disabled:checked + label:before{
+        background-color: $color-default;
+    }
+    input[type="checkbox"] + label:after{
+        border-color: $base-color;
+    }
+    input[type="radio"]:checked + label:before{
+        background-color: $grey-100;
+    }
+    input[type="checkbox"]:checked + label:before{
+        background: none !important;
+    }
+}
+.selected-item{
+    background: $selected-background;
+}
+.btn-iceblue {
+    background: $base-color;
+    border: 1px solid $btn-border;
+    color: $grey-100;
+}
