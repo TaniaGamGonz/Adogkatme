@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CountriesService } from 'src/app/core/services/countries.services/countries.service';
 
 @Component({
   selector: 'app-register-protective',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterProtectiveComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private countriesService: CountriesService
+
+  ) { }
+  private countries: Array<Object>;
+  private cities: Array<Object>;
 
   ngOnInit() {
+    this.cities = this.countriesService.getCities();
+    this.countries = this.countriesService.getCountries();
+
   }
 
 }

@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+  private optionAdopcion: Array<Object>;
 
   ngOnInit() {
+    this.optionAdopcion = [
+      {id: 1, itemName: "Adoptar"},
+      {id: 2, itemName: "Acoger"},
+      ]
+
   }
 
 }

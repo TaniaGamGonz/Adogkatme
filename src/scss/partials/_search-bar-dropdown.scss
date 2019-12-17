@@ -1,0 +1,33 @@
+ .form-group__control--search-bar .dropdown .cuppa-dropdown .selected-list .c-btn{
+  border-color: transparent;
+}
+
+.form-group__control--search-bar .dropdown .cuppa-dropdown .selected-list .c-angle-down,
+.form-group__control--search-bar .dropdown .cuppa-dropdown .selected-list .c-angle-up,
+.form-group__control--search-bar .dropdown .cuppa-dropdown .selected-list .c-remove
+{
+  position: relative;
+  top: 6px;
+  right: -5px;
+  margin-left: 5px;
+}
+.form-group__control--search-bar .dropdown .cuppa-dropdown .selected-list .c-remove{
+  top: 8px;
+  margin-left: 5px;
+
+}
+.form-group__control--search-bar .dropdown .cuppa-dropdown .dropdown-list .list-area{
+  border-color: $color-primary;
+}
+.form-group__control--search-bar .dropdown .arrow-2{
+  border-bottom-color: $color-primary;
+}
+
+.form-group__control--search-bar .dropdown .dropdown-list{
+  min-width: 200px;
+}
+
+
+
+
+

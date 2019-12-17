@@ -15,10 +15,16 @@ export class DropdownComponent implements OnInit {
   singleSelection = true;
   @Input()
   text: String;
+  @Input()
+  enableSearchFilter = true;
+  @Input()
+  classes:String;
+  @Input()
+  showCheckbox = true;
   constructor() { }
 
-  selectedItems = [];
-  dropdownSettings = {};
+  selectedItems: Array<Object>;
+  dropdownSettings: Object;
 
 
   ngOnInit() {
@@ -28,9 +34,12 @@ export class DropdownComponent implements OnInit {
       enableCheckAll: this.singleSelection,
       text: this.text,
       selectAllText: "Selecciona todos",
-      unSelectAllText: "UnSelect All",
-      enableSearchFilter: true,
-      classes: "dropdown"
+      unSelectAllText: "Deshacer toda la seleccion",
+      enableSearchFilter: this.enableSearchFilter,
+      classes: `dropdown ,${this.classes}`,
+      searchPlaceholderText: "Buscar",
+      position: "bottom",
+      showCheckbox: this.showCheckbox,
     };
   }
   onItemSelect(item: any) {

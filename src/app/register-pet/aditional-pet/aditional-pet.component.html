@@ -22,24 +22,23 @@
         <div class="align--row">
         <div class="form-group d-inlineB">
           <label for="Independencia" class="form-group__label">Independencia</label>
-          <select id="Independencia" class="form-group__control">
-            <option selected>Seleccionar...</option>
-            <option value="">Muy independiente</option>
-            <option value="">Dependiente por las noches</option>
-            <option value="">Poco dependiente</option>
-            <option value="">Muy dependiente</option>
-          </select>
-        </div>
+          <app-dropdown
+          [dropdownList]="petIndependence"
+          [showCheckbox]="false"
+          [enableSearchFilter]="false"
+          [text]="'Nivel de independencia'"
+          [classes]="search-bar" ></app-dropdown>
+    </div>
         <div class="form-group">
           <label for="ruido" class="form-group__label">
             Ruido
           </label>
-          <select id="ruido" class="form-group__control">
-            <option selected>Seleccionar...</option>
-            <option value="">Ruido cuando está solo</option>
-            <option value="">Poco ruido</option>
-            <option value="">Mucho ruido</option>
-          </select>
+          <app-dropdown
+          [dropdownList]="petNoise"
+          [showCheckbox]="false"
+          [enableSearchFilter]="false"
+          [text]="'¿Es muy ruidoso?'"
+          [classes]="search-bar" ></app-dropdown>
         </div>
         </div>
       </fieldset>
@@ -86,15 +85,13 @@
         <label for="motivoAdopcion" class="form-group__label">
           ¿Motivo de la adopcion?
         </label>
-        <select id="motivoAdopcion" class="form-group__control">
-          <option selected>Seleccionar...</option>
-          <option value="">Divorcio</option>
-          <option value="">Nacimiento de bebé</option>
-          <option value="">Problemas economicos</option>
-          <option value="">Mudanza</option>
-          <option value="">Tiempo</option>
-        </select>
-      </div>
+        <app-dropdown
+        [dropdownList]="reasonAdoption"
+        [showCheckbox]="false"
+        [enableSearchFilter]="false"
+        [text]="'¿Motivo de la adopcion?'"
+        [classes]="search-bar" ></app-dropdown>
+    </div>
       <div class="form-btn--container">
         <button type="submit" class="btn" routerLinkActive="bread-crumbs__item--selected">Enviar!</button>
       </div>

@@ -12,8 +12,8 @@ export class RegisterUserComponent implements OnInit {
     private endpointService: EndpointsService,
     private countriesService: CountriesService)
    {}
-  private countries = [];
-  private cities = [];
+  private countries: Array<Object>;
+  private cities: Array<Object>;;
 
   ngOnInit() {
      this.cities = this.countriesService.getCities();

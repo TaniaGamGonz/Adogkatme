@@ -7,20 +7,12 @@
       <input type="text" id="protectorName" class="form-group__control" required>
 </div>
 <div class="form-group">
-      <label for="comunidadP" class="form-group__label">Comunidad*</label>
-  <select id="comunidadP" class="form-group__control">
-      <option selected>Selecciona tu comunidad</option>
-      <option value="">....</option>
-      <option value="">....</option>
-  </select>
-</div>
+      <label for="comunidadP" class="form-group__label">Comunidad</label>
+      <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'"></app-dropdown>
+    </div>
 <div class="form-group">
   <label for="ciudadP" class="form-group__label">Ciudad*</label>
-  <select id="ciudadP" class="form-group__control">
-      <option selected>Selecciona tu ciudad</option>
-      <option value="">....</option>
-      <option value="">....</option>
-  </select>
+  <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'"></app-dropdown>
 </div>
 <div class="form-group">
   <label for="documents" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Documentos de la entidad*</label>
