@@ -16,16 +16,12 @@
           <p class="info">Debes ser mayor de edad para poder registrarte</p>
       </div>
       <div class="form-group">
-              <label for="comunidad" class="form-group__label">Comunidad*</label>
-          <select id="comunidad" class="form-group__control">
-              <option selected>Selecciona tu comunidad</option>
-              <option value="">....</option>
-              <option value="">....</option>
-          </select>
+        <label for="comunidad" class="form-group__label">Comunidad</label>
+        <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'"></app-dropdown>
       </div>
       <div class="form-group">
-        <label for="newEmail" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Provincia</label>
-        <app-dropdown></app-dropdown>
+        <label for="newEmail" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Ciudad</label>
+        <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'"></app-dropdown>
       </div>
       <div class="form-group">
           <label for="newEmail" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Email*</label>
