@@ -15,9 +15,19 @@
         <li>5 Años</li>
         <li>Bien de salud</li>
       </ul>
+      <ng-content select="[removeButton]"></ng-content>
     </div>
-    <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
-      <use xlink:href="/assets/svg/sprite.svg#heart"></use>
+    <div *ngIf="isLogged">
+    <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos"
+    *ngIf="isFavourite else elseBlock">
+      <use xlink:href="/assets/svg/sprite.svg#heart-color"></use>
     </svg>
+    <ng-template #elseBlock>
+      <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
+        <use xlink:href="/assets/svg/sprite.svg#heart"></use>
+      </svg>
+    </ng-template>
+  </div>
+
   </article>
 </a>

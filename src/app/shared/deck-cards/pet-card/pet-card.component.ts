@@ -11,5 +11,12 @@ export class PetCardComponent implements OnInit {
 
   ngOnInit() {
   }
+  private isLogged: boolean = false;
+  private isFavourite: boolean = false;
+  private logged() {
+    const user = localStorage.getItem("user");
+    this.isLogged = (user && user !== "") ? true : false ;
+  }
+
 
 }
