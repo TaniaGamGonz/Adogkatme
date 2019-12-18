@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, Renderer2, } from '@angular/core';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { Subscription } from 'rxjs';
 
@@ -15,9 +15,12 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   constructor(
     private modalService : ModalService,
-  ) { }
+    private renderer: Renderer2
+  ) {
 
+    this.renderer.addClass(document.body, 'over-hidden');
 
+   }
 
 
   ngOnInit(): void {
@@ -34,6 +37,8 @@ export class ModalComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
 
     }
+
+    this.renderer.removeClass(document.body, 'over-hidden');
   }
 
 

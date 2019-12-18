@@ -53,65 +53,23 @@ a {
   color: $color-default;
 }
 
-.info {
-  margin-top: 3px;
-  color: $color-text-disabled;
-}
-
-/*------------
- UTILITIES
- ------------*/
 .container {
   margin: 0 auto;
   width: rem(1200px);
 }
 
-.d-flex {
-  display: flex;
+.left-arrow{
+  margin-right: 5px;
 }
-
-.d-none {
-  display: none;
-}
-
-.align--column {
-  display: flex;
-  flex-direction: column;
-}
-
-.align--center {
-  display: flex;
-  justify-content: center;
-}
-
-.align--space-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.align--row {
-  display: flex;
-  align-items: baseline;
-}
-.flex-grow-1{
-  flex-grow: 1;
-}
-.d-inlineB{
-  display: inline-block;
-}
-
-.mt-20{
-  margin-top: 20px;
+.info {
+  margin-top: 3px;
+  color: $color-text-disabled;
 }
 
 .border--b {
   border-top: 1px solid $grey-90;
 }
 
-.bold {
-  font-weight: 700;
-}
 
 .height-100 {
   min-height: 100vh;

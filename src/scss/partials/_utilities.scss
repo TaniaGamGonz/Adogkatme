@@ -1,0 +1,57 @@
+
+//Display utilities
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-inlineB{
+  display: inline-block;
+}
+
+
+//Align utilities
+.align--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align--center {
+  display: flex;
+  justify-content: center;
+}
+
+.align--space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.align--row {
+  display: flex;
+  align-items: baseline;
+}
+
+//Flex utilities
+.flex-grow-1{
+  flex-grow: 1;
+}
+
+//Margin and padding utilities
+.mt-20{
+  margin-top: 20px;
+}
+
+//Other
+.over-hidden{
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+

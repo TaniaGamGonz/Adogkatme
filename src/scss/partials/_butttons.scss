@@ -1,4 +1,3 @@
-
 .btn {
   border: 0;
   border-radius: 5px;
@@ -14,36 +13,47 @@
     background-color: darken($color-primary, 15%);
   }
 
-}
+  &--sm {
+    padding: 10px 15px;
+    height: rem(40px);
+  }
+  &--return{
+    background-color: transparent;
+    color: $color-default;
+    border: none;
+    transition: color 0.2s;
 
-.btn--sm {
-  padding: 10px 15px;
-  height: rem(40px);
-}
-
-.btn--fb {
-  position: relative;
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 50px 15px 20px;
-  background-color: $color-button-fb;
-  font-family: $ff-title;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.2rem;
-
-  &::after {
-    content: '';
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    top: 9px;
-    right: 12px;
+    &:hover{
+      color: darken($color-default, 15%);
+      background-color: transparent;
+      border: none;
+    }
+  }
+  &--fb {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 50px 15px 20px;
     background-color: $color-button-fb;
-    background-image: url(/assets/svg/facebook.svg);
+    font-family: $ff-title;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+
+    &::after {
+      content: '';
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      top: 9px;
+      right: 12px;
+      background-color: $color-button-fb;
+      background-image: url(/assets/svg/facebook.svg);
+    }
+
+    &:hover {
+      background-color: $color-button-fb;
+    }
   }
 
-  &:hover{
-    background-color: $color-button-fb;
-  }
 }
