@@ -1,104 +1,86 @@
       <h2 class="h2">Datos generales del animal</h2>
       <form action="..." class="form form--adopcion">
-          <div class="form-group">
-              <label for="nameAnimal" class="form-group__label"
-                  title="Los campos marcados con * deben ser rellenados">Nombre*</label>
-              <input type="text" id="nameAnimal" class="form-group__control" required>
-          </div>
-          <div class="form-group">
-              <label for="typeAnimal" class="form-group__label"
-                  title="Los campos marcados con * deben ser rellenados">Tipo de animal*</label>
-              <input type="text" id="typeAnimal" class="form-group__control" required>
-          </div>
-          <div class="form-group">
-              <span>Sexo</span>
-              <div class="form-group">
-                <label for="r-01" class="form-group__label radio" >Macho
-                        <input type="radio" id="r-01" name="sex" class="radio__control">
-                        <span class="radio__custom"></span>
-                </label>
-                <label for="r-02" class="form-group__label radio">Hembra
-                        <input type="radio" id="r-02" name="sex" class="radio__control">
-                        <span class="radio__custom"></span>
-                </label>
-              </div>
+        <div class="form-group">
+          <label for="nameAnimal" class="form-group__label"
+            title="Los campos marcados con * deben ser rellenados">Nombre*</label>
+          <input type="text" id="nameAnimal" class="form-group__control" required>
         </div>
-                <div class="form-group">
-              <label for="state" class="form-group__label">Estado</label>
-              <app-dropdown
-              [dropdownList]="petHealth"
-              [showCheckbox]="false"
-              [enableSearchFilter]="false"
-              [text]="'Selecciona un estado...'"
-              [classes]="search-bar" ></app-dropdown>
-                  </div>
-          <div class="form-group form-group--age">
-              <label for="ageAnimal" class="form-group__label"
-                  title="Los campos marcados con * deben ser rellenados">Edad (aproximadamente)</label>
-              <input type="text" id="ageAnimal" class="form-group__control form-group__control--age form-group__control--sm">
-              <app-dropdown
-              [dropdownList]="petAge"
-              [showCheckbox]="false"
-              [enableSearchFilter]="false"
-              [text]="'Selecciona formato de edad..'"
-              [classes]="search-bar" ></app-dropdown>
+        <div class="form-group">
+          <label for="typeAnimal" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Tipo
+            de animal*</label>
+          <input type="text" id="typeAnimal" class="form-group__control" required>
+        </div>
+        <div class="form-group">
+          <span>Sexo</span>
+          <div class="form-group">
+            <label for="r-01" class="form-group__label radio">Macho
+              <input type="radio" id="r-01" name="sex" class="radio__control">
+              <span class="radio__custom"></span>
+            </label>
+            <label for="r-02" class="form-group__label radio">Hembra
+              <input type="radio" id="r-02" name="sex" class="radio__control">
+              <span class="radio__custom"></span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="state" class="form-group__label">Estado</label>
+          <app-dropdown [dropdownList]="petHealth" [showCheckbox]="false" [enableSearchFilter]="false"
+            [text]="'Selecciona un estado...'"></app-dropdown>
+        </div>
+        <div class="form-group form-group--sm">
+          <label for="ageAnimal" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Edad
+            (aproximadamente)</label>
+          <div class="d-flex">
+            <input type="text" id="ageAnimal" class="form-group__control  form-group__control--sm">
+            <app-dropdown [dropdownList]="petAge" [showCheckbox]="false" [enableSearchFilter]="false"
+              [text]="'Selecciona la edad..'" class="flex-grow-1"></app-dropdown>
+          </div>
 
-          </div>
-          <div class="form-group">
-              <label for="size" class="form-group__label">Tamaño</label>
-            <app-dropdown
-              [dropdownList]="petSize"
-              [showCheckbox]="false"
-              [enableSearchFilter]="false"
-              [text]="'Selecciona el tamaño...'"
-              [classes]="search-bar" ></app-dropdown>
-                </div>
-          <div class="form-group">
-              <label for="activity" class="form-group__label">Nivel de actividad</label>
-              <app-dropdown
-              [dropdownList]="petActivity"
-              [showCheckbox]="false"
-              [enableSearchFilter]="false"
-              [text]="'Selecciona un nivel de actividad'"
-              [classes]="search-bar" ></app-dropdown>
-                  </div>
-          <div class="form-group">
-              <label for="weight" class="form-group__label">Peso</label>
-              <input type="number" name="weight" id="weight" class="form-group__control">
-          </div>
-          <div class="form-group">
-              <label for="comunidad" class="form-group__label">Comunidad</label>
-              <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'"></app-dropdown>
-            </div>
-          <div class="form-group">
-              <label for="ciudad" class="form-group__label">Ciudad</label>
-              <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'"></app-dropdown>
-            </div>
-          <div class="form-group ">
+        </div>
+        <div class="form-group">
+          <label for="size" class="form-group__label">Tamaño</label>
+          <app-dropdown [dropdownList]="petSize" [showCheckbox]="false" [enableSearchFilter]="false"
+            [text]="'Selecciona el tamaño...'"></app-dropdown>
+        </div>
+        <div class="form-group">
+          <label for="activity" class="form-group__label">Nivel de actividad</label>
+          <app-dropdown [dropdownList]="petActivity" [showCheckbox]="false" [enableSearchFilter]="false"
+            [text]="'Selecciona un nivel de actividad'"></app-dropdown>
+        </div>
+        <div class="form-group">
+          <label for="weight" class="form-group__label">Peso</label>
+          <input type="number" name="weight" id="weight" class="form-group__control">
+        </div>
+        <div class="form-group">
+          <label for="comunidad" class="form-group__label">Comunidad</label>
+          <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'"></app-dropdown>
+        </div>
+        <div class="form-group">
+          <label for="ciudad" class="form-group__label">Ciudad</label>
+          <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'"></app-dropdown>
+        </div>
+        <div class="form-group ">
 
           <label class="form-group__label checkbox">Necesita licencia PPP
-              <input type="checkbox" name="license" id="license" class="checkbox__control ">
-              <span class="checkbox__custom"></span>
+            <input type="checkbox" name="license" id="license" class="checkbox__control ">
+            <span class="checkbox__custom"></span>
 
           </label>
-          </div>
-          <div class="form-group">
-              <label for="info" class="form-group__label">Información adicional</label>
-              <textarea name="info" id="" cols="30" rows="10" class="form-group__control textarea"
-                  placeholder="Come mucho, no le gusta el agua, le gusta jugar, es más activo por las noches..."></textarea>
-          </div>
-          <div class="form-group">
-              <image-upload
-               [extensions]="['jpeg','png','svg','jpg', 'mp4']"
-              buttonCaption="Selecciona la imagen o video"
-              dropBoxMessage="Arrastra la imagen o video"
-              class="customClass"
-              >
-            </image-upload>
+        </div>
+        <div class="form-group form-group--xl">
+          <label for="info" class="form-group__label">Información adicional</label>
+          <textarea name="info" id="" cols="30" rows="10" class="form-group__control textarea"
+            placeholder="Come mucho, no le gusta el agua, le gusta jugar, es más activo por las noches..."></textarea>
+        </div>
+        <div class="form-group form-group--content">
+          <image-upload [extensions]="['jpeg','png','svg','jpg', 'mp4']" buttonCaption="Selecciona la imagen o video"
+            dropBoxMessage="Arrastra la imagen o video" class="customClass">
+          </image-upload>
 
-          </div>
-          <div class="form-btn--container">
-              <button type="submit" class="btn" routerLink="sanitario" routerLinkActive="bread-crumbs__item--selected" >Datos sanitarios...</button>
-          </div>
+        </div>
+        <div class="form-btn--container">
+          <button type="submit" class="btn" routerLink="sanitario">Datos
+            sanitarios...</button>
+        </div>
       </form>
-

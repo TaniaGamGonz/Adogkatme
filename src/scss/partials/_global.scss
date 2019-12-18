@@ -66,9 +66,8 @@ a {
   width: rem(1200px);
 }
 
-.container--flex {
+.d-flex {
   display: flex;
-  flex-direction: column;
 }
 
 .d-none {
@@ -95,8 +94,15 @@ a {
   display: flex;
   align-items: baseline;
 }
+.flex-grow-1{
+  flex-grow: 1;
+}
 .d-inlineB{
   display: inline-block;
+}
+
+.mt-20{
+  margin-top: 20px;
 }
 
 .border--b {

@@ -155,3 +155,10 @@ $selected-background: $grey-95;
     border: 1px solid $btn-border;
     color: $grey-100;
 }
+
+
+//MODIFICACION PARA FORMULARIO
+.d-flex .dropdown .cuppa-dropdown .selected-list .c-btn{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}

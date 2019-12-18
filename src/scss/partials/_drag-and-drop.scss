@@ -22,5 +22,10 @@
 
   & .img-ul-drag-box-msg {
     color: $color-primary;
+    transition: color 0.3s;
+  }
+
+  &:hover .img-ul-drag-box-msg{
+    color: darken($color-primary, 15%);
   }
 }

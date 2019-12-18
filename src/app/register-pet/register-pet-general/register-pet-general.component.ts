@@ -33,7 +33,7 @@ export class RegisterPetGeneralComponent implements OnInit {
       { id: 4, itemName: "Mini" }
     ];
     this.petActivity = [
-      { id: 1, itemName: "Muy activo, necesita hacer deporte" },
+      { id: 1, itemName: "Muy activo" },
       { id: 2, itemName: "Medianamente activo" },
       { id: 3, itemName: "Poco activo" },
       { id: 4, itemName: "Vago, ni sale a pasear" }

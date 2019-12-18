@@ -8,7 +8,7 @@ import { RegisterPetGeneralComponent } from './register-pet-general/register-pet
 const routes: Routes = [
   {path: '', component: RegisterPetGeneralComponent,  },
   {path: 'sanitario', component: SanitaryRegisterComponent,  },
-  {path: 'adicional', component: AditionalPetComponent,  },
+  {path: 'sanitario/adicional', component: AditionalPetComponent,  },
 ];
 
 @NgModule({

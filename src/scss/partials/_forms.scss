@@ -24,6 +24,14 @@
   border: 1px solid $color-border;
 }
 
+
+.form-group--xl{
+  max-width: none;
+}
+.form-group--content{
+  max-width: max-content;
+}
+
 .form-group__label {
   display: block;
   margin-bottom: 8px;
@@ -34,7 +42,7 @@
 }
 
 .form-group__control--sm {
-  width: 49%;
+  width: 30%;
 }
 
 .form-group__title {
