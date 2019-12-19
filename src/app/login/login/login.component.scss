@@ -23,6 +23,10 @@
   padding: 0 17px 5px;
 }
 
+.form-group__control--login:focus {
+  border: 1px solid $color-default;
+}
+
 .form-group__label--inside {
   position: absolute;
   transform: translate(15px, -48px);

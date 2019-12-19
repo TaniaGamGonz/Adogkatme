@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { FormsModule } from '@angular/forms';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 const COMPONENTS = [
   DeckCardsComponent,
@@ -17,8 +18,8 @@ const COMPONENTS = [
   SearchBarComponent,
   ModalComponent,
   ProtectiveCardComponent,
-  DropdownComponent
-
+  DropdownComponent,
+  TooltipComponent,
 ];
 
 

@@ -2,16 +2,35 @@
   <div class="container container--login">
     <!--Formulario de logeo-->
     <h1 class="h1">Login</h1>
-    <form action="..." class="form__login" #loginForm="ngForm">
+    <form action="..." class="form__login" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.controls)">
       <div class="form-group form-group--login">
-        <input type="email" name="email" id="email" placeholder=" "
-          class="form-group__control form-group__control--login">
+        <tooltip *ngIf="email.touched && !email.valid">Correo incorrecto!</tooltip>
+        <input
+        type="email"
+        name="email"
+        [(ngModel)]="login.email"
+        #email="ngModel"
+        required
+        email
+        id="email"
+        placeholder=" "
+        class="form-group__control form-group__control--login">
         <label for="email" class="form-group__label form-group__label--inside">Introduce tu
           correo</label>
       </div>
       <div class="form-group form-group--login">
-        <input type="password" name="password" id="password" placeholder=" "
-          class="form-group__control form-group__control--login">
+        <tooltip *ngIf="password.touched && !password.valid" >Contraseña incorrecta!</tooltip>
+        <input
+        type="password"
+        name="password"
+        [(ngModel)]="login.password"
+        #password="ngModel"
+        [pattern]="passwordRegExp"
+        required
+        id="password"
+        placeholder=" "
+        class="form-group__control form-group__control--login"
+        >
         <label for="password" class="form-group__label form-group__label--inside">Introduce tu
           contraseña</label>
       </div>
