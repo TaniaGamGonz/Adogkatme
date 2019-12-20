@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalService } from "src/app/core/services/modal.service";
-import { Login } from "../models/login";
 import { Router } from "@angular/router";
+import { User } from 'src/app/core/models/user';
 
 @Component({
   selector: "login",
@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  public login = new Login("", "");
+  public login = new User("", "","","","",[],[]);
   private password: string;
   private email: string;
   private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;

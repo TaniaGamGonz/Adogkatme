@@ -4,11 +4,11 @@
     <h1 class="h1">Login</h1>
     <form action="..." class="form__login" #loginForm="ngForm" (ngSubmit)="onSubmit(email, password)">
       <div class="form-group form-group--login">
-        <tooltip *ngIf="email.touched && !email.valid">Correo incorrecto!</tooltip>
+        <tooltip *ngIf="email?.touched && !email?.valid">Correo incorrecto!</tooltip>
         <input
         type="email"
         name="email"
-        [(ngModel)]="login.email"
+        [(ngModel)]="user.email"
         #email="ngModel"
         required
         email
@@ -19,11 +19,11 @@
           correo</label>
       </div>
       <div class="form-group form-group--login">
-        <tooltip *ngIf="password.touched && !password.valid" >Contraseña incorrecta!</tooltip>
+        <tooltip *ngIf="password?.touched && !password?.valid" >Contraseña incorrecta!</tooltip>
         <input
         type="password"
         name="password"
-        [(ngModel)]="login.password"
+        [(ngModel)]="user.password"
         #password="ngModel"
         [pattern]="passwordRegExp"
         required
@@ -39,7 +39,7 @@
         <button type="submit" class="btn btn--sm">Inicia sesión</button>
       </div>
     </form>
-    <a href="#" class="btn btn--fb" role="button">Inicia sesión con</a>
+    <a class="btn btn--fb" role="button">Inicia sesión con</a>
     <div class="align--row">
       <span>¿Todavía no tienes una cuenta?</span>
       <a routerLink='/registro'  class="link link--login">Regístrate</a>
