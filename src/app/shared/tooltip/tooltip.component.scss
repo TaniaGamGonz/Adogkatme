@@ -4,7 +4,7 @@
 .tooltip{
   position: absolute;
   right: 8px;
-  top: 6px;
+  top: 30px;
   min-height: 28px;
   display: flex;
   align-items: center;
@@ -22,6 +22,7 @@
   }
 
 }
+
 .icon--alert{
   cursor: pointer;
   order: 1;
@@ -42,7 +43,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.7);
+    transform: scale(1.4);
   }
   to {
     transform: scale(1);

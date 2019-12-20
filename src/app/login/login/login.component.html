@@ -2,7 +2,7 @@
   <div class="container container--login">
     <!--Formulario de logeo-->
     <h1 class="h1">Login</h1>
-    <form action="..." class="form__login" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.controls)">
+    <form action="..." class="form__login" #loginForm="ngForm" (ngSubmit)="onSubmit(email, password)">
       <div class="form-group form-group--login">
         <tooltip *ngIf="email.touched && !email.valid">Correo incorrecto!</tooltip>
         <input
@@ -51,12 +51,24 @@
   <h3 class="modal__title">Recupera tu contraseña</h3>
   <a rol="button" class="modal__close link" (click)="toggleModal()">&times;</a>
   <p class="modal__info">Escribenos tu e-mail y te enviaremos un correo de recuperación</p>
-  <form action="">
+  <form action="" #modalForm="ngForm" (ngSubmit)="modalSubmit(recoverEmail)">
     <div class="form-group">
+      <tooltip *ngIf="recoverEmail.touched && recoverEmail.invalid">Correo incorrecto!</tooltip>
       <label for="recoverEmail" class="form-group__label">Email</label>
-      <input type="email" name="recoverEmail" id="recoverEmail" class="form-group__control">
+      <input
+      type="email"
+      email
+      required
+      [(ngModel)]="modalForm.recoverEmail"
+      #recoverEmail="ngModel"
+      name="recoverEmail"
+      id="recoverEmail"
+      class="form-group__control">
     </div>
     <button type="submit" class="btn">Recuperar</button>
   </form>
 </modal>
+
+
+
 

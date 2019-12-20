@@ -26,10 +26,16 @@ export class LoginComponent implements OnInit {
     this.modalService.toggleModal("loginModal");
   }
 
-  onSubmit() {
-    if (this.email && this.password) {
+  onSubmit(email, password) {
+    if (email.valid && password.valid) {
       localStorage.setItem("user", "soemthing");
       this.router.navigate(["/"]);
+    }
+  }
+
+  modalSubmit(email){
+    if(email.valid){
+      alert('Se te ha enviado un correo de verificacion');
     }
   }
 }

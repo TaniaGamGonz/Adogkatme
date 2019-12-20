@@ -14,6 +14,7 @@
   flex: 1 0 30%;
   margin-bottom: 20px;
   margin-right: 20px;
+  position: relative;
 }
 
 .form-group__control, .dropdown .cuppa-dropdown .selected-list .c-btn {
@@ -24,13 +25,14 @@
   border: 1px solid $color-border;
   transition: border-color 0.4s;
 }
-.form-group__control:focus{
+
+/*.form-group__control:focus{
   outline: none;
   border-color: transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: 1px solid $color-border;
-}
+}*/
 
 .form-group__control--success{
   border-bottom-width: 2px;

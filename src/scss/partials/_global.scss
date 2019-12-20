@@ -66,6 +66,11 @@ a {
   color: $color-text-disabled;
 }
 
+.form-group--login .tooltip{
+  top: 6px !important;
+}
+
+
 .border--b {
   border-top: 1px solid $grey-90;
 }
