@@ -25,8 +25,12 @@
     &:hover{
       color: $grey-100;
       background-color: $color-primary;
-
   }
+  &--selected{
+    color: $grey-100;
+    background-color: $color-primary;
+  }
+
 }
 }
 .btn--search{

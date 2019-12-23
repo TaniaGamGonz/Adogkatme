@@ -33,7 +33,15 @@ export class Pet {
   independence: string;
   noisy: string;
   adoptionReason: string;
-  pleasures: Array<string>;
+  pleasures: Object = {
+    play: false,
+    scape: false,
+    sleep: false,
+    bath: false,
+    eat: false,
+    takeAWalk: false,
+    car: false
+  }
 
   constructor( ){ }
 

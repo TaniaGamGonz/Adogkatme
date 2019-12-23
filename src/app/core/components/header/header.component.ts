@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: "app-header",
@@ -6,11 +7,18 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
-  ngOnInit() {}
-  private logged: boolean = false;
-  private isLogged() {
-    const user = localStorage.getItem("user");
-    this.logged = (user && user !== "") ? true : false ;
+  constructor(
+    private loginService: LoginService,
+  ) {}
+  ngOnInit() {
+    this.logged();
+    this.isLogged = this.loginService.isLogged;
   }
+  private isLogged: boolean;
+  private logged() {
+    this.loginService.logged();
+  }
+
+
 }
+

@@ -2,56 +2,73 @@
 @import '../../../../scss/partials/px-to-rem';
 
 
-.card{
-  align-self:center;
+.card {
+  align-self: center;
   justify-self: start;
   box-shadow: $box-shadow;
   max-width: rem(250px);
   position: relative;
-  cursor:pointer;
   transition: transform 0.2s;
 
-
-  &:hover{
+  &:hover {
     box-shadow: $box-shadow-hover;
-    transform:scale(1.07);
+    transform: scale(1.07);
   }
-  &__header{
+
+  &__header {
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
   }
+
   &__img {
     width: 100%;
+    cursor: pointer;
   }
-  &__body{
+
+  &__body {
     padding: 8px 0 30px 20px;
     position: relative;
     background-color: $grey-100;
   }
-  &__title{
+
+  &__title {
     font-size: 1.5rem;
     margin: 0;
   }
-  &__info{
+
+  &__info {
     color: $color-text-secondary;
     line-height: 1.5;
     margin-bottom: 10px;
   }
-  &__icon{
+
+  &__icon {
     position: absolute;
   }
 }
-.ubic-card{
+
+.ubic-card {
   color: $color-text-default;
   position: relative;
 
 }
-.icon--heart{
+
+.icon--heart {
   top: 10px;
   right: 10px;
+  cursor: pointer;
+
+  &-grey {
+    opacity: 0.6;
+    transition: opacity 0.4s;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
-.icon--ubic{
+
+.icon--ubic {
   top: -5px;
   left: -22px;
 }

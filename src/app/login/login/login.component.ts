@@ -9,7 +9,7 @@ import { User } from 'src/app/core/models/user';
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  public login = new User("", "","","","",[],[]);
+  public login = new User;
   private password: string;
   private email: string;
   private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(email, password) {
     if (email.valid && password.valid) {
-      localStorage.setItem("user", "soemthing");
+      localStorage.setItem("user", "token");
       this.router.navigate(["/"]);
     }
   }

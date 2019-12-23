@@ -21,7 +21,7 @@
       <div class="form-group form-group--login">
         <tooltip *ngIf="password?.touched && !password?.valid" >Contraseña incorrecta!</tooltip>
         <input
-        type="password"
+        type="text"
         name="password"
         [(ngModel)]="login.password"
         #password="ngModel"

@@ -1,6 +1,8 @@
-<a routerLink="/mascota">
+
   <article class="card">
+    <a routerLink="/mascota">
     <img class="card__img" src="/assets/svg/cloe.svg" alt="Animal en adopción">
+  </a>
     <div class="card__header">
       <h3 class="h3 card__title">Cloe</h3>
       <span class="ubic-card">
@@ -23,11 +25,10 @@
       <use xlink:href="/assets/svg/sprite.svg#heart-color"></use>
     </svg>
     <ng-template #elseBlock>
-      <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos">
+      <svg (click)="setFavourite()" class="card__icon icon--heart icon--heart-grey" width="40" height="40" alt="Corazón de favoritos">
         <use xlink:href="/assets/svg/sprite.svg#heart"></use>
       </svg>
     </ng-template>
   </div>
-
   </article>
-</a>
+
