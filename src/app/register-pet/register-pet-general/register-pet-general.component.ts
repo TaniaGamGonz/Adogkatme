@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { CountriesService } from "src/app/core/services/countries.services/countries.service";
+import { Pet } from 'src/app/core/models/pet';
+import { DropdownService } from 'src/app/core/services/dropdown.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-register-pet-general",
@@ -7,41 +10,30 @@ import { CountriesService } from "src/app/core/services/countries.services/count
   styleUrls: ["./register-pet-general.component.scss"]
 })
 export class RegisterPetGeneralComponent implements OnInit {
-  constructor(private countriesService: CountriesService) {}
+  constructor(
+    private countriesService: CountriesService,
+    private dropdownService: DropdownService,
+    private router: Router
+    ) {}
   private petHealth: Array<Object>;
   private petAge: Array<Object>;
   private petSize: Array<Object>;
   private petActivity: Array<Object>;
   private countries: Array<Object>;
   private cities: Array<Object>;
+  private pet: Pet = new Pet;
 
   ngOnInit() {
-    this.petHealth = [
-      { id: 1, itemName: "Sano" },
-      { id: 2, itemName: "Por examinar" },
-      { id: 2, itemName: "Enfermo" }
-    ];
-    this.petAge = [
-      { id: 1, itemName: "Años" },
-      { id: 2, itemName: "Semanas" },
-      { id: 3, itemName: "No se sabe" }
-    ];
-    this.petSize = [
-      { id: 1, itemName: "Grande" },
-      { id: 2, itemName: "Mediano" },
-      { id: 3, itemName: "Pequeño" },
-      { id: 4, itemName: "Mini" }
-    ];
-    this.petActivity = [
-      { id: 1, itemName: "Muy activo" },
-      { id: 2, itemName: "Medianamente activo" },
-      { id: 3, itemName: "Poco activo" },
-      { id: 4, itemName: "Vago, ni sale a pasear" }
-    ];
+    this.petHealth = this.dropdownService.getPetHealth();
+    this.petAge = this.dropdownService.getPetAge();
+    this.petSize = this.dropdownService.getPetSize();
+    this.petActivity = this.dropdownService.getPetActivity();
     this.cities = this.countriesService.getCities();
     this.countries = this.countriesService.getCountries();
-
-
-
   }
+
+  onSubmit(){
+    this.router.navigate(["sanitario"]);
+  }
+
 }

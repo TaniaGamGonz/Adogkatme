@@ -43,18 +43,12 @@ export class DropdownComponent implements OnInit {
     };
   }
   onItemSelect(item: any) {
-    console.log(item);
-    console.log(this.selectedItems);
   }
   OnItemDeSelect(item: any) {
-    console.log(item);
-    console.log(this.selectedItems);
   }
   onSelectAll(items: any) {
-    console.log(items);
   }
   onDeSelectAll(items: any) {
-    console.log(items);
 
   }
 

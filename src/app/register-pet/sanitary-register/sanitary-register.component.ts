@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pet } from 'src/app/core/models/pet';
 
 @Component({
   selector: 'app-sanitary-register',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class SanitaryRegisterComponent implements OnInit {
 
   constructor() { }
+
+  private pet: Pet = new Pet;
 
   ngOnInit() {
   }

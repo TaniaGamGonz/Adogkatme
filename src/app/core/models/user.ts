@@ -1,11 +1,13 @@
 export class User {
-  constructor(
-  name : string,
-  email: string,
-  password: string,
-  country : string,
-  city: string,
-  photos: Array<string>,
-  animalsInAdoption: Array<object>)
-  {}
+
+  name : string;
+  email: string;
+  password: string;
+  country : Array<Object>;
+  city: Array<Object>;
+  photos: Array<string>;
+  animalsInAdoption: Array<object>
+
+
+  constructor( ) { }
 }

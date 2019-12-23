@@ -6,16 +6,13 @@
         <span>Sexo</span>
         <div class="form-group">
           <label for="r-01" class="form-group__label radio">Hombre
-            <input type="radio" id="r-01" name="gender" value="men" class="radio__control"
-            [(ngModel)]="person.gender"
-            #genderM="ngModel"
-            >
+            <input type="radio" id="r-01" name="gender" value="men" class="radio__control" [(ngModel)]="person.gender"
+              #genderM="ngModel">
             <span class="radio__custom"></span>
           </label>
           <label for="r-02" class="form-group__label radio">Mujer
-            <input type="radio" id="r-02" value="women" name="gender" class="radio__control"
-            [(ngModel)]="person.gender"
-            #genderF="ngModel">
+            <input type="radio" id="r-02" value="women" name="gender" class="radio__control" [(ngModel)]="person.gender"
+              #genderF="ngModel">
             <span class="radio__custom"></span>
           </label>
         </div>
@@ -23,66 +20,37 @@
       <div class="form-group">
         <tooltip *ngIf="phone?.touched && !phone?.valid">Telefono incorrecto!</tooltip>
         <label for="phone" class="form-group__label">Teléfono</label>
-        <input type="tel" name="phone" id="phone" tel class="form-group__control"
-        [(ngModel)]="person.phone"
-        #phone="ngModel"
-        [pattern]="phonePattern"
->
+        <input type="tel" name="phone" id="phone" class="form-group__control" [(ngModel)]="person.phone"
+          #phone="ngModel" [pattern]="phonePattern">
       </div>
       <div class="form-group">
         <label for="house" class="form-group__label">Tipo de vivienda</label>
-        <app-dropdown
-        [dropdownList]="livingPlace"
-        [enableSearchFilter]="false"
-        [text]="'Escoge tu vivienda'"
-        ></app-dropdown>
+        <app-dropdown [dropdownList]="livingPlace" [enableSearchFilter]="false" [text]="'Escoge tu vivienda'">
+        </app-dropdown>
       </div>
       <div class="form-group">
         <label class="form-group__label">Interesado en</label>
-          <app-dropdown
-          [dropdownList]="optionAdopcion"
-          [showCheckbox]="true"
-          [text]="'Selecciona una o varias'"
-          [singleSelection]="false"
-          [enableSearchFilter]="false"
-          [(ngModel)]="person.interestedIn"
-          #interestedIn="ngModel"
-          name="interestedIn"
-          (onSelect)="onItemSelect($event)"
-          (onDeSelect)="OnItemDeSelect($event)"
-          (onSelectAll)="onSelectAll($event)"
-          (onDeSelectAll)="onDeSelectAll($event)"
-          ></app-dropdown>
+        <app-dropdown [dropdownList]="optionAdopcion" [showCheckbox]="true" [text]="'Selecciona una o varias'"
+          [singleSelection]="false" [enableSearchFilter]="false" [(ngModel)]="person.interestedIn"
+          #interestedIn="ngModel" name="interestedIn" (onSelect)="onItemSelect($event)"
+          (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
+          (onDeSelectAll)="onDeSelectAll($event)"></app-dropdown>
       </div>
       <div class="form-group">
         <label class="form-group__label">¿Tienes mascotas?</label>
-        <app-dropdown
-        [dropdownList]="otherPets"
-        [showCheckbox]="true"
-        [text]="'Selecciona una o varias'"
-        [singleSelection]="false"
-        [enableSearchFilter]="false"
-        [(ngModel)]="person.pets"
-        #pets="ngModel"
-        name="pets"
-        (onSelect)="onItemSelect($event)"
-        (onDeSelect)="OnItemDeSelect($event)"
-        (onSelectAll)="onSelectAll($event)"
-        (onDeSelectAll)="onDeSelectAll($event)"
-        ></app-dropdown>
+        <app-dropdown [dropdownList]="otherPets" [showCheckbox]="true" [text]="'Selecciona una o varias'"
+          [singleSelection]="false" [enableSearchFilter]="false" [(ngModel)]="person.pets" #pets="ngModel" name="pets"
+          (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
+          (onDeSelectAll)="onDeSelectAll($event)"></app-dropdown>
       </div>
       <div class="form-group form-group--content">
         <label for="photo" class="form-group__label">Pon aquí tu foto de perfil</label>
-        <image-upload
-          [max]="1" [extensions]="['jpeg','png','svg','jpg']"
-          buttonCaption="Selecciona la imagen"
-          dropBoxMessage="Arrastra la imagen"
-          class="customClass"
-          >
+        <image-upload [max]="1" [extensions]="['jpeg','png','svg','jpg']" buttonCaption="Selecciona la imagen"
+          dropBoxMessage="Arrastra la imagen" class="customClass">
         </image-upload>
       </div>
       <div class="form-btn--container">
-        <button type="submit" class="btn btn--sm">Registrate</button>
+        <button routerLink="/registro-usuario"  class="btn btn--return"><span class="left-arrow">&#8592;</span>Volver atrás </button>   <button type="submit" class="btn btn--sm">Registrate</button>
       </div>
     </form>
   </div>

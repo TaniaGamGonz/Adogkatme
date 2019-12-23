@@ -1,52 +1,69 @@
 <main class="height-100">
   <div class="container container--register">
-      <h1 class="h1 h1--register">Nuevo usuario</h1>
-  <form action="..." class="form form--register">
+    <h1 class="h1 h1--register">Nuevo usuario</h1>
+    <form class="form form--register" #userForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-          <label for="name" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Nombre*</label>
-          <input type="text" id="name" class="form-group__control" required>
+        <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
+        <label for="name" class="form-group__label">Nombre</label>
+        <input type="text" id="name" name="name" [(ngModel)]="person.name" #name="ngModel" class="form-group__control"
+          required>
       </div>
       <div class="form-group">
-          <label for="surname" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Apellidos*</label>
-          <input type="text" id="surname" class="form-group__control" required>
+        <tooltip *ngIf="surname?.touched && !surname?.valid">El apellido es obligatorio!</tooltip>
+        <label for="surname" class="form-group__label">Apellidos</label>
+        <input type="text" id="surname" [(ngModel)]="person.surname" #surname="ngModel" name="surname"
+          class="form-group__control" required>
       </div>
       <div class="form-group form-group--age">
-          <label for="age" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Edad*</label>
-          <input type="text" id="age" class="form-group__control form-group__control--age" required>
-          <p class="info">Debes ser mayor de edad para poder registrarte</p>
+        <tooltip *ngIf="age?.touched && !age?.valid">La edad es incorrecta!</tooltip>
+        <label for="age" class="form-group__label">Edad</label>
+        <input type="text" id="age" name="age" class="form-group__control form-group__control--age"
+          [(ngModel)]="person.age" #age="ngModel" required>
+        <p class="info">Debes ser mayor de edad para poder registrarte</p>
       </div>
       <div class="form-group">
         <label for="comunidad" class="form-group__label">Comunidad</label>
-        <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'"></app-dropdown>
+        <app-dropdown [dropdownList]="countries" (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"
+          (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)" [(ngModel)]="person.country"
+          name="country" [text]="'Escoge tu comunidad'"></app-dropdown>
       </div>
       <div class="form-group">
-        <label for="newEmail" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Ciudad</label>
-        <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'"></app-dropdown>
+        <label for="city" class="form-group__label">Ciudad</label>
+        <app-dropdown [dropdownList]="cities" (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"
+          (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)" [(ngModel)]="person.city"
+          name="city" [text]="'Escoge tu ciudad'"></app-dropdown>
       </div>
       <div class="form-group">
-          <label for="newEmail" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Email*</label>
-          <input type="email" id="newEmail" class="form-group__control" required>
+        <tooltip *ngIf="email?.touched && !email?.valid">El email incorrecto!</tooltip>
+        <label for="newEmail" class="form-group__label">Email</label>
+        <input type="email" name="email" id="newEmail" class="form-group__control" [(ngModel)]="person.email"
+          #email="ngModel" email required>
       </div>
       <div class="form-group">
-              <label for="newPassword" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Contraseña*</label>
-              <input type="password" id="newPassword" class="form-group__control" required>
+        <tooltip *ngIf="password?.touched && !password?.valid">La contraseña es incorrecta!</tooltip>
+        <label for="newPassword" class="form-group__label">Contraseña</label>
+        <input type="password" name="password" id="password" class="form-group__control" [(ngModel)]="person.password"
+          #password="ngModel" required>
       </div>
       <div class="form-group">
-              <label for="confirmPassword" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Repite la contraseña*</label>
-              <input type="password" id="confirmPassword" class="form-group__control" required>
+        <tooltip *ngIf="">Las contraseñas no coinciden!</tooltip>
+        <label for="confirmPassword" class="form-group__label">Repite la contraseña</label>
+        <input type="password" id="confirmPassword" class="form-group__control" [(ngModel)]="person.none"
+          #confirmPassword="ngModel" name="confirmPassword" required>
       </div>
-      <div class="form-group ">
-          <label for="conditions" class="form-group__label checkbox">
-              He leído y acepto las
-              <a href="#" class="link">condiciones y términos de uso.</a>
-              <input type="checkbox" name="conditions" id="conditions" class="checkbox__control">
-              <span class="checkbox__custom"></span>
-          </label>
+      <div class="form-group form-group--content">
+        <label for="conditions" class="form-group__label checkbox">
+          He leído y acepto las
+          <a class="link">condiciones y términos de uso.</a>
+          <input type="checkbox" name="conditions" id="conditions" class="checkbox__control"
+            [(ngModel)]="person.conditions" #conditions="ngModel" name="conditions" required>
+          <span class="checkbox__custom"></span>
+        </label>
       </div>
       <div class="form-btn--container">
-          <button type="submit" class="btn btn--sm" routerLink='/registro-adicional'  >Último paso...</button>
+        <button type="submit" class="btn btn--sm">Último paso...</button>
       </div>
-</form>
-  <a href="#" class="btn btn--fb" role="button">Inicia sesión con</a>
-</div>
+    </form>
+    <a class="btn btn--fb" role="button">Inicia sesión con</a>
+  </div>
 </main>

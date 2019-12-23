@@ -1,46 +1,50 @@
 <main class="height-100">
   <div class="container container--register">
       <h1 class="h1 h1--register">Nueva protectora</h1>
-  <form action="..." class="form form--register">
+  <form class="form form--register" #protectiveForm="ngForm">
     <div class="form-group">
-      <label for="protectorName" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Nombre de la entidad*</label>
-      <input type="text" id="protectorName" class="form-group__control" required>
+      <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
+      <label for="name" class="form-group__label" >Nombre de la entidad</label>
+      <input type="text" id="protectiveName" class="form-group__control" required [(ngModel)]="protective.name" #name="ngModel" name="name">
 </div>
 <div class="form-group">
       <label for="comunidadP" class="form-group__label">Comunidad</label>
-      <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'"></app-dropdown>
+      <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'" [(ngModel)]="protective.country" #country="ngModel" name="country"></app-dropdown>
     </div>
 <div class="form-group">
-  <label for="ciudadP" class="form-group__label">Ciudad*</label>
-  <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'"></app-dropdown>
+  <label for="ciudadP" class="form-group__label">Ciudad</label>
+  <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'" [(ngModel)]="protective.city" #city="ngModel" name="city"></app-dropdown>
 </div>
 <div class="form-group">
-  <label for="documents" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Documentos de la entidad*</label>
-  <input type="file" name="documents" id="documents">
+  <label for="documents" class="form-group__label" >Documentos de la entidad</label>
+  <input type="file" name="documents" id="documents" [(ngModel)]="protective.entityDocs" #documents="ngModel" name="documents">
 </div>
 
       <div class="form-group">
-          <label for="newEmail" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Email*</label>
-          <input type="email" id="newEmail" class="form-group__control" required>
+        <tooltip *ngIf="email?.touched && !email?.valid">El email incorrecto!</tooltip>
+          <label for="newEmail" class="form-group__label" >Email</label>
+          <input type="email" id="newEmail" class="form-group__control" required email [(ngModel)]="protective.email" #email="ngModel" name="email">
       </div>
       <div class="form-group">
-              <label for="newPassword" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Contraseña*</label>
-              <input type="password" id="newPassword" class="form-group__control" required>
+        <tooltip *ngIf="password?.touched && !password?.valid">La contraseña es incorrecta!</tooltip>
+              <label for="newPassword" class="form-group__label" >Contraseña</label>
+              <input type="password" id="newPassword" class="form-group__control" required [(ngModel)]="protective.password" #password="ngModel" name="password">
       </div>
       <div class="form-group">
-              <label for="confirmPassword" class="form-group__label" title="Los campos marcados con * deben ser rellenados">Repite la contraseña*</label>
-              <input type="password" id="confirmPassword" class="form-group__control" required>
+        <tooltip *ngIf="confirmPassword.dirty &&  password !== confirmPassword">Las contraseñas no coinciden!</tooltip>
+              <label for="confirmPassword" class="form-group__label" >Repite la contraseña</label>
+              <input type="password" id="confirmPassword" class="form-group__control" required [(ngModel)]="protective.confirmPassword" #confirmPassword="ngModel" name="confirmPassword">
       </div>
-      <div class="form-group ">
+      <div class="form-group form-group--content">
           <label for="conditions" class="form-group__label checkbox">
               He leído y acepto las
-              <a href="#" class="link">condiciones y términos de uso.</a>
-              <input type="checkbox" name="conditions" id="conditions" class="checkbox__control">
+              <a class="link">condiciones y términos de uso.</a>
+              <input type="checkbox" name="conditions" id="conditions" class="checkbox__control" required [(ngModel)]="protective.conditions" #conditions="ngModel" name="conditions">
               <span class="checkbox__custom"></span>
           </label>
       </div>
       <div class="form-btn--container">
-          <button type="submit" class="btn btn--sm"  >Envialo</button>
+          <button type="submit" class="btn btn--sm">Envialo</button>
       </div>
 </form>
 </div>
