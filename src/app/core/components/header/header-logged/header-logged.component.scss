@@ -30,6 +30,7 @@
   display: block;
   color: $color-primary;
   transition: all 0.2s;
+  cursor: pointer;
 
   &:hover{
     background-color: $grey-95;

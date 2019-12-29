@@ -1,20 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
+import { Pet } from "../models/pet";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class FavouritesService {
+  constructor() {}
+  public isFavourite$ = new BehaviorSubject<boolean>(false);
+  private petName: Pet; //Se cambiara el fav por el nombre de la mascota?
 
-  constructor() { }
-  public isFavourite: boolean;
+  public setFavourite() {
+    let fav = localStorage.getItem("fav");
+    let favNew = fav ? "" : "cloe";
 
-  public setFavourite(){
-    const fav = localStorage.setItem("fav", "cloe");
+    localStorage.setItem("fav", favNew);
+    this.isFavourite$.next(favNew === "cloe" ? true : false);
+    this.getFavourite();
   }
-  public getFavourite(){
-    const fav = localStorage.getItem("fav");
-    this.isFavourite = (fav && fav === "cloe" ) ? true : false;
-    //TODO: Que la condicon no sea "cloe" si no que sea dinámica en funcion de cada mascota.
+  public getFavourite() {
+    this.isFavourite$.getValue();
   }
-
 }

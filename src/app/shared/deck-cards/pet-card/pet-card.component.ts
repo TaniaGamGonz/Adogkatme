@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
 import { FavouritesService } from 'src/app/core/services/favourites.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'pet-card',
   templateUrl: './pet-card.component.html',
   styleUrls: ['./pet-card.component.scss']
 })
-export class PetCardComponent implements OnInit {
+export class PetCardComponent implements OnInit, OnDestroy{
 
   constructor(
     private loginService: LoginService,
@@ -16,6 +17,8 @@ export class PetCardComponent implements OnInit {
 
   private isLogged: boolean;
   private isFavourite: boolean;
+  private subscription: Subscription;
+  private loginSubscription: Subscription;
   private logged(){
     this.loginService.logged();
   }
@@ -29,10 +32,15 @@ export class PetCardComponent implements OnInit {
 
 
   ngOnInit() {
-    this.isLogged = this.loginService.isLogged;
-    this.isFavourite = this.favouriteService.isFavourite;
+    this.loginSubscription = this.loginService.isLogged$.subscribe(data =>{ this.isLogged = data});
+    this.subscription = this.favouriteService.isFavourite$.subscribe(data =>{
+      this.isFavourite = data;
+    });
     this.logged();
-    this.getFavourite();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe;
   }
 
 

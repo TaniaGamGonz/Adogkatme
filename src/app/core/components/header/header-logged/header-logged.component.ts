@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/core/services/login.service';
 
 @Component({
   selector: 'header-logged',
@@ -7,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderLoggedComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private loginService: LoginService,
+  ) { }
+  private isMenuShown: boolean = false;
 
   ngOnInit() {
+
   }
-  private isMenuShown: boolean = false;
-  public showMenu(){
+  private showMenu(){
     this.isMenuShown = !(this.isMenuShown);
   }
+  private clearLogin(){
+    this.loginService.clearLogin();
+  }
+
 
 
 

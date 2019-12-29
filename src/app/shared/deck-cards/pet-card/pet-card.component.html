@@ -20,7 +20,7 @@
       <ng-content select="[removeButton]"></ng-content>
     </div>
     <div *ngIf="isLogged">
-    <svg class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos"
+    <svg (click)="setFavourite()" class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos"
     *ngIf="isFavourite else elseBlock">
       <use xlink:href="/assets/svg/sprite.svg#heart-color"></use>
     </svg>
