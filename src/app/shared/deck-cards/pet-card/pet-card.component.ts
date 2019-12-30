@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
 import { FavouritesService } from 'src/app/core/services/favourites.service';
 import { Subscription } from 'rxjs';
+import { Pet } from 'src/app/core/models/pet';
 
 @Component({
   selector: 'pet-card',
@@ -9,6 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./pet-card.component.scss']
 })
 export class PetCardComponent implements OnInit, OnDestroy{
+  @Input( ) mascota: Pet;
 
   constructor(
     private loginService: LoginService,

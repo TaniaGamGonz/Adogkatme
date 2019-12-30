@@ -40,6 +40,7 @@ const COMPONENTS = [
     CommonModule,
     AngularMultiSelectModule,
     FormsModule,
+    RouterModule
   ]
 
 })
