@@ -1,156 +1,56 @@
-import { Injectable, Inject } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Pet } from "../models/pet";
-import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class PetsService {
-  private pets: Pet[] = [
-    {
-      name: "Cloe",
-      type: "Perro",
-      sex: "Hembra",
-      health: "Sana",
-      age: "2 años",
-      size: "Pequeña",
-      activity: "Media",
-      weight: "3kg",
-      country: "Madrid",
-      city: "Parla",
-      PPPlicense: false,
-      aditionalInfo:
-        "Cloe es una perrita muy cariñosa, le encanta jugar pero es algo miedosa.",
-      photos: ["assets/svg/cloe.svg"],
-      videos: "assets/videos/cloe.mp4",
-      hasParasite: false,
-      isHealthy: true,
-      isVaccine: true,
-      isSterilized: false,
-      hasPrimer: false,
-      hasChip: false,
-      hasLeishmania: false,
-      isInTreatment: false,
-      hasInmunodeficiency: false,
-      hasLeukemia: false,
-      hasAllergy: false,
-      allergies: "",
-      isSociableKids: true,
-      isSociablePeople: true,
-      isSociableOtherAnimals: false,
-      isSociablePets: false,
-      independence: "Poco independiente",
-      noisy: "A veces ladra",
-      adoptionReason: "Falta de tiempo",
-      pleasures: {
-        play: false,
-        scape: false,
-        sleep: true,
-        bath: false,
-        eat: true,
-        takeAWalk: false,
-        car: false
-      }
-    },
-    {
-      name: "Mambo",
-      type: "Gato",
-      sex: "Macho",
-      health: "Sano",
-      age: "2 años",
-      size: "Mediano",
-      activity: "Media",
-      weight: "3kg",
-      country: "Madrid",
-      city: "Parla",
-      PPPlicense: false,
-      aditionalInfo:
-        "Mambo es un gato muy tranquilo, sociable con la gente y poco problemático. A veces le gusta tirar cosas de la mesa.",
-      photos: ["assets/svg/cloe.svg"],
-      videos: "",
-      hasParasite: false,
-      isHealthy: true,
-      isVaccine: true,
-      isSterilized: true,
-      hasPrimer: false,
-      hasChip: true,
-      hasLeishmania: false,
-      isInTreatment: false,
-      hasInmunodeficiency: false,
-      hasLeukemia: false,
-      hasAllergy: false,
-      allergies: "",
-      isSociableKids: true,
-      isSociablePeople: true,
-      isSociableOtherAnimals: false,
-      isSociablePets: false,
-      independence: "Muy independiente",
-      noisy: "A veces ladra",
-      adoptionReason: "Falta de tiempo",
-      pleasures: {
-        play: false,
-        scape: false,
-        sleep: true,
-        bath: false,
-        eat: true,
-        takeAWalk: false,
-        car: false
-      }
-    },
-    {
-      name: "Cloe",
-      type: "Perro",
-      sex: "Hembra",
-      health: "Sana",
-      age: "2 años",
-      size: "Pequeña",
-      activity: "Media",
-      weight: "3kg",
-      country: "Madrid",
-      city: "Parla",
-      PPPlicense: false,
-      aditionalInfo:
-        "Cloe es una perrita muy cariñosa, le encanta jugar pero es algo miedosa.",
-      photos: ["assets/svg/cloe.svg"],
-      videos: "assets/videos/cloe.mp4",
-      hasParasite: false,
-      isHealthy: true,
-      isVaccine: true,
-      isSterilized: false,
-      hasPrimer: false,
-      hasChip: false,
-      hasLeishmania: false,
-      isInTreatment: false,
-      hasInmunodeficiency: false,
-      hasLeukemia: false,
-      hasAllergy: false,
-      allergies: "",
-      isSociableKids: true,
-      isSociablePeople: true,
-      isSociableOtherAnimals: false,
-      isSociablePets: false,
-      independence: "Poco independiente",
-      noisy: "A veces ladra",
-      adoptionReason: "Falta de tiempo",
-      pleasures: {
-        play: false,
-        scape: false,
-        sleep: true,
-        bath: false,
-        eat: true,
-        takeAWalk: false,
-        car: false
-      }
-    },
+  private pets: Pet[] = [];
 
-  ];
-  constructor() {}
+  constructor() {
 
-  ngOnInit() {
+    let pet: Pet = new Pet();
+    pet.id = 0,
+    pet.race = "Yorsai",
+    pet.name = "Cloe",
+    pet.owner = "Soraya",
+    pet.type = "Perro",
+    pet.gender = "Hembra",
+    pet.health = "Sana",
+    pet.age = "2 años",
+    pet.size = "Pequeña",
+    pet.activity = "Media",
+    pet.weight = "3kg",
+    pet.country = "Madrid",
+    pet.city = "Parla",
+    pet.description="Cloe es una perrita muy buena, le gusta jugar y es algo traviesa. Cuidado que es muy glotona y se sube a las mesas en busca de comida, no dejeis platos encima de las mesas u os quedareis sin comida.",
+    pet.videos = ["assets/videos/cloe.mp4"],
+    pet.independence = "Poco independiente",
+    pet.noisy = "A veces ladra",
+    pet.adoptionReason = "Falta de tiempo"
+
+    this.pets.push(pet);
+
+    pet = { ...pet, getDescription : pet.getDescription };
+    this.pets.push(pet);
+
+    pet = { ...pet, getDescription : pet.getDescription };
+    this.pets.push(pet);
+
   }
+
+  ngOnInit() {}
 
   public getPets() {
     return this.pets;
   }
+  public getPetById(idPet: number) {
+    return this.pets[idPet];
+  }
+  public getPetPhotos(idPet: number): Array<string>{
+
+    return ["assets/svg/cloe.svg","assets/svg/cloe.svg","assets/svg/cloe.svg"];
+  }
+
 
 }

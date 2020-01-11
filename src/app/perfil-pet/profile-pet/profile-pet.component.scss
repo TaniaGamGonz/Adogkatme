@@ -18,7 +18,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
+  &-contact{
+    min-width: 25%;
+  }
   &__img {
     margin-top: 2px;
     align-self: flex-start;
@@ -34,9 +36,6 @@
     padding-left: 1rem;
   }
 
-  &-info .align--space-between {
-    width: 100%;
-  }
 
   &-contact::after {
     content: '';

@@ -4,49 +4,39 @@
     <div class="perfil-pet">
       <div class="pet__media">
         <video class="video" controls src="assets/videos/cloe.mp4"></video>
-        <img src="../../../assets/svg/cloe.svg" alt="foto de mascota" class="pet__img">
-        <img src="../../../assets/svg/cloe.svg" alt="foto de mascota" class="pet__img">
-        <img src="../../../assets/svg/cloe.svg" alt="foto de mascota" class="pet__img">
+        <img *ngFor="let photo of photos" [src]="photo" alt="foto de mascota" class="pet__img">
+
       </div>
       <div class="pet-info">
-        <div class="align--space-between">
-          <h3 class="h3">Cloe</h3>
+        <div class="align--space-between w-100">
+          <h3 class="h3">{{pet.name}}</h3>
           <div class="pet-contact">
-            <p class="contact__name">Tania Gam Gonz</p>
+            <p class="contact__name">{{pet.owner}}</p>
             <a href="mailto:#" class="link" type="submit">Contactame</a>
           </div>
         </div>
         <ul class="pet__list">
-          <li class="pet-list__item">Perro</li>
-          <li class="pet-list__item">Yorkshire</li>
-          <li class="pet-list__item">Hembra</li>
-          <li class="pet-list__item">Parla, Madrid</li>
-          <li class="pet-list__item">Muy activa</li>
+          <li class="pet-list__item">{{pet.type}}</li>
+          <li class="pet-list__item">{{pet.race}}</li>
+          <li class="pet-list__item">{{pet.gender}}</li>
+          <li class="pet-list__item">{{pet.city}}, {{pet.country}}</li>
+          <li class="pet-list__item">{{pet.activity}}</li>
         </ul>
         <ul class="pet__list">
           <li class="pet-list__item">Salud</li>
-          <li class="pet-list__item">Vacunada</li>
-          <li class="pet-list__item">Esterilizada</li>
-          <li class="pet-list__item">Desparasitada</li>
-          <li class="pet-list__item">Chip</li>
+          <li class="pet-list__item">{{pet.sterilized}}</li>
+          <li class="pet-list__item">{{pet.vaccine}}</li>
+          <li class="pet-list__item">{{pet.treatment}}</li>
+          <li class="pet-list__item">{{pet.chip}}</li>
         </ul>
         <ul class="pet__list">
           <li class="pet-list__item">Carácter</li>
-          <li class="pet-list__item">Jugetona</li>
-          <li class="pet-list__item">Poco independiente</li>
-          <li class="pet-list__item">Sociable con niños</li>
-          <li class="pet-list__item">No sociable con mascotas</li>
+          <li class="pet-list__item">{{pet.pleasures.play}}</li>
+          <li class="pet-list__item">{{pet.pleasures.eat}}</li>
+          <li class="pet-list__item">{{pet.sociableKids}}</li>
+          <li class="pet-list__item">{{pet.sociablePets}}</li>
         </ul>
-        <p class="pet__description">Aquí va una descripción de la mascota. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Inventore, numquam. Corporis pariatur soluta obcaecati tempora,
-          nulla assumenda eius provident, reprehenderit atque harum, qui rerum culpa commodi aperiam
-          magnam. Inventore, assumenda.
-          Qui autem neque sunt adipisci atque laudantium vel minima, est provident. Excepturi tenetur
-          soluta tempore fugiat, eos porro tempora culpa. Ipsa cupiditate adipisci illum impedit illo
-          magnam doloribus eos dolorum.
-          Delectus accusamus deleniti facere corrupti dolores laudantium veritatis pariatur ipsa
-          recusandae odit, beatae placeat sint quisquam omnis praesentium velit nulla nisi quos. Quos
-          autem voluptatibus at, voluptas repellendus inventore facilis?</p>
+        <p class="pet__description w-100">{{pet.getDescription()}}</p>
       </div>
     </div>
   </div>
