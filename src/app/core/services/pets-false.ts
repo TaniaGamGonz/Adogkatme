@@ -1,6 +1,6 @@
 import { Pet } from '../models/pet';
 
-export const PETS: Pet[] = [
+export const PETS: any[] = [
 
   {
   id : 1,
