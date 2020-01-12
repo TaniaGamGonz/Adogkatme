@@ -14,7 +14,7 @@ export class Pet {
   city: string;
   PPPlicense: string = "No necesita licencia PPP";
   description: string;
-  photos: Array<string>;
+  photo: string;
   videos: Array<string>;
   hasParasite: string = "No está desparasitado/a";
   isHealthy: string = "No está sano/a";
@@ -47,7 +47,7 @@ export class Pet {
 
   getDescription(): string{
     if(!this.description){
-    return `¡Hola me llamo ${this.name} y estaré encantad@ de formar parte de tu familia!` ;
+    return `¡Hola, me llamo ${this.name} y estaré encantad@ de formar parte de tu familia!` ;
     }
     return this.description;
   }

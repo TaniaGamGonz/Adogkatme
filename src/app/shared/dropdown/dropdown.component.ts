@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { FormsModule } from '@angular/forms';
 
@@ -21,14 +21,19 @@ export class DropdownComponent implements OnInit {
   classes:String;
   @Input()
   showCheckbox = true;
+  @Input()
+  selectedItems: Array<Object>;
+  @Output()
+  onSelectedItem = new EventEmitter();
   constructor() { }
 
-  selectedItems: Array<Object>;
+
+
+
   dropdownSettings: Object;
 
 
   ngOnInit() {
-
     this.dropdownSettings = {
       singleSelection: this.singleSelection,
       enableCheckAll: this.singleSelection,
@@ -43,6 +48,7 @@ export class DropdownComponent implements OnInit {
     };
   }
   onItemSelect(item: any) {
+    this.onSelectedItem.emit(item);
   }
   OnItemDeSelect(item: any) {
   }

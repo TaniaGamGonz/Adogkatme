@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'registro-protectora', component: RegisterProtectiveComponent},
   { path: 'registro-adicional', component: AditionalRegisterComponent },
   { path: 'perfil', component: ProfileComponent},
-  { path: 'mascota', component: ProfilePetComponent},
+  { path: 'mascota/:id', component: ProfilePetComponent},
   { path: 'protectora', component: ProtectiveProfileComponent},
   { path: '**', component: ErrorComponent },
 ];

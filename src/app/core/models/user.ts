@@ -6,7 +6,7 @@ export class User {
   country : Array<Object>;
   city: Array<Object>;
   photos: Array<string>;
-  animalsInAdoption: Array<Object>
+  id: number;
 
 
   constructor( ) { }

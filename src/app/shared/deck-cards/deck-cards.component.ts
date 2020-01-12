@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PetsService } from 'src/app/core/services/pets.service';
-import { Pet } from 'src/app/core/models/pet';
 
 @Component({
   selector: 'deck-cards',
@@ -11,12 +9,11 @@ export class DeckCardsComponent implements OnInit {
 
 
   constructor(
-    private petService: PetsService,
+
   ) { }
-  public pets: Pet[];
+
 
   ngOnInit() {
-    this.pets = this.petService.getPets();
 
   }
 }

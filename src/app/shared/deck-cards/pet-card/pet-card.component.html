@@ -1,7 +1,7 @@
 
   <article class="card">
-    <a routerLink="/mascota">
-    <img class="card__img" [src]="mascota.photos[0]" alt="Animal en adopción">
+    <a [routerLink]="['/mascota', mascota.id]">
+    <img class="card__img" [src]="mascota.photo" alt="Animal en adopción">
   </a>
     <div class="card__header">
       <h3 class="h3 card__title">{{mascota.name}}</h3>

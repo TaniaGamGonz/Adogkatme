@@ -15,19 +15,46 @@ export class RegisterUserComponent implements OnInit {
    {}
   private countries: Array<Object>;
   private cities: Array<Object>;;
-  private person: Person = new Person;
+  private person: Person = new Person();
+  private dropdownCountrySettings;
+  private dropdownCitySettings;
 
   ngOnInit() {
+
+    let dropdownSettings = {
+      singleSelection: true,
+      enableCheckAll: false,
+      selectAllText: "Selecciona todos",
+      unSelectAllText: "Deshacer toda la seleccion",
+      enableSearchFilter: true,
+      searchPlaceholderText: "Buscar",
+      position: "bottom",
+      showCheckbox: false,
+    };
+
+    this.dropdownCountrySettings = {
+      ...dropdownSettings,
+      text: 'Escoge tu comunidad'
+    };
+
+    this.dropdownCitySettings = {
+      ...dropdownSettings,
+      text: 'Escoge tu ciudad'
+    };
+
+
      this.cities = this.countriesService.getCities();
      this.countries = this.countriesService.getCountries();
-
-   /* this.cities = result.map(() => {
-       return
-      })
-    });*/
   }
 
+  showPueblo(event):void{
+    this.person.country = [event];
+    console.log(event);
+}
+
+
   onSubmit(){
-    this.router.navigate(["/registro-adicional"]);
+    console.log(this.person);
+    //this.router.navigate(["/registro-adicional",{ person :this.person }]);
   }
 }

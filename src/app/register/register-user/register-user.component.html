@@ -23,15 +23,21 @@
       </div>
       <div class="form-group">
         <label for="comunidad" class="form-group__label">Comunidad</label>
-        <app-dropdown [dropdownList]="countries" (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"
-          (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)" [(ngModel)]="person.country"
-          name="country" [text]="'Escoge tu comunidad'"></app-dropdown>
+        <angular2-multiselect
+          [data]="countries"
+          [(ngModel)]="person.country"
+          [settings]="dropdownCountrySettings"
+          name="country">
+        </angular2-multiselect>
       </div>
       <div class="form-group">
         <label for="city" class="form-group__label">Ciudad</label>
-        <app-dropdown [dropdownList]="cities" (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"
-          (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)" [(ngModel)]="person.city"
-          name="city" [text]="'Escoge tu ciudad'"></app-dropdown>
+        <angular2-multiselect
+          [data]="cities"
+          [(ngModel)]="person.city"
+          [settings]="dropdownCitySettings"
+          name="city">
+        </angular2-multiselect>
       </div>
       <div class="form-group">
         <tooltip *ngIf="email?.touched && !email?.valid">El email incorrecto!</tooltip>

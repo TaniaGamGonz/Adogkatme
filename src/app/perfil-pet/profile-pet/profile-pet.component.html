@@ -1,5 +1,5 @@
 <main class="height-100">
-  <div class="container container--pet">
+  <div class="container container--pet" *ngIf="pet$ | async as pet">
     <h1 class="h1">Perfil Mascota</h1>
     <div class="perfil-pet">
       <div class="pet__media">
