@@ -11,7 +11,8 @@ export class Person extends User {
   pets: string;
   receptions: string;
   adoptions: string;
-  favorites: Array<object>;
+  inAdoption: Array<number>;
+  favorites: Array<number>;
 
   constructor(){
     super( );

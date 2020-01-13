@@ -25,23 +25,30 @@
       </div>
       <div class="form-group">
         <label for="house" class="form-group__label">Tipo de vivienda</label>
-        <app-dropdown [dropdownList]="livingPlace" [enableSearchFilter]="false" [text]="'Escoge tu vivienda'">
-        </app-dropdown>
+        <angular2-multiselect
+        [data]="livingPlace"
+        [(ngModel)]="person.livingPlace"
+        [settings]="dropdownLivingPlaceSettings"
+        name="livingPlace">
+      </angular2-multiselect>
       </div>
       <div class="form-group">
         <label class="form-group__label">Interesado en</label>
-        <app-dropdown [dropdownList]="optionAdopcion" [showCheckbox]="true" [text]="'Selecciona una o varias'"
-          [singleSelection]="false" [enableSearchFilter]="false" [(ngModel)]="person.interestedIn"
-          #interestedIn="ngModel" name="interestedIn" (onSelect)="onItemSelect($event)"
-          (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
-          (onDeSelectAll)="onDeSelectAll($event)"></app-dropdown>
+        <angular2-multiselect
+        [data]="optionAdopcion"
+        [(ngModel)]="person.interestedIn"
+        [settings]="dropdownSettings"
+        name="interestedIn">
+      </angular2-multiselect>
       </div>
       <div class="form-group">
         <label class="form-group__label">¿Tienes mascotas?</label>
-        <app-dropdown [dropdownList]="otherPets" [showCheckbox]="true" [text]="'Selecciona una o varias'"
-          [singleSelection]="false" [enableSearchFilter]="false" [(ngModel)]="person.pets" #pets="ngModel" name="pets"
-          (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
-          (onDeSelectAll)="onDeSelectAll($event)"></app-dropdown>
+        <angular2-multiselect
+        [data]="otherPets"
+        [(ngModel)]="person.pets"
+        [settings]="dropdownSettings"
+        name="otherPets">
+      </angular2-multiselect>
       </div>
       <div class="form-group form-group--content">
         <label for="photo" class="form-group__label">Pon aquí tu foto de perfil</label>

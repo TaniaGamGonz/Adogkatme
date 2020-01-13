@@ -4,80 +4,80 @@
         <legend class="form-group__title">Caracter</legend>
         <span class="form-group__label">Sociable con</span>
         <label class="form-group__label checkbox">Niños
-          <input type="checkbox" id="sociableKids" value=true  [(ngModel)]="pet.isSociableKids" #isSociableKids="ngModel" name="isSociableKids" class="checkbox__control" >
+          <input type="checkbox" id="sociableKids"   [(ngModel)]="pet.isSociableKids" #isSociableKids="ngModel" name="isSociableKids" class="checkbox__control" >
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Gente
-          <input type="checkbox" id="sociablePeople" value=true  [(ngModel)]="pet.isSociablePeople" #isSociablePeople="ngModel" name="isSociablePeople" class="checkbox__control">
+          <input type="checkbox" id="sociablePeople"   [(ngModel)]="pet.isSociablePeople" #isSociablePeople="ngModel" name="isSociablePeople" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Animales de su especie
-          <input type="checkbox" id="sociablePets" value=true  [(ngModel)]="pet.isSociablePets" #isSociablePets="ngModel" name="isSociablePets" class="checkbox__control">
+          <input type="checkbox" id="sociablePets"   [(ngModel)]="pet.isSociablePets" #isSociablePets="ngModel" name="isSociablePets" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Animales de otras especies
-          <input type="checkbox" id="sociableOtherAnimals" value=true  [(ngModel)]="pet.isSociableOtherAnimals" #isSociableOtherAnimals="ngModel" name="isSociableOtherAnimals" class="checkbox__control">
+          <input type="checkbox" id="sociableOtherAnimals"   [(ngModel)]="pet.isSociableOtherAnimals" #isSociableOtherAnimals="ngModel" name="isSociableOtherAnimals" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <div class="align--row">
         <div class="form-group mt-20">
           <label for="Independencia" class="form-group__label">Independencia</label>
-          <app-dropdown
-          [dropdownList]="petIndependence"
-          [showCheckbox]="false"
-          [enableSearchFilter]="false"
-          [text]="'Nivel de independencia'"
-          [classes]="search-bar" ></app-dropdown>
+          <angular2-multiselect
+          [data]="petIndependence"
+          [(ngModel)]="pet.Independence"
+          [settings]="dropdownIndependenceSettings"
+          name="independence">
+        </angular2-multiselect>
     </div>
         <div class="form-group">
           <label for="ruido" class="form-group__label">
             Ruido
           </label>
-          <app-dropdown
-          [dropdownList]="petNoise"
-          [showCheckbox]="false"
-          [enableSearchFilter]="false"
-          [text]="'¿Es muy ruidoso?'"
-          [classes]="search-bar" ></app-dropdown>
+          <angular2-multiselect
+          [data]="petNoise"
+          [(ngModel)]="pet.noise"
+          [settings]="dropdownNoiseSettings"
+          name="noise">
+        </angular2-multiselect>
         </div>
         </div>
       </fieldset>
       <fieldset class="from-group form-group--checkbox">
         <legend class="form-group__title">Gustos</legend>
         <label class="form-group__label checkbox">Jugar
-          <input type="checkbox" id="play" value=true  [(ngModel)]="pet.pleasures.play" #play="ngModel" name="play" class="checkbox__control">
+          <input type="checkbox" id="play"  [(ngModel)]="pet.pleasures.Play" #play="ngModel" name="play" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
         </label>
         <label class="form-group__label checkbox">Comer
-          <input type="checkbox" id="eat" value=true  [(ngModel)]="pet.pleasures.eat" #eat="ngModel" name="eat" class="checkbox__control">
+          <input type="checkbox" id="eat"  [(ngModel)]="pet.pleasures.Eat" #eat="ngModel" name="eat" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
         </label>
         <label class="form-group__label checkbox">Escaparse
-          <input type="checkbox" id="scape" value=true  [(ngModel)]="pet.pleasures.scape" #escape="ngModel" name="escape" class="checkbox__control">
+          <input type="checkbox" id="scape"  [(ngModel)]="pet.pleasures.scape" #escape="ngModel" name="escape" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
 
         </label>
         <label class="form-group__label checkbox">Pasear
-          <input type="checkbox" id="takeAWalk" value=true  [(ngModel)]="pet.pleasures.takeAWalk" #takeAWalk="ngModel" name="takeAWalk" class="checkbox__control">
+          <input type="checkbox" id="takeAWalk"  [(ngModel)]="pet.pleasures.TakeAWalk" #takeAWalk="ngModel" name="takeAWalk" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
 
         </label>
         <label class="form-group__label checkbox">Dormir
-          <input type="checkbox" id="sleep" value=true  [(ngModel)]="pet.pleasures.sleep" #sleep="ngModel" name="sleep" class="checkbox__control">
+          <input type="checkbox" id="sleep"  [(ngModel)]="pet.pleasures.Sleep" #sleep="ngModel" name="sleep" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
 
         </label>
         <label class="form-group__label checkbox">Ir en coche
-          <input type="checkbox" id="car" value=true  [(ngModel)]="pet.pleasures.car" #car="ngModel" name="car" class="checkbox__control">
+          <input type="checkbox" id="car"  [(ngModel)]="pet.pleasures.car" #car="ngModel" name="car" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Bañarse
-          <input type="checkbox" id="bath" value=true  [(ngModel)]="pet.pleasures.bath" #bath="ngModel" name="bath" class="checkbox__control">
+          <input type="checkbox" id="bath"  [(ngModel)]="pet.pleasures.bath" #bath="ngModel" name="bath" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
       </fieldset>
@@ -85,12 +85,12 @@
         <label for="motivoAdopcion" class="form-group__label">
           ¿Motivo de la adopcion?
         </label>
-        <app-dropdown
-        [dropdownList]="reasonAdoption"
-        [showCheckbox]="false"
-        [enableSearchFilter]="false"
-        [text]="'¿Motivo de la adopcion?'"
-        [classes]="search-bar" ></app-dropdown>
+        <angular2-multiselect
+        [data]="reasonAdoption"
+        [(ngModel)]="pet.reason"
+        [settings]="dropdownReasonSettings"
+        name="reason">
+      </angular2-multiselect>
     </div>
       <div class="form-btn--container">
         <button routerLink="/adopcion/sanitario"  class="btn btn--return"><span class="left-arrow">&#8592;</span>Volver atrás </button> <button type="submit" class="btn">Enviar!</button>

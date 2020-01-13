@@ -27,28 +27,43 @@
         </div>
         <div class="form-group">
           <label for="state" class="form-group__label">Estado</label>
-          <app-dropdown [dropdownList]="petHealth" [showCheckbox]="false" [enableSearchFilter]="false"
-            [text]="'Selecciona un estado...'"></app-dropdown>
+          <angular2-multiselect
+          [data]="petHealth"
+          [(ngModel)]="pet.health"
+          [settings]="dropdownHealthSettings"
+          name="heatlh">
+        </angular2-multiselect>
         </div>
         <div class="form-group form-group--sm">
           <label for="ageAnimal" class="form-group__label" >Edad
             (aproximadamente)</label>
           <div class="d-flex">
             <input type="text" id="ageAnimal" class="form-group__control  form-group__control--sm">
-            <app-dropdown [dropdownList]="petAge" [showCheckbox]="false" [enableSearchFilter]="false"
-              [text]="'Selecciona la edad..'" class="flex-grow-1"></app-dropdown>
+            <angular2-multiselect
+            [data]="petAge"
+            [(ngModel)]="pet.age"
+            [settings]="dropdownAgeSettings"
+            name="age">
+          </angular2-multiselect>
           </div>
-
         </div>
         <div class="form-group">
           <label for="size" class="form-group__label">Tamaño</label>
-          <app-dropdown [dropdownList]="petSize" [showCheckbox]="false" [enableSearchFilter]="false"
-            [text]="'Selecciona el tamaño...'"></app-dropdown>
+          <angular2-multiselect
+          [data]="petSize"
+          [(ngModel)]="pet.size"
+          [settings]="dropdownSizeSettings"
+          name="size">
+        </angular2-multiselect>
         </div>
         <div class="form-group">
           <label for="activity" class="form-group__label">Nivel de actividad</label>
-          <app-dropdown [dropdownList]="petActivity" [showCheckbox]="false" [enableSearchFilter]="false"
-            [text]="'Selecciona un nivel de actividad'"></app-dropdown>
+          <angular2-multiselect
+          [data]="petActivity"
+          [(ngModel)]="pet.activity"
+          [settings]="dropdownActivitySettings"
+          name="activity">
+        </angular2-multiselect>
         </div>
         <div class="form-group">
           <label for="weight" class="form-group__label">Peso</label>
@@ -56,14 +71,23 @@
         </div>
         <div class="form-group">
           <label for="comunidad" class="form-group__label">Comunidad</label>
-          <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'"></app-dropdown>
+          <angular2-multiselect
+          [data]="countries"
+          [(ngModel)]="pet.country"
+          [settings]="dropdownCountrySettings"
+          name="country">
+        </angular2-multiselect>
         </div>
         <div class="form-group">
           <label for="ciudad" class="form-group__label">Ciudad</label>
-          <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'"></app-dropdown>
+          <angular2-multiselect
+          [data]="cities"
+          [(ngModel)]="pet.city"
+          [settings]="dropdownCitySettings"
+          name="city">
+        </angular2-multiselect>
         </div>
         <div class="form-group ">
-
           <label class="form-group__label checkbox">Necesita licencia PPP
             <input type="checkbox" name="license" id="license" class="checkbox__control " [(ngModel)]="pet.license" #license="ngModel" name="license">
             <span class="checkbox__custom"></span>

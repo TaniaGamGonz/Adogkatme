@@ -3,53 +3,62 @@
       <fieldset class="from-group form-group--checkbox">
         <legend class="form-group__title">Estado</legend>
         <label class="form-group__label checkbox">Desparasitado
-          <input type="checkbox" id="hasParasite"  value=true  [(ngModel)]="pet.hasParasite" #hasParasite="ngModel" name="hasParasite" class="checkbox__control">
+          <input type="checkbox" id="parasite"   [(ngModel)]="pet.parasite" #parasite="ngModel" name="parasite" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Vacunado
-          <input type="checkbox" id="isVaccined"  value=true  [(ngModel)]="pet.isVaccined" #isVaccined="ngModel" name="isVaccined" class="checkbox__control">
+          <input type="checkbox"
+          id="isVaccined"
+           [(ngModel)]="pet.vaccined"
+           #isVaccined="ngModel"
+           name="isVaccined"
+           class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Sano
-          <input type="checkbox" id="isHealthy"  class="checkbox__control"  value=true  [(ngModel)]="pet.isHealthy" #isHealthy="ngModel" name="isHealthy"  >
+          <input type="checkbox"
+          class="checkbox__control"
+          [(ngModel)]="pet.healthy"
+          #isHealthy="ngModel"
+          name="isHealthy"  >
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Esterilizado
-          <input type="checkbox" id="isSterilized"  class="checkbox__control"  value=true  [(ngModel)]="pet.isSterilized" #isSterilized="ngModel" name="isSterilized" >
+          <input type="checkbox" id="isSterilized"  class="checkbox__control"   [(ngModel)]="pet.isSterilized" #isSterilized="ngModel" name="isSterilized" >
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Cartilla
-          <input type="checkbox" id="hasPrimer"  class="checkbox__control" value=true  [(ngModel)]="pet.hasPrimer" #hasPrimer="ngModel" name="hasPrimer">
+          <input type="checkbox" id="hasPrimer"  class="checkbox__control"  [(ngModel)]="pet.hasPrimer" #hasPrimer="ngModel" name="hasPrimer">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Microchip
-          <input type="checkbox" id="hasChip"  class="checkbox__control" value=true  [(ngModel)]="pet.hasChip" #hasChip="ngModel" name="hasChip">
+          <input type="checkbox" id="hasChip"  class="checkbox__control"  [(ngModel)]="pet.hasChip" #hasChip="ngModel" name="hasChip">
           <span class="checkbox__custom"></span>
         </label>
       </fieldset>
       <fieldset class="from-group form-group--checkbox">
         <legend class="form-group__title">Alergias y enfermedades</legend>
         <label class="form-group__label checkbox" >Leishmania
-          <input type="checkbox" id="hasLeishmania" name="health" class="checkbox__control" value=true  [(ngModel)]="pet.hasLeishmania" #hasLeishmania="ngModel" name="hasLeishmania">
+          <input type="checkbox" id="hasLeishmania" name="health" class="checkbox__control"  [(ngModel)]="pet.hasLeishmania" #hasLeishmania="ngModel" name="hasLeishmania">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">En tratamiento
-          <input type="checkbox" id="isInTreatment" name="health" class="checkbox__control" value=true  [(ngModel)]="pet.isInTreatment" #isInTreatment="ngModel" name="isInTreatment">
+          <input type="checkbox" id="isInTreatment" name="health" class="checkbox__control"  [(ngModel)]="pet.isInTreatment" #isInTreatment="ngModel" name="isInTreatment">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Inmunodeficiencia
-          <input type="checkbox" id="hasInmunodeficiency" name="health" class="checkbox__control" value=true  [(ngModel)]="pet.hasInmunodeficiency" #hasInmunodeficiency="ngModel" name="hasInmunodeficiency">
+          <input type="checkbox" id="hasInmunodeficiency" name="health" class="checkbox__control"  [(ngModel)]="pet.hasInmunodeficiency" #hasInmunodeficiency="ngModel" name="hasInmunodeficiency">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Leucemia
-          <input type="checkbox" id="hasLeucemia" name="health" class="checkbox__control" value=true  [(ngModel)]="pet.hasLeucemia" #hasLeucemia="ngModel" name="hasLeucemia">
+          <input type="checkbox" id="hasLeucemia" name="health" class="checkbox__control"  [(ngModel)]="pet.hasLeucemia" #hasLeucemia="ngModel" name="hasLeucemia">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Alergias
-          <input type="checkbox" id="hasAllergy" name="Alergias" class="checkbox__control" value=true  [(ngModel)]="pet.hasAllergy" #hasAllergy="ngModel" name="hasAllergy">
+          <input type="checkbox" id="hasAllergy" name="Alergias" class="checkbox__control"  [(ngModel)]="pet.hasAllergy" #hasAllergy="ngModel" name="hasAllergy">
           <span class="checkbox__custom"></span>
           <textarea class="textarea form-group__control"
-            placeholder="Es alérgico a los frutos secos, tiene alergia a la lana..." value=true  [(ngModel)]="pet.allergies" #allergies="ngModel" name="allergies"></textarea>
+            placeholder="Es alérgico a los frutos secos, tiene alergia a la lana..."  [(ngModel)]="pet.allergies" #allergies="ngModel" name="allergies"></textarea>
         </label>
       </fieldset>
 

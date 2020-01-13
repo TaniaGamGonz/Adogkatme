@@ -1,15 +1,19 @@
 <main class="height-100">
   <div class="container container--home">
     <h1 class="h1 h1--home">¿Qué mascota buscas?</h1>
-    <search-bar>
-      <app-dropdown
-      [dropdownList]="optionAdopcion"
-      [showCheckbox]="false"
-      [enableSearchFilter]="false"
-      [text]="'¿Buscas adoptar o acoger?'"
-      [classes]="search-bar" class="form-group__control--search-bar"></app-dropdown>
-
+    <search-bar (searched)="onSearchBar($event)">
+      <angular2-multiselect
+      [data]="optionAdoption"
+      [(ngModel)]="selectedAdoption"
+      [settings]="dropdownSettings"
+      name="adoption">
+    </angular2-multiselect>
     </search-bar>
+    <deck-cards *ngIf="petsFounds$ | async">
+      <h2 class="h2" title>Resultados</h2>
+      <a class="link" title>Ver más reclutas...</a>
+      <pet-card *ngFor="let pet of petsFounds$ | async" [mascota]="pet"></pet-card>
+    </deck-cards>
     <deck-cards>
       <h2 class="h2" title>Nuevos reclutas</h2>
       <a class="link" title>Ver más reclutas...</a>

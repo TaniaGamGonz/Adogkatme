@@ -32,7 +32,7 @@ export class DropdownService {
     { id: 11, itemName: "Chalet" },
     { id: 14, itemName: "Casa con campo" }
   ];
-  private optionAdopcion = [
+  private optionAdoption = [
     { id: 1, itemName: "Adoptar" },
     { id: 2, itemName: "Acoger" }
   ];
@@ -79,8 +79,8 @@ export class DropdownService {
   public getLivingPlace(): Array<Object> {
     return this.livingPlace;
   }
-  public getOtionAdopcion(): Array<Object> {
-    return this.optionAdopcion;
+  public getOptionAdoption(): Array<Object> {
+    return this.optionAdoption;
   }
   public getOtherPets(): Array<Object> {
     return this.otherPets;

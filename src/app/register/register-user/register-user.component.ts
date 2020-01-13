@@ -16,8 +16,8 @@ export class RegisterUserComponent implements OnInit {
   private countries: Array<Object>;
   private cities: Array<Object>;;
   private person: Person = new Person();
-  private dropdownCountrySettings;
-  private dropdownCitySettings;
+  private dropdownCountrySettings: Object;
+  private dropdownCitySettings: Object;
 
   ngOnInit() {
 

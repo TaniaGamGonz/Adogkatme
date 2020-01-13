@@ -10,13 +10,21 @@
       </div>
       <div class="form-group">
         <label for="comunidadP" class="form-group__label">Comunidad</label>
-        <app-dropdown [dropdownList]="countries" [text]="'Escoge tu comunidad'" [(ngModel)]="protective.country"
-          #country="ngModel" name="country"></app-dropdown>
+        <angular2-multiselect
+          [data]="countries"
+          [(ngModel)]="protective.country"
+          [settings]="dropdownCountrySettings"
+          name="country">
+        </angular2-multiselect>
       </div>
       <div class="form-group">
         <label for="ciudadP" class="form-group__label">Ciudad</label>
-        <app-dropdown [dropdownList]="cities" [text]="'Escoge tu ciudad'" [(ngModel)]="protective.city" #city="ngModel"
-          name="city"></app-dropdown>
+        <angular2-multiselect
+          [data]="cities"
+          [(ngModel)]="protective.city"
+          [settings]="dropdownCitySettings"
+          name="city">
+        </angular2-multiselect>
       </div>
       <div class="form-group">
         <label for="documents" class="form-group__label">Documentos de la entidad</label>
