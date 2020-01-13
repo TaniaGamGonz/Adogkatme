@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'registro-adicional', component: AditionalRegisterComponent },
   { path: 'perfil/:id', component: ProfileComponent},
   { path: 'mascota/:id', component: ProfilePetComponent},
-  { path: 'protectora', component: ProtectiveProfileComponent},
+  { path: 'protectora/:id', component: ProtectiveProfileComponent},
   { path: '**', component: ErrorComponent },
 ];
 

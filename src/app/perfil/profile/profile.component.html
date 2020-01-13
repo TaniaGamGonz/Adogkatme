@@ -34,14 +34,13 @@
         <div class="favoritos">
           <deck-cards>
             <h2 class="h2" title>Favoritos</h2>
-            <pet-card>
-            </pet-card>
+            <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet"></pet-card>
           </deck-cards>
         </div>
         <deck-cards>
           <h2 class="h2" title>Tus animales en adopción</h2>
-          <pet-card>
-            <a removeButton class="link">Eliminar mascota</a>
+          <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet">
+          <a removeButton class="link">Eliminar mascota</a>
           </pet-card>
         </deck-cards>
       </div>

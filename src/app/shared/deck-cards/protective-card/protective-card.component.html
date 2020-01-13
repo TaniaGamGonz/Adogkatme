@@ -1,10 +1,10 @@
-<a routerLink="/protectora">
+<a [routerLink]="['/protectora', protectora.id]">
   <article class="card">
     <div class="card__img--div" width="250" alt="Animal en adopción"></div>
     <div class="card__header">
-      <h3 class="h3 card__title">Protectora patitas felices</h3>
+      <h3 class="h3 card__title">{{protectora.name}}</h3>
       <span class="ubic-card">
-        Madrid
+        {{protectora.country}}, {{protectora.city}}
         <svg class="card__icon icon--ubic" width="20" height="20" alt="Icono ubicación">
           <use xlink:href="../../assets/svg/sprite.svg#ubic"></use>
         </svg>
@@ -12,7 +12,7 @@
     </div>
     <div class="card__body">
       <ul class="card__info">
-        <li>10 Mascotas en adopción</li>
+        <li>{{protectora.petsToAdoption}} Mascotas en adopción</li>
       </ul>
     </div>
   </article>

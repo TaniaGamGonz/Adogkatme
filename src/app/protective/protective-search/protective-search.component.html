@@ -7,7 +7,7 @@
     <section class="result-search">
       <deck-cards>
         <h2 class="h2" title>Tus resultados</h2>
-        <protective-card></protective-card>
+        <protective-card *ngFor="let protective of protectives$ | async" [protectora]="protective"></protective-card>
       </deck-cards>
     </section>
     </div>

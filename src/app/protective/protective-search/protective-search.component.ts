@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Protective } from 'src/app/core/models/protective';
+import { ProtectiveService } from 'src/app/core/services/protective.service';
 
 @Component({
   selector: 'protective-search',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProtectiveSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private protectiveService: ProtectiveService,
+  ) { }
+
+  private protectives$: Observable<Protective[]>
 
   ngOnInit() {
+
+    this.protectives$ = this.protectiveService.getProtectives();
   }
 
 }

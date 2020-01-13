@@ -5,6 +5,8 @@ import { Observable, Subscription } from 'rxjs';
 import { PersonService } from 'src/app/core/services/person.service';
 import { switchMap } from 'rxjs/operators';
 import { ParamMap, Router, ActivatedRoute } from '@angular/router';
+import { PetsService } from 'src/app/core/services/pets.service';
+import { Pet } from 'src/app/core/models/pet';
 
 @Component({
   selector: 'profile',
@@ -16,6 +18,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   constructor(
     private loginService: LoginService,
     private personService: PersonService,
+    private petService: PetsService,
     private router: Router,
     private route: ActivatedRoute,
   ) { }
@@ -26,6 +29,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   public id: number;
   private subscriptionPerson: Subscription;
   public photos: Array<string>;
+  private pets$: Observable<Pet[]>
 
 
   private thisUser(){
@@ -49,6 +53,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
         this.router.navigate(['/home']);
       }
     })
+    this.pets$ = this.petService.getPets();
+
 
   }
 

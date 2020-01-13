@@ -1,15 +1,15 @@
 <main class="height-100">
   <div class="container">
     <h1 class="h1">Perfil</h1>
-    <div class="container--protectora">
+    <div class="container--protectora" *ngIf="protective$ | async as protective">
       <aside class=" perfil-datos">
         <div class="img"> </div>
         <ul class="perfil__list">
-          <li class="perfil__item">Patitas felices</li>
-          <li class="perfil__item"> Madrid</li>
-          <li class="perfil__item">30 Animales adopcion</li>
-          <li class="perfil__item">30 Animales acogida</li>
-          <li class="perfil__item">happypaws@hotmail.es</li>
+          <li class="perfil__item">{{protective.name}}</li>
+          <li class="perfil__item"> {{protective.country}}, {{protective.city}}</li>
+          <li class="perfil__item">{{protective.petsToAdoption}} Animales adopcion</li>
+          <li class="perfil__item">{{protective.petsToReception}}  Animales acogida</li>
+          <li class="perfil__item">{{protective.email}}</li>
         </ul>
         <ul class="perfil__list--menu">
           <li class="link">Contactar</li>
@@ -18,29 +18,18 @@
       <div class="perfil--protectora">
         <div class="historia">
           <h3 class="h3">Sobre nosotros</h3>
-          <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nesciunt
-            pariatur deleniti fugit, impedit, accusantium laudantium veniam aliquid quibusdam laborum iusto id rem
-            explicabo optio excepturi repellendus aut eveniet nihil?
-            Quisquam ex neque libero nisi quasi reprehenderit similique dolor. Temporibus ut a fugiat obcaecati dolorem.
-            Reprehenderit, doloremque necessitatibus dolorum aut recusandae mollitia ullam temporibus, accusantium
-            aliquid qui, soluta earum exercitationem!
-            Velit, veniam. Illum dolores tempore neque architecto ex autem ducimus officiis quod illo quaerat expedita,
-            nisi dicta debitis obcaecati cupiditate laudantium qui saepe corporis nesciunt tempora sed eum? Dolores,
-            nemo?
-            Placeat fugiat, perspiciatis enim modi quam tempora fuga omnis error ullam facere saepe suscipit aspernatur
-            fugit assumenda, amet quis voluptatibus nesciunt quo quibusdam? Ea, quasi dolores asperiores voluptatum
-            quisquam quaerat!</p>
+          <p class="description">{{protective.description}}</p>
         </div>
         <div class="adopcion">
           <deck-cards>
             <h2 class="h2" title>Mascotas para adoptar</h2>
-            <pet-card></pet-card>
+            <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet"></pet-card>
           </deck-cards>
         </div>
         <div class="acogida">
           <deck-cards>
             <h2 class="h2" title>Mascotas para acoger</h2>
-            <pet-card></pet-card>
+            <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet"></pet-card>
           </deck-cards>
         </div>
       </div>

@@ -1,0 +1,33 @@
+import { Injectable } from '@angular/core';
+import { Protective } from '../models/protective';
+import { Observable, of } from 'rxjs';
+import { PROTECTIVES } from './Protective-false';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProtectiveService {
+
+  constructor() { }
+
+  private protectives: Protective[] = [];
+  private protective: Protective;
+
+  ngOnInit() {}
+
+  public getProtectives(): Observable<Protective[]> {
+    return of (PROTECTIVES);
+  }
+  public getProtectiveById(idProtective: number): Observable<Protective> {
+    console.log( PROTECTIVES);
+    return of (Object.assign(new Protective(), PROTECTIVES.find((protective: Protective) => idProtective === protective.id)));
+  }
+
+
+}
+
+
+
+
+

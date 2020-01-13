@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PetsService } from 'src/app/core/services/pets.service';
 import { Pet } from 'src/app/core/models/pet';
-import { Observable, Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { DropdownService } from 'src/app/core/services/dropdown.service';
 
 @Component({
@@ -16,7 +14,6 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private petService: PetsService,
-    private route: ActivatedRoute,
     private dropdownService: DropdownService
   ) { }
   private optionAdoption: Array<Object>;
