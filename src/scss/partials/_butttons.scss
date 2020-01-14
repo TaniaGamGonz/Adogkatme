@@ -13,6 +13,12 @@
     background-color: darken($color-primary, 15%);
   }
 
+  &:disabled,
+  &:disabled:hover{
+    background-color:  $grey-95;
+    color: $grey-90;
+  }
+
   &--sm {
     padding: 10px 15px;
     height: rem(40px);

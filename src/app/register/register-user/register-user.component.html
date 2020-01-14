@@ -1,24 +1,24 @@
 <main class="height-100">
   <div class="container container--register">
     <h1 class="h1 h1--register">Nuevo usuario</h1>
-    <form class="form form--register" #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="form form--register" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
       <div class="form-group">
         <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
         <label for="name" class="form-group__label">Nombre</label>
         <input type="text" id="name" name="name" [(ngModel)]="person.name" #name="ngModel" class="form-group__control"
-          required>
+          required [ngClass]="{'form-group__control--success': name?.touched && name?.valid, 'form-group__control--danger': name?.touched && !name?.valid }">
       </div>
       <div class="form-group">
         <tooltip *ngIf="surname?.touched && !surname?.valid">El apellido es obligatorio!</tooltip>
         <label for="surname" class="form-group__label">Apellidos</label>
         <input type="text" id="surname" [(ngModel)]="person.surname" #surname="ngModel" name="surname"
-          class="form-group__control" required>
+          class="form-group__control" required [ngClass]="{'form-group__control--success': surname?.touched && surname?.valid, 'form-group__control--danger': surname?.touched && !surname?.valid }">
       </div>
       <div class="form-group form-group--age">
         <tooltip *ngIf="age?.touched && !age?.valid">La edad es incorrecta!</tooltip>
         <label for="age" class="form-group__label">Edad</label>
-        <input type="text" id="age" name="age" class="form-group__control form-group__control--age"
-          [(ngModel)]="person.age" #age="ngModel" required>
+        <input type="number" [pattern]="regExpAge" id="age" name="age" class="form-group__control form-group__control--age"
+          [(ngModel)]="person.age"  #age="ngModel" required [ngClass]="{'form-group__control--success': age?.touched && age?.valid, 'form-group__control--danger': age?.touched && !age?.valid }"  >
         <p class="info">Debes ser mayor de edad para poder registrarte</p>
       </div>
       <div class="form-group">
@@ -43,31 +43,34 @@
         <tooltip *ngIf="email?.touched && !email?.valid">El email incorrecto!</tooltip>
         <label for="newEmail" class="form-group__label">Email</label>
         <input type="email" name="email" id="newEmail" class="form-group__control" [(ngModel)]="person.email"
-          #email="ngModel" email required>
+          #email="ngModel" email required [ngClass]="{'form-group__control--success': email?.valid, 'form-group__control--danger': email?.touched && !email?.valid }">
       </div>
       <div class="form-group">
-        <tooltip *ngIf="password?.touched && !password?.valid">La contraseña es incorrecta!</tooltip>
+        <tooltip *ngIf="password?.touched && !password?.valid ">La contraseña es incorrecta!</tooltip>
         <label for="newPassword" class="form-group__label">Contraseña</label>
         <input type="password" name="password" id="password" class="form-group__control" [(ngModel)]="person.password"
-          #password="ngModel" required>
+          #password="ngModel" [pattern]="passwordRegExp" [ngClass]="{'form-group__control--success': password?.valid, 'form-group__control--danger': password?.touched && !password?.valid }" required>
+          <p class="info">Debe contener mayúsculas, numeros y una longitud de mínimo 8 caracteres</p>
       </div>
       <div class="form-group">
-        <tooltip *ngIf="">Las contraseñas no coinciden!</tooltip>
+        <tooltip *ngIf="password.touched && !checkSamePassword(password.value, confirmPassword.value) || password.touched  && confirmPassword.invalid">Las contraseñas no coinciden!</tooltip>
         <label for="confirmPassword" class="form-group__label">Repite la contraseña</label>
-        <input type="password" id="confirmPassword" class="form-group__control" [(ngModel)]="person.none"
-          #confirmPassword="ngModel" name="confirmPassword" required>
+        <input type="password" id="confirmPassword" class="form-group__control" [(ngModel)]="person.confirmPassword"
+          #confirmPassword="ngModel" name="confirmPassword" [pattern]="passwordRegExp" [ngClass]="{'form-group__control--success': password?.valid, 'form-group__control--danger': password?.touched && !password?.valid || password?.touched && !checkSamePassword(password.value, confirmPassword.value)}"
+          required>
       </div>
       <div class="form-group form-group--content">
         <label for="conditions" class="form-group__label checkbox">
           He leído y acepto las
           <a class="link">condiciones y términos de uso.</a>
           <input type="checkbox" name="conditions" id="conditions" class="checkbox__control"
-            [(ngModel)]="person.conditions" #conditions="ngModel" name="conditions" required>
+            [(ngModel)]="person.conditions" #conditions="ngModel"
+            name="conditions" required>
           <span class="checkbox__custom"></span>
         </label>
       </div>
       <div class="form-btn--container">
-        <button type="submit" class="btn btn--sm">Último paso...</button>
+        <button type="submit" class="btn btn--sm" [disabled]="!userForm.valid || !checkSamePassword(password.value, confirmPassword.value)">Último paso...</button>
       </div>
     </form>
     <a class="btn btn--fb" role="button">Inicia sesión con</a>

@@ -4,7 +4,7 @@ export const PEOPLE: any[] = [
   {
     name: "Tania",
     surname: "Gam Gonz",
-    age: "25",
+    age: 25,
     gender: "Mujer",
     interestedIn: "adoptar",
     phone: "2345",
@@ -17,14 +17,14 @@ export const PEOPLE: any[] = [
     password: "asdad",
     country: "cataluña",
     city: "reus",
-    photos: [""],
+    photo: "assets/images/tania.jpg",
     inAdoption: [1],
     id: 1
   },
   {
     name: "Soraya",
     surname: "Breña",
-    age: "21",
+    age: 21,
     gender: "Mujer",
     interestedIn: "adoptar",
     phone: "2345",
@@ -37,7 +37,7 @@ export const PEOPLE: any[] = [
     password: "asdad",
     country: "Madrid",
     city: "Parla",
-    photos: [""],
+    photo: "a",
     inAdoption: [1],
     id: 1
   }

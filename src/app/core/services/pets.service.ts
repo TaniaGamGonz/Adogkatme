@@ -24,6 +24,9 @@ export class PetsService {
   public getPetPhotos(idPet: number): Array<string>{
     return ["assets/svg/cloe.svg","assets/svg/cloe.svg","assets/svg/cloe.svg"];
   }
+  public removePetById(idPet: number): void{
+    PETS.splice((idPet-1), 1);
+  }
 
 
 }

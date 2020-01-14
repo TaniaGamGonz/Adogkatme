@@ -1,7 +1,7 @@
 <div class="logged">
     <button type="button" class="header__link--logged btn" (click)="showMenu()">Bienvenida, Tania</button>
     <ul class="logged__dropdown"  *ngIf="isMenuShown">
-        <li><a routerLink="perfil"   class="dropdown__item">Mi perfil</a></li>
+        <li><a routerLink="perfil/1"   class="dropdown__item">Mi perfil</a></li>
         <li><a routerLink="protectoras"   class="dropdown__item">Protectoras</a></li>
         <li><a routerLink="adopcion"   class="dropdown__item">Adopcion</a></li>
         <li><a class="dropdown__item" (click)="clearLogin()">Cerrar sesión</a></li>

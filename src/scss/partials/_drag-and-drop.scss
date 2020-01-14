@@ -1,22 +1,29 @@
-
-.customClass {
-  box-shadow:$box-shadow;
+.drag-and-drop {
+  box-shadow: $box-shadow;
   border-radius: 4px;
   cursor: pointer;
 
-  & .img-ul-upload {
-    font-size: 1rem !important;
-    font-family: $ff-title !important;
-    font-weight: 600 !important;
-    background-color: $color-primary !important;
-    border-radius: 4px !important;
+  & .img-ul-file-upload .img-ul-button {
+    font-size: 1rem;
+    font-family: $ff-title;
+    font-weight: 600;
+    background-color: $color-primary;
+    border-radius: 4px;
     transition: background-color 0.3s,
       box-shadow 0.3s;
 
     &:hover {
-      background-color: darken($color-primary, 15%) !important;
-      box-shadow: $box-shadow-hover !important;
+      background-color: darken($color-primary, 15%);
+      box-shadow: $box-shadow-hover;
 
+    }
+  }
+
+  & .img-ul-hr-inline-group .img-ul-clear {
+    background-color: $color-danger;
+    margin-left: 5px;
+    &:hover{
+      background-color: darken($color-danger, 15%);
     }
   }
 
@@ -24,8 +31,19 @@
     color: $color-primary;
     transition: color 0.3s;
   }
+  & .img-ul-container .img-ul-image .img-ul-x-mark{
+    padding-top: 4px;
+    width: inherit;
+    margin: 0;
+    background-color: $color-danger;
+    opacity: 1;
+    transition: background-color 0.2s;
+    &:hover{
+      background-color: darken($color-danger, 15%);
+    }
+  }
 
-  &:hover .img-ul-drag-box-msg{
+  &:hover .img-ul-drag-box-msg {
     color: darken($color-primary, 15%);
   }
 }

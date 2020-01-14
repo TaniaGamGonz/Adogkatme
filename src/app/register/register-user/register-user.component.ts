@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CountriesService } from 'src/app/core/services/countries.services/countries.service';
 import { Person } from 'src/app/core/models/person';
 import { Router } from '@angular/router';
+import { invalid } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: "app-register-user",
@@ -18,6 +19,9 @@ export class RegisterUserComponent implements OnInit {
   private person: Person = new Person();
   private dropdownCountrySettings: Object;
   private dropdownCitySettings: Object;
+  private regExpAge: RegExp = /(1[89]|[2-9][0-9]|100)/;
+  private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+
 
   ngOnInit() {
 
@@ -47,13 +51,14 @@ export class RegisterUserComponent implements OnInit {
      this.countries = this.countriesService.getCountries();
   }
 
-  showPueblo(event):void{
-    this.person.country = [event];
-    console.log(event);
-}
+  checkSamePassword(password: string, confirmPassword: string):boolean{
+    return (password === confirmPassword);
+  }
 
 
-  onSubmit(){
+
+
+  onSubmit(userForm){
     console.log(this.person);
     //this.router.navigate(["/registro-adicional",{ person :this.person }]);
   }

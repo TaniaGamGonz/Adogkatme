@@ -10,7 +10,7 @@ export const PROTECTIVES: any[] = [
     password: "asaddas",
     country: "Madrid",
     city: "Madrid",
-    photos: [""],
+    photo: "a",
     id: 1
   },
   {
@@ -23,7 +23,7 @@ export const PROTECTIVES: any[] = [
     password: "asaddas",
     country: "Parla",
     city: "Parla",
-    photos: [""],
+    photo: "a",
     id: 2
   }
 

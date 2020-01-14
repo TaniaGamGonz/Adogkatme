@@ -3,7 +3,7 @@ import { User } from './user';
 export class Person extends User {
 
   surname: string;
-  age: string;
+  age: number;
   gender: string;
   interestedIn: string;
   phone: string;

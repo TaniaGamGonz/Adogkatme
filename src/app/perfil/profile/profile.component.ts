@@ -40,6 +40,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.loginService.clearLogin();
     this.thisUser();
   }
+  private removePet(idPet): void{
+    this.petService.removePetById(idPet);
+  }
 
 
   ngOnInit() {

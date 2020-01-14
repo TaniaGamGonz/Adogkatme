@@ -29,38 +29,12 @@ export const PETS: any[] = [
   }
 
   },
-  {
-    id : 2,
-    race : "Cocodrilo",
-    name : "Croco",
-    owner : "Soraya",
-    type : "Reptil",
-    gender : "Hembra",
-    photo : "assets/svg/cloe.svg",
-    health : "Sana",
-    age : "2 años",
-    size : "Pequeña",
-    activity : "Media",
-    weight : "3kg",
-    country : "Madrid",
-    city : "Parla",
-    description:"Cloe es una perrita muy buena, le gusta jugar y es algo traviesa. Cuidado que es muy glotona y se sube a las mesas en busca de comida, no dejeis platos encima de las mesas u os quedareis sin comida.",
-    videos : ["assets/videos/cloe.mp4"],
-    independence : "Poco independiente",
-    noisy : "A veces ladra",
-    adoptionReason : "Falta de tiempo",
-    pleasures:   {
-      play: "Jugueton/a",
-      sleep: "Dormilon/a",
-      eat: "Glotón/a",
-    }
 
-    },
     {
-      id : 3,
+      id : 2,
       race : "Yorsai",
       name : "Bubba",
-      photo : "assets/images/greta.jpg",
+      photo : "assets/images/bubba.jpg",
       owner : "Sebas",
       type : "Gato",
       gender : "Macho",
@@ -83,21 +57,21 @@ export const PETS: any[] = [
       }
     },
       {
-        id : 4,
-        race : "Yorsai",
+        id : 3,
+        race : "Pitbull",
         name : "Howl",
         photo : "assets/images/howl.jpg",
         owner : "Jorge",
         type : "Perro",
         gender : "Macho",
         health : "Sano",
-        age : "2 años",
-        size : "Pequeña",
+        age : "8 años",
+        size : "Pequeño",
         activity : "Media",
-        weight : "3kg",
+        weight : "27kg",
         country : "Madrid",
         city : "Parla",
-        description:"Cloe es una perrita muy buena, le gusta jugar y es algo traviesa. Cuidado que es muy glotona y se sube a las mesas en busca de comida, no dejeis platos encima de las mesas u os quedareis sin comida.",
+        description:"Howl es una perrita muy buena, le gusta jugar y es algo traviesa. Cuidado que es muy glotona y se sube a las mesas en busca de comida, no dejeis platos encima de las mesas u os quedareis sin comida.",
         videos : ["assets/videos/cloe.mp4"],
         independence : "Poco independiente",
         noisy : "A veces ladra",
@@ -107,13 +81,9 @@ export const PETS: any[] = [
           sleep: "Dormilon/a",
           eat: "Glotón/a",
         }
-
-
-
-
       },
       {
-        id : 5,
+        id : 4,
         race : "Yorsai",
         name : "Debrin",
         photo : "assets/images/debrin.jpg",
@@ -127,7 +97,6 @@ export const PETS: any[] = [
         weight : "3kg",
         country : "Madrid",
         city : "Parla",
-        description:"Cloe es una perrita muy buena, le gusta jugar y es algo traviesa. Cuidado que es muy glotona y se sube a las mesas en busca de comida, no dejeis platos encima de las mesas u os quedareis sin comida.",
         videos : ["assets/videos/cloe.mp4"],
         independence : "Poco independiente",
         noisy : "A veces ladra",
@@ -139,7 +108,7 @@ export const PETS: any[] = [
         }
       },
       {
-        id : 6,
+        id : 5,
         race : "Yorsai",
         name : "Kira",
         photo : "assets/images/kira.jpg",
@@ -165,7 +134,7 @@ export const PETS: any[] = [
         }
       },
       {
-        id : 7,
+        id : 6,
         race : "Yorsai",
         name : "Rengar",
         photo : "assets/images/rengar.jpg",
@@ -189,7 +158,33 @@ export const PETS: any[] = [
           sleep: "Dormilon/a",
           eat: "Glotón/a",
         }
-      }
+      },
+      {
+        id : 7,
+        race : "Yorsai",
+        name : "Greta",
+        photo : "assets/images/greta.jpg",
+        owner : "Sebas",
+        type : "Gato",
+        gender : "Macho",
+        health : "Sano",
+        age : "2 años",
+        size : "Pequeña",
+        activity : "Media",
+        weight : "3kg",
+        country : "Madrid",
+        city : "Parla",
+        description:"Cloe es una perrita muy buena, le gusta jugar y es algo traviesa. Cuidado que es muy glotona y se sube a las mesas en busca de comida, no dejeis platos encima de las mesas u os quedareis sin comida.",
+        videos : ["assets/videos/cloe.mp4"],
+        independence : "Poco independiente",
+        noisy : "A veces ladra",
+        adoptionReason : "Falta de tiempo",
+        pleasures:   {
+          play: "Jugueton/a",
+          sleep: "Dormilon/a",
+          eat: "Glotón/a",
+        }
+      },
 
 
 

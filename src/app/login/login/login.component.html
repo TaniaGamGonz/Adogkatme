@@ -21,7 +21,7 @@
       <div class="form-group form-group--login">
         <tooltip *ngIf="password?.touched && !password?.valid" >Contraseña incorrecta!</tooltip>
         <input
-        type="text"
+        type="password"
         name="password"
         [(ngModel)]="login.password"
         #password="ngModel"
@@ -33,6 +33,8 @@
         >
         <label for="password" class="form-group__label form-group__label--inside">Introduce tu
           contraseña</label>
+          <p class="info">Debe contener mayúsculas, numeros y 8 caracteres</p>
+
       </div>
       <div class="align--column">
         <a class="link" (click)="toggleModal()">¿Has olvidado tu contraseña?</a>

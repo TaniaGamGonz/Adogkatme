@@ -17,30 +17,25 @@
   position: relative;
 }
 
-.form-group__control, .dropdown .cuppa-dropdown .selected-list .c-btn {
+.form-group__control,
+.dropdown .cuppa-dropdown .selected-list .c-btn {
   width: 100%;
   height: rem(40px);
   border-radius: 4px;
   padding: 5px 10px;
   border: 1px solid $color-border;
-  transition: border-color 0.4s;
+  transition: border 0.2s;
 }
 
 .form-group__control:focus{
-  outline: none;
-  //border-color: transparent;
-  //border-bottom-left-radius: 0;
-  //border-bottom-right-radius: 0;
-  //border-bottom: 1px solid $color-border;
+ outline: none;
 }
 
 .form-group__control--success{
-  border-bottom-width: 2px;
-  border-bottom-color: $color-success;
+  border-left: solid 3px  $color-success;
 }
 .form-group__control--danger{
-  border-bottom-width: 2px;
-  border-bottom-color: $color-danger;
+  border-left: solid 3px $color-danger;
 }
 
 

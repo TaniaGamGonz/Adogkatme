@@ -5,6 +5,7 @@
       <aside class="perfil-datos">
         <a routerLink="/registro-usuario">
         <div class="img" >
+          <img [src]="person.photo" class="img" alt="">
           <button type="button" class="img__change"></button>
         </div>
       </a>
@@ -17,8 +18,8 @@
         </ul>
         <ul class="perfil__list--menu" *ngIf="isThisUser">
           <li class="link">Cambiar contraseña</li>
-          <li class="link">Cambiar datos personales</li>
-          <li class="link" (click)="clearLogin()">Cerrar sesión</li>
+          <li class="link" [routerLink]="['/registro-usuario']" >Cambiar datos personales</li>
+          <li class="link" (click)="clearLogin()" [routerLink]="['/home']" >Cerrar sesión</li>
         </ul>
         <div class="logros">
           <h3 class="h3 h3--perfil">Logros</h3>
@@ -40,7 +41,7 @@
         <deck-cards>
           <h2 class="h2" title>Tus animales en adopción</h2>
           <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet">
-          <a removeButton class="link">Eliminar mascota</a>
+          <a removeButton class="link" (click)="removePet(pet.id)">Eliminar mascota</a>
           </pet-card>
         </deck-cards>
       </div>

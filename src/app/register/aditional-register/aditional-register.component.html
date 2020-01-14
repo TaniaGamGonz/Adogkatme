@@ -53,11 +53,11 @@
       <div class="form-group form-group--content">
         <label for="photo" class="form-group__label">Pon aquí tu foto de perfil</label>
         <image-upload [max]="1" [extensions]="['jpeg','png','svg','jpg']" buttonCaption="Selecciona la imagen"
-          dropBoxMessage="Arrastra la imagen" class="customClass">
+          dropBoxMessage="Arrastra la imagen" [clearButtonCaption]="'Borrar todo'"  class="drag-and-drop" >
         </image-upload>
       </div>
       <div class="form-btn--container">
-        <button routerLink="/registro-usuario"  class="btn btn--return"><span class="left-arrow">&#8592;</span>Volver atrás </button>   <button type="submit" class="btn btn--sm">Registrate</button>
+        <button routerLink="/registro-usuario"  class="btn btn--return" ><span class="left-arrow">&#8592;</span>Volver atrás </button>   <button  type="submit" class="btn btn--sm" [routerLink]="['/home']" >Registrate</button>
       </div>
     </form>
   </div>

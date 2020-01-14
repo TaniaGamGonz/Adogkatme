@@ -5,7 +5,7 @@ export class User {
   password: string;
   country : any;
   city: any;
-  photos: Array<string>;
+  photo: string;
   id: number;
 
 
