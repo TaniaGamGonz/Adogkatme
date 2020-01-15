@@ -3,6 +3,7 @@ import { CountriesService } from 'src/app/core/services/countries.services/count
 import { Person } from 'src/app/core/models/person';
 import { Router } from '@angular/router';
 import { invalid } from '@angular/compiler/src/render3/view/util';
+import { FormService } from 'src/app/core/services/form.service';
 
 @Component({
   selector: "app-register-user",
@@ -12,7 +13,8 @@ import { invalid } from '@angular/compiler/src/render3/view/util';
 export class RegisterUserComponent implements OnInit {
   constructor(
     private router: Router,
-    private countriesService: CountriesService)
+    private countriesService: CountriesService,
+    private formsService: FormService)
    {}
   private countries: Array<Object>;
   private cities: Array<Object>;;
@@ -59,7 +61,7 @@ export class RegisterUserComponent implements OnInit {
 
 
   onSubmit(userForm){
-    console.log(this.person);
-    //this.router.navigate(["/registro-adicional",{ person :this.person }]);
+    this.formsService.firstForm = this.person;
+    this.router.navigate(["/registro-adicional"]);
   }
 }

@@ -146,8 +146,8 @@
   content: '';
   background-color: $color-default;
   border-radius: 50%;
-  height: 9px;
-  width: 9px;
+  height: 8px;
+  width: 8px;
 }
 
 .checkbox__control:checked~.checkbox__custom::before {

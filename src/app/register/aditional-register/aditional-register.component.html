@@ -21,7 +21,8 @@
         <tooltip *ngIf="phone?.touched && !phone?.valid">Telefono incorrecto!</tooltip>
         <label for="phone" class="form-group__label">Teléfono</label>
         <input type="tel" name="phone" id="phone" class="form-group__control" [(ngModel)]="person.phone"
-          #phone="ngModel" [pattern]="phonePattern">
+          #phone="ngModel" [pattern]="phonePattern"
+          [ngClass]="{'form-group__control--success': phone?.dirty && phone?.valid, 'form-group__control--danger': phone?.touched && !phone?.valid }">
       </div>
       <div class="form-group">
         <label for="house" class="form-group__label">Tipo de vivienda</label>
@@ -29,7 +30,8 @@
         [data]="livingPlace"
         [(ngModel)]="person.livingPlace"
         [settings]="dropdownLivingPlaceSettings"
-        name="livingPlace">
+        name="livingPlace"
+        id="livingPlace">
       </angular2-multiselect>
       </div>
       <div class="form-group">
@@ -37,6 +39,7 @@
         <angular2-multiselect
         [data]="optionAdopcion"
         [(ngModel)]="person.interestedIn"
+        id="interestedIn"
         [settings]="dropdownSettings"
         name="interestedIn">
       </angular2-multiselect>
@@ -47,17 +50,23 @@
         [data]="otherPets"
         [(ngModel)]="person.pets"
         [settings]="dropdownSettings"
-        name="otherPets">
+        name="otherPets"
+        id="otherPets">
       </angular2-multiselect>
       </div>
       <div class="form-group form-group--content">
         <label for="photo" class="form-group__label">Pon aquí tu foto de perfil</label>
         <image-upload [max]="1" [extensions]="['jpeg','png','svg','jpg']" buttonCaption="Selecciona la imagen"
-          dropBoxMessage="Arrastra la imagen" [clearButtonCaption]="'Borrar todo'"  class="drag-and-drop" >
+          dropBoxMessage="Arrastra la imagen" [clearButtonCaption]="'Borrar todo'"  class="drag-and-drop"
+          [(ngModel)]="person.photo"
+          name="photo"
+          #photo="ngModel"
+          id="photo"
+          >
         </image-upload>
       </div>
       <div class="form-btn--container">
-        <button routerLink="/registro-usuario"  class="btn btn--return" ><span class="left-arrow">&#8592;</span>Volver atrás </button>   <button  type="submit" class="btn btn--sm" [routerLink]="['/home']" >Registrate</button>
+        <button routerLink="/registro-usuario"  class="btn btn--return" ><span class="left-arrow">&#8592;</span>Volver atrás </button>   <button  type="submit" class="btn btn--sm" >Registrate</button>
       </div>
     </form>
   </div>

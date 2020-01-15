@@ -14,7 +14,8 @@
         email
         id="email"
         placeholder=" "
-        class="form-group__control form-group__control--login">
+        class="form-group__control form-group__control--login"
+        [ngClass]="{'form-group__control--success': email?.valid, 'form-group__control--danger': email?.touched && !email?.valid }" >
         <label for="email" class="form-group__label form-group__label--inside">Introduce tu
           correo</label>
       </div>
@@ -30,6 +31,7 @@
         id="password"
         placeholder=" "
         class="form-group__control form-group__control--login"
+        [ngClass]="{'form-group__control--success': password?.valid, 'form-group__control--danger': password?.touched && !password?.valid }"
         >
         <label for="password" class="form-group__label form-group__label--inside">Introduce tu
           contraseña</label>
@@ -38,10 +40,10 @@
       </div>
       <div class="align--column">
         <a class="link" (click)="toggleModal()">¿Has olvidado tu contraseña?</a>
-        <button type="submit" class="btn btn--sm">Inicia sesión</button>
+        <button type="submit" class="btn btn--sm" [disabled]="!loginForm.valid">Inicia sesión</button>
       </div>
     </form>
-    <a class="btn btn--fb" role="button">Inicia sesión con</a>
+    <a class="btn btn--fb"  role="button">Inicia sesión con</a>
     <div class="align--row">
       <span>¿Todavía no tienes una cuenta?</span>
       <a routerLink='/registro'  class="link link--login">Regístrate</a>
@@ -65,9 +67,11 @@
       #recoverEmail="ngModel"
       name="recoverEmail"
       id="recoverEmail"
-      class="form-group__control">
+      class="form-group__control"
+      [ngClass]="{'form-group__control--success': recoverEmail?.valid, 'form-group__control--danger': recoverEmail?.touched && !recoverEmail?.valid }"
+      >
     </div>
-    <button type="submit" class="btn">Recuperar</button>
+    <button type="submit" [disabled]="!modalForm.valid" class="btn">Recuperar</button>
   </form>
 </modal>
 

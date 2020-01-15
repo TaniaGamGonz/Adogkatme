@@ -18,6 +18,8 @@ export class RegisterProtectiveComponent implements OnInit {
   private protective: Protective = new Protective;
   private dropdownCountrySettings: Object;
   private dropdownCitySettings: Object;
+  private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+
 
 
 
@@ -45,8 +47,11 @@ export class RegisterProtectiveComponent implements OnInit {
       ...dropdownSettings,
       text: 'Escoge tu ciudad'
     };
-
-
   }
+
+  checkSamePassword(password: string, confirmPassword: string):boolean{
+    return (password === confirmPassword);
+  }
+
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Person } from 'src/app/core/models/person';
 import { DropdownService } from 'src/app/core/services/dropdown.service';
+import { FormService } from 'src/app/core/services/form.service';
 
 @Component({
   selector: 'aditional-register',
@@ -13,12 +14,13 @@ export class AditionalRegisterComponent implements OnInit {
   constructor(
     private router: Router,
     private dropdownService: DropdownService,
+    private formsService: FormService,
   ) { }
   private livingPlace: Array<Object>;
   private optionAdopcion: Array<Object>;
   private otherPets: Array<Object>;
   private person: Person = new Person;
-  private phonePattern: RegExp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+  private phonePattern: RegExp = /(6|9)\d{8}/;
   private dropdownSettings: Object;
   private dropdownLivingPlaceSettings: Object;
 
@@ -50,7 +52,8 @@ export class AditionalRegisterComponent implements OnInit {
 
   }
 
-
   onSubmit(){
+    let twoForms = Object.assign(new Person, this.formsService.mergeForms(this.formsService.firstForm, this.person));
+    console.log(twoForms);
   }
 }

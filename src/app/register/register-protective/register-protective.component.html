@@ -6,7 +6,8 @@
         <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
         <label for="name" class="form-group__label">Nombre de la entidad</label>
         <input type="text" id="protectiveName" class="form-group__control" required [(ngModel)]="protective.name"
-          #name="ngModel" name="name">
+          #name="ngModel" name="name"
+          [ngClass]="{'form-group__control--success': name?.touched && name?.valid, 'form-group__control--danger': name?.touched && !name?.valid }">
       </div>
       <div class="form-group">
         <label for="comunidadP" class="form-group__label">Comunidad</label>
@@ -28,7 +29,7 @@
       </div>
       <div class="form-group">
         <label for="documents" class="form-group__label">Documentos de la entidad</label>
-        <input type="file" name="documents" id="documents" [(ngModel)]="protective.entityDocs" #documents="ngModel"
+        <input type="file"  name="documents" id="documents" [(ngModel)]="protective.entityDocs" #documents="ngModel"
           name="documents">
       </div>
 
@@ -36,19 +37,25 @@
         <tooltip *ngIf="email?.touched && !email?.valid">El email incorrecto!</tooltip>
         <label for="newEmail" class="form-group__label">Email</label>
         <input type="email" id="newEmail" class="form-group__control" required email [(ngModel)]="protective.email"
-          #email="ngModel" name="email">
+          #email="ngModel" name="email"
+          [ngClass]="{'form-group__control--success': email?.valid, 'form-group__control--danger': email?.touched && !email?.valid }">
       </div>
       <div class="form-group">
         <tooltip *ngIf="password?.touched && !password?.valid">La contraseña es incorrecta!</tooltip>
         <label for="newPassword" class="form-group__label">Contraseña</label>
         <input type="password" id="newPassword" class="form-group__control" required [(ngModel)]="protective.password"
-          #password="ngModel" name="password">
+          #password="ngModel" name="password" [pattern]="passwordRegExp"
+          [ngClass]="{'form-group__control--success': password?.valid, 'form-group__control--danger': password?.touched && !password?.valid }" required>
+          <p class="info">Debe contener mayúsculas, numeros y una longitud de mínimo 8 caracteres</p>
       </div>
       <div class="form-group">
-        <tooltip *ngIf="confirmPassword.dirty &&  password !== confirmPassword">Las contraseñas no coinciden!</tooltip>
+        <tooltip *ngIf="password.touched && !checkSamePassword(password.value, confirmPassword.value) || password.touched  && confirmPassword.invalid">Las contraseñas no coinciden!</tooltip>
         <label for="confirmPassword" class="form-group__label">Repite la contraseña</label>
         <input type="password" id="confirmPassword" class="form-group__control" required
-          [(ngModel)]="protective.confirmPassword" #confirmPassword="ngModel" name="confirmPassword">
+          [(ngModel)]="protective.confirmPassword" #confirmPassword="ngModel" name="confirmPassword"
+          [pattern]="passwordRegExp"
+          [ngClass]="{'form-group__control--success': password?.valid, 'form-group__control--danger': password?.touched && !password?.valid || password?.touched && !checkSamePassword(password.value, confirmPassword.value)}"
+>
       </div>
       <div class="form-group form-group--content">
         <label for="conditions" class="form-group__label checkbox">
@@ -62,7 +69,7 @@
       <div class="form-group form-group--content">
         <label for="photo" class="form-group__label">Pon aquí tu imagen de perfil</label>
         <image-upload [max]="1" [extensions]="['jpeg','png','svg','jpg']" buttonCaption="Selecciona la imagen"
-          dropBoxMessage="Arrastra la imagen" class="customClass">
+          dropBoxMessage="Arrastra la imagen" class="drag-and-drop" [clearButtonCaption]="'Borrar todo'" >
         </image-upload>
       </div>
       <div class="form-group form-group--xl">
@@ -73,7 +80,7 @@
 
 
       <div class="form-btn--container">
-        <button type="submit" class="btn btn--sm">Envialo</button>
+        <button type="submit" class="btn btn--sm" [disabled]="!protectiveForm.valid || !checkSamePassword(password.value, confirmPassword.value)">Envialo</button>
       </div>
     </form>
   </div>

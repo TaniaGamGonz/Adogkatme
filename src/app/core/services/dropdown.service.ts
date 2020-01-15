@@ -7,7 +7,7 @@ export class DropdownService {
   private petHealth = [
     { id: 1, itemName: "Sano" },
     { id: 2, itemName: "Por examinar" },
-    { id: 2, itemName: "Enfermo" }
+    { id: 3, itemName: "Enfermo" }
   ];
   private petAge = [
     { id: 1, itemName: "Años" },
@@ -28,9 +28,9 @@ export class DropdownService {
   ];
 
   private livingPlace = [
-    { id: 4, itemName: "Piso" },
-    { id: 11, itemName: "Chalet" },
-    { id: 14, itemName: "Casa con campo" }
+    { id: 1, itemName: "Piso" },
+    { id: 2, itemName: "Chalet" },
+    { id: 3, itemName: "Casa con campo" }
   ];
   private optionAdoption = [
     { id: 1, itemName: "Adoptar" },
