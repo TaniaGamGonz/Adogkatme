@@ -1,61 +1,54 @@
     <h2 class="h2">Datos sanitarios</h2>
-    <form #petSanitaryForm="ngForm" class="form form--adopcion-sanitario">
+    <form #petSanitaryForm="ngForm" class="form form--adopcion-sanitario" (ngSubmit)="onSubmit()">
       <fieldset class="from-group form-group--checkbox">
         <legend class="form-group__title">Estado</legend>
         <label class="form-group__label checkbox">Desparasitado
-          <input type="checkbox" id="parasite"   [(ngModel)]="pet.parasite" #parasite="ngModel" name="parasite" class="checkbox__control">
+          <input type="checkbox" id="parasite"   [(ngModel)]="pet.parasite" #parasite="ngModel" name="parasite" class="checkbox__control" value="No está desparasitado/a">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Vacunado
           <input type="checkbox"
           id="isVaccined"
            [(ngModel)]="pet.vaccined"
-           #isVaccined="ngModel"
+           #vaccined="ngModel"
            name="isVaccined"
-           class="checkbox__control">
-          <span class="checkbox__custom"></span>
-        </label>
-        <label class="form-group__label checkbox">Sano
-          <input type="checkbox"
-          class="checkbox__control"
-          [(ngModel)]="pet.healthy"
-          #isHealthy="ngModel"
-          name="isHealthy"  >
+           class="checkbox__control"
+           value="Está vacunado/a">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Esterilizado
-          <input type="checkbox" id="isSterilized"  class="checkbox__control"   [(ngModel)]="pet.isSterilized" #isSterilized="ngModel" name="isSterilized" >
+          <input type="checkbox" id="sterilized"  class="checkbox__control"  value="Esterilizado/a" [(ngModel)]="pet.sterilized" #sterilized="ngModel" name="sterilized" >
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Cartilla
-          <input type="checkbox" id="hasPrimer"  class="checkbox__control"  [(ngModel)]="pet.hasPrimer" #hasPrimer="ngModel" name="hasPrimer">
+          <input type="checkbox" id="primer"  class="checkbox__control" value="Tiene cartilla" [(ngModel)]="pet.primer" #primer="ngModel" name="primer">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Microchip
-          <input type="checkbox" id="hasChip"  class="checkbox__control"  [(ngModel)]="pet.hasChip" #hasChip="ngModel" name="hasChip">
+          <input type="checkbox" id="chip"  class="checkbox__control" value="Tiene microchip"  [(ngModel)]="pet.chip" #chip="ngModel" name="chip">
           <span class="checkbox__custom"></span>
         </label>
       </fieldset>
       <fieldset class="from-group form-group--checkbox">
         <legend class="form-group__title">Alergias y enfermedades</legend>
         <label class="form-group__label checkbox" >Leishmania
-          <input type="checkbox" id="hasLeishmania" name="health" class="checkbox__control"  [(ngModel)]="pet.hasLeishmania" #hasLeishmania="ngModel" name="hasLeishmania">
+          <input type="checkbox" id="leishmania" name="leishmania" value="Tiene leishmania" class="checkbox__control"  [(ngModel)]="pet.leishmania" #leishmania="ngModel" name="leishmania">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">En tratamiento
-          <input type="checkbox" id="isInTreatment" name="health" class="checkbox__control"  [(ngModel)]="pet.isInTreatment" #isInTreatment="ngModel" name="isInTreatment">
+          <input type="checkbox" id="treatment" name="treatment" value="Está en tratamiento" class="checkbox__control"  [(ngModel)]="pet.treatment" #treatment="ngModel" name="treatment">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Inmunodeficiencia
-          <input type="checkbox" id="hasInmunodeficiency" name="health" class="checkbox__control"  [(ngModel)]="pet.hasInmunodeficiency" #hasInmunodeficiency="ngModel" name="hasInmunodeficiency">
+          <input type="checkbox" id="inmunodeficiency" value="Tiene inmunodeficiencia" name="health"  class="checkbox__control"  [(ngModel)]="pet.inmunodeficiency" #inmunodeficiency="ngModel" name="inmunodeficiency">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Leucemia
-          <input type="checkbox" id="hasLeucemia" name="health" class="checkbox__control"  [(ngModel)]="pet.hasLeucemia" #hasLeucemia="ngModel" name="hasLeucemia">
+          <input type="checkbox" id="leukemia" name="health" class="checkbox__control"  [(ngModel)]="pet.leukemia" #leukemia="ngModel" name="leukemia">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Alergias
-          <input type="checkbox" id="hasAllergy" name="Alergias" class="checkbox__control"  [(ngModel)]="pet.hasAllergy" #hasAllergy="ngModel" name="hasAllergy">
+          <input type="checkbox" id="allergy" name="Alergias" class="checkbox__control"  [(ngModel)]="pet.allergy" #allergy="ngModel" name="allergy">
           <span class="checkbox__custom"></span>
           <textarea class="textarea form-group__control"
             placeholder="Es alérgico a los frutos secos, tiene alergia a la lana..."  [(ngModel)]="pet.allergies" #allergies="ngModel" name="allergies"></textarea>
@@ -63,6 +56,6 @@
       </fieldset>
 
       <div class="form-btn--container">
-       <button routerLink="/adopcion"  class="btn btn--return"><span class="left-arrow">&#8592;</span>Volver atrás </button> <button type="submit" class="btn" routerLink="adicional"  >Datos adicionales...</button>
+       <button routerLink="/adopcion"  class="btn btn--return"><span class="left-arrow">&#8592;</span>Volver atrás </button> <button type="submit" class="btn" [disabled]="petSanitaryForm.invalid"  >Datos adicionales...</button>
       </div>
     </form>

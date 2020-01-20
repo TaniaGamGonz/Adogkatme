@@ -3,20 +3,29 @@
         <div class="form-group">
           <label for="nameAnimal" class="form-group__label">Nombre</label>
             <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
-          <input type="text" id="nameAnimal" class="form-group__control" required [(ngModel)]="pet.name" #name="ngModel" name="name">
+          <input type="text" id="nameAnimal" class="form-group__control" required [(ngModel)]="pet.name" #name="ngModel" name="name"
+          [ngClass]="{'form-group__control--success': name?.touched && name?.valid, 'form-group__control--danger': name?.touched && !name?.valid }">
         </div>
         <div class="form-group">
           <label for="typeAnimal" class="form-group__label" >Tipo
             de animal</label>
             <tooltip *ngIf="type?.touched && !type?.valid">El tipo es obligatorio!</tooltip>
-
-          <input type="text" id="typeAnimal" class="form-group__control" required  [(ngModel)]="pet.type" #type="ngModel" name="type">
+          <input type="text" id="typeAnimal" class="form-group__control" required  [(ngModel)]="pet.type" #type="ngModel" name="type" placeholder="Gato"
+          [ngClass]="{'form-group__control--success': type?.touched && type?.valid, 'form-group__control--danger': type?.touched && !type?.valid }">
         </div>
+        <div class="form-group">
+          <label for="raceAnimal" class="form-group__label" >Raza
+            del animal</label>
+            <tooltip *ngIf="race?.touched && !race?.valid">La raza no es válida</tooltip>
+          <input type="text" placeholder="Siamés" id="raceAnimal" class="form-group__control"   [(ngModel)]="pet.race" #race="ngModel" name="race"
+          [ngClass]="{'form-group__control--success': race?.touched && race?.valid, 'form-group__control--danger': race?.touched && !race?.valid }">
+        </div>
+
         <div class="form-group">
           <span>Sexo</span>
           <div class="form-group">
             <label for="r-01" class="form-group__label radio">Macho
-              <input type="radio" id="r-01" class="radio__control" value="Macho" [(ngModel)]="pet.gender" #genderMale="ngModel" name="genderMale">
+              <input type="radio" id="r-01" class="radio__control" value="Macho"[(ngModel)]="pet.gender" #genderMale="ngModel" name="genderMale">
               <span class="radio__custom"></span>
             </label>
             <label for="r-02" class="form-group__label radio">Hembra
@@ -38,7 +47,7 @@
           <label for="ageAnimal" class="form-group__label" >Edad
             (aproximadamente)</label>
           <div class="d-flex">
-            <input type="text" id="ageAnimal" class="form-group__control  form-group__control--sm">
+            <input type="number" id="ageAnimal" class="form-group__control  form-group__control--sm">
             <angular2-multiselect
             [data]="petAge"
             [(ngModel)]="pet.age"
@@ -89,7 +98,7 @@
         </div>
         <div class="form-group ">
           <label class="form-group__label checkbox">Necesita licencia PPP
-            <input type="checkbox" name="license" id="license" class="checkbox__control " [(ngModel)]="pet.license" #license="ngModel" name="license">
+            <input type="checkbox" name="license" id="license" class="checkbox__control " [(ngModel)]="pet.license" #license="ngModel"  value="Necesita PPP" name="license">
             <span class="checkbox__custom"></span>
           </label>
         </div>
@@ -105,7 +114,7 @@
 
         </div>
         <div class="form-btn--container">
-          <button type="submit" class="btn" routerLink="sanitario">Datos
+          <button type="submit" class="btn"   [disabled]="petForm.invalid">Datos
             sanitarios...</button>
         </div>
       </form>

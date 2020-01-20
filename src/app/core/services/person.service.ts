@@ -19,7 +19,7 @@ export class PersonService {
     return of (PEOPLE);
   }
   public getPersonById(idPerson: number): Observable<Person> {
-    return of (Object.assign(new Person(), PEOPLE.find((person: Person) => idPerson === person.id)));
+    return of (Object.assign(new Person({}), PEOPLE.find((person: Person) => idPerson === person.id)));
   }
 
 }

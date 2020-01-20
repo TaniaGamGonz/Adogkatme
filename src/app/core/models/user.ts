@@ -9,5 +9,13 @@ export class User {
   id: number;
 
 
-  constructor( ) { }
+  constructor(params) {
+    this.name  = params.name ? params.name : "";
+    this.email = params.email ? params.email : "";
+    this.password = params.password ? params.password : "";
+    this.country  = params.country ? params.country : "";
+    this.city = params.city? params.city : "";
+    this.photo = params.photo ? params.photo : "";
+    this.id = params.id ? params.id : "";
+  }
 }

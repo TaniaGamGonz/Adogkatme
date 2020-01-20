@@ -1,7 +1,7 @@
 <main class="height-100">
   <div class="container container--register">
     <h1 class="h1 h1--register">Nueva protectora</h1>
-    <form class="form form--register" #protectiveForm="ngForm">
+    <form class="form form--register" #protectiveForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
         <label for="name" class="form-group__label">Nombre de la entidad</label>
@@ -77,8 +77,6 @@
         <textarea name="info" id="" cols="10" rows="10" class="form-group__control textarea"
           placeholder="Escribe aquí algo sobre la historia de la protectora, lo que haceis, cuanto tiempo llevais...etc" [(ngModel)]="protective.description" #description="ngModel" name="description"></textarea>
       </div>
-
-
       <div class="form-btn--container">
         <button type="submit" class="btn btn--sm" [disabled]="!protectiveForm.valid || !checkSamePassword(password.value, confirmPassword.value)">Envialo</button>
       </div>

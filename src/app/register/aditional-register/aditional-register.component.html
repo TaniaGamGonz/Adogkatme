@@ -58,15 +58,11 @@
         <label for="photo" class="form-group__label">Pon aquí tu foto de perfil</label>
         <image-upload [max]="1" [extensions]="['jpeg','png','svg','jpg']" buttonCaption="Selecciona la imagen"
           dropBoxMessage="Arrastra la imagen" [clearButtonCaption]="'Borrar todo'"  class="drag-and-drop"
-          [(ngModel)]="person.photo"
-          name="photo"
-          #photo="ngModel"
-          id="photo"
           >
         </image-upload>
       </div>
       <div class="form-btn--container">
-        <button routerLink="/registro-usuario"  class="btn btn--return" ><span class="left-arrow">&#8592;</span>Volver atrás </button>   <button  type="submit" class="btn btn--sm" >Registrate</button>
+        <button routerLink="/registro-usuario"  class="btn btn--return" ><span class="left-arrow">&#8592;</span>Volver atrás </button>   <button  type="submit" class="btn btn--sm" [disabled]="aditionalForm.invalid">Registrate</button>
       </div>
     </form>
   </div>

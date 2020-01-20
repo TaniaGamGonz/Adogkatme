@@ -19,7 +19,7 @@ export class PetsService {
   }
   public getPetById(idPet: number): Observable<Pet> {
 
-    return of (Object.assign(new Pet(), PETS.find((pet: Pet) => idPet === pet.id)));
+    return of (Object.assign(new Pet({}), PETS.find((pet: Pet) => idPet === pet.id)));
   }
   public getPetPhotos(idPet: number): Array<string>{
     return ["assets/svg/cloe.svg","assets/svg/cloe.svg","assets/svg/cloe.svg"];

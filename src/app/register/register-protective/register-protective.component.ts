@@ -15,7 +15,7 @@ export class RegisterProtectiveComponent implements OnInit {
   ) { }
   private countries: Array<Object>;
   private cities: Array<Object>;
-  private protective: Protective = new Protective;
+  private protective: Protective;
   private dropdownCountrySettings: Object;
   private dropdownCitySettings: Object;
   private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
@@ -24,6 +24,7 @@ export class RegisterProtectiveComponent implements OnInit {
 
 
   ngOnInit() {
+    this.protective = new Protective({});
     this.cities = this.countriesService.getCities();
     this.countries = this.countriesService.getCountries();
 
@@ -51,6 +52,9 @@ export class RegisterProtectiveComponent implements OnInit {
 
   checkSamePassword(password: string, confirmPassword: string):boolean{
     return (password === confirmPassword);
+  }
+  onSubmit(){
+    console.log(this.protective);
   }
 
 

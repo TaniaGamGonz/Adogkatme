@@ -1,23 +1,31 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Person } from '../models/person';
+import { Pet } from '../models/pet';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FormService {
+export class FormService implements OnInit{
 
   constructor() {
+  }
 
+  ngOnInit() {
+    this.firstForm;
+    this.secondForm;
   }
 
   public firstForm;
   public secondForm;
 
-
-  mergeForms(firsForm, secondForm){
-  let  finalForm = {...this.firstForm, ...secondForm};
-   return finalForm;
+  mergePersonForms(secondForm: Person): Person{
+   return new Person({...this.firstForm, ...secondForm});
   }
+  mergePetForms(thirdForm: Pet): Pet{
+    return new Pet({...this.firstForm, ...this.secondForm, ...thirdForm});
+
+  }
+
 
 
 }

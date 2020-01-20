@@ -21,7 +21,7 @@ export class ProtectiveService {
   }
   public getProtectiveById(idProtective: number): Observable<Protective> {
     console.log( PROTECTIVES);
-    return of (Object.assign(new Protective(), PROTECTIVES.find((protective: Protective) => idProtective === protective.id)));
+    return of (Object.assign(new Protective({}), PROTECTIVES.find((protective: Protective) => idProtective === protective.id)));
   }
 
 

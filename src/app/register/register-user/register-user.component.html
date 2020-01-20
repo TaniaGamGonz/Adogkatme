@@ -1,7 +1,7 @@
 <main class="height-100">
   <div class="container container--register">
     <h1 class="h1 h1--register">Nuevo usuario</h1>
-    <form class="form form--register" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <form class="form form--register" #userForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
         <label for="name" class="form-group__label">Nombre</label>
@@ -61,7 +61,7 @@
         <input type="password" id="confirmPassword" class="form-group__control" [(ngModel)]="person.confirmPassword"
           #confirmPassword="ngModel" name="confirmPassword"
           [pattern]="passwordRegExp"
-          [ngClass]="{'form-group__control--success': password?.valid, 'form-group__control--danger': password?.touched && !password?.valid || password?.touched && !checkSamePassword(password.value, confirmPassword.value)}"
+          [ngClass]="{'form-group__control--success': confirmPassword?.valid, 'form-group__control--danger': password.touched && !password?.valid || !password.pristine && !checkSamePassword(password.value, confirmPassword.value)}"
           required>
       </div>
       <div class="form-group form-group--content">

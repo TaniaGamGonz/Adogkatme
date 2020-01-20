@@ -1,22 +1,22 @@
     <h2 class="h2">Datos adicionales</h2>
-    <form #petAditionalForm="ngForm" class="form form--adopcion-adicional">
+    <form #petAditionalForm="ngForm" class="form form--adopcion-adicional" (ngSubmit)="onSubmit()">
       <fieldset class="from-group form-group--checkbox">
-        <legend class="form-group__title">Caracter</legend>
+        <legend class="form-group__title">Carácter</legend>
         <span class="form-group__label">Sociable con</span>
         <label class="form-group__label checkbox">Niños
-          <input type="checkbox" id="sociableKids"   [(ngModel)]="pet.isSociableKids" #isSociableKids="ngModel" name="isSociableKids" class="checkbox__control" >
+          <input type="checkbox" value="Es sociable con niños" id="sociableKids"   [(ngModel)]="pet.sociableKids" #sociableKids="ngModel" name="sociableKids" class="checkbox__control" >
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Gente
-          <input type="checkbox" id="sociablePeople"   [(ngModel)]="pet.isSociablePeople" #isSociablePeople="ngModel" name="isSociablePeople" class="checkbox__control">
+          <input type="checkbox" id="sociablePeople"  value="Es sociable con desconocidos" [(ngModel)]="pet.sociablePeople" #sociablePeople="ngModel" name="sociablePeople" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Animales de su especie
-          <input type="checkbox" id="sociablePets"   [(ngModel)]="pet.isSociablePets" #isSociablePets="ngModel" name="isSociablePets" class="checkbox__control">
+          <input type="checkbox" id="sociablePets"  value="Es sociable con otros de su raza" [(ngModel)]="pet.sociablePets" #sociablePets="ngModel" name="sociablePets" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Animales de otras especies
-          <input type="checkbox" id="sociableOtherAnimals"   [(ngModel)]="pet.isSociableOtherAnimals" #isSociableOtherAnimals="ngModel" name="isSociableOtherAnimals" class="checkbox__control">
+          <input type="checkbox" id="sociableOtherAnimals"  value="Es sociable con otras especies" [(ngModel)]="pet.sociableOtherAnimals" #sociableOtherAnimals="ngModel" name="sociableOtherAnimals" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <div class="align--row">
@@ -24,7 +24,7 @@
           <label for="Independencia" class="form-group__label">Independencia</label>
           <angular2-multiselect
           [data]="petIndependence"
-          [(ngModel)]="pet.Independence"
+          [(ngModel)]="pet.independence"
           [settings]="dropdownIndependenceSettings"
           name="independence">
         </angular2-multiselect>
@@ -45,39 +45,37 @@
       <fieldset class="from-group form-group--checkbox">
         <legend class="form-group__title">Gustos</legend>
         <label class="form-group__label checkbox">Jugar
-          <input type="checkbox" id="play"  [(ngModel)]="pet.pleasures.Play" #play="ngModel" name="play" class="checkbox__control">
+          <input type="checkbox" id="play"  [(ngModel)]="pet.play" #play="ngModel" name="play" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
         </label>
         <label class="form-group__label checkbox">Comer
-          <input type="checkbox" id="eat"  [(ngModel)]="pet.pleasures.Eat" #eat="ngModel" name="eat" class="checkbox__control">
+          <input type="checkbox" id="eat"  [(ngModel)]="pet.eat" #eat="ngModel" name="eat" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
         </label>
         <label class="form-group__label checkbox">Escaparse
-          <input type="checkbox" id="scape"  [(ngModel)]="pet.pleasures.scape" #escape="ngModel" name="escape" class="checkbox__control">
+          <input type="checkbox" id="scape"  [(ngModel)]="pet.scape" #scape="ngModel" name="scape" class="checkbox__control">
           <span class="checkbox__custom"></span>
 
 
         </label>
         <label class="form-group__label checkbox">Pasear
-          <input type="checkbox" id="takeAWalk"  [(ngModel)]="pet.pleasures.TakeAWalk" #takeAWalk="ngModel" name="takeAWalk" class="checkbox__control">
+          <input type="checkbox" id="takeAWalk"  [(ngModel)]="pet.takeAWalk" #takeAWalk="ngModel" name="takeAWalk" class="checkbox__control">
           <span class="checkbox__custom"></span>
-
 
         </label>
         <label class="form-group__label checkbox">Dormir
-          <input type="checkbox" id="sleep"  [(ngModel)]="pet.pleasures.Sleep" #sleep="ngModel" name="sleep" class="checkbox__control">
+          <input type="checkbox" id="sleep"  [(ngModel)]="pet.sleep" #sleep="ngModel" name="sleep" class="checkbox__control">
           <span class="checkbox__custom"></span>
-
 
         </label>
         <label class="form-group__label checkbox">Ir en coche
-          <input type="checkbox" id="car"  [(ngModel)]="pet.pleasures.car" #car="ngModel" name="car" class="checkbox__control">
+          <input type="checkbox" id="car"  [(ngModel)]="pet.car" #car="ngModel" name="car" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
         <label class="form-group__label checkbox">Bañarse
-          <input type="checkbox" id="bath"  [(ngModel)]="pet.pleasures.bath" #bath="ngModel" name="bath" class="checkbox__control">
+          <input type="checkbox" id="bath"  [(ngModel)]="pet.bath" #bath="ngModel" name="bath" class="checkbox__control">
           <span class="checkbox__custom"></span>
         </label>
       </fieldset>
@@ -87,12 +85,12 @@
         </label>
         <angular2-multiselect
         [data]="reasonAdoption"
-        [(ngModel)]="pet.reason"
+        [(ngModel)]="pet.adoptionReason"
         [settings]="dropdownReasonSettings"
-        name="reason">
+        name="adoptionReason">
       </angular2-multiselect>
     </div>
       <div class="form-btn--container">
-        <button routerLink="/adopcion/sanitario"  class="btn btn--return"><span class="left-arrow">&#8592;</span>Volver atrás </button> <button type="submit" class="btn">Enviar!</button>
+        <button routerLink="/adopcion/sanitario"  class="btn btn--return"><span class="left-arrow">&#8592;</span>Volver atrás </button> <button type="submit" class="btn" [disabled]="petAditionalForm.invalid">Enviar!</button>
       </div>
     </form>

@@ -9,7 +9,7 @@ import { User } from 'src/app/core/models/user';
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  public login = new User;
+  public login;
   private password: string;
   private email: string;
   private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
     private modalService: ModalService,
     private router: Router)
     { }
-  ngOnInit() {}
+  ngOnInit() {
+    this.login = new User({});
+  }
 
   toggleModal() {
     this.modalService.toggleModal("loginModal");

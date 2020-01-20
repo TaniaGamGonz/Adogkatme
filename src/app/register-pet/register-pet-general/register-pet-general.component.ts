@@ -3,6 +3,7 @@ import { CountriesService } from "src/app/core/services/countries.services/count
 import { Pet } from 'src/app/core/models/pet';
 import { DropdownService } from 'src/app/core/services/dropdown.service';
 import { Router } from '@angular/router';
+import { FormService } from 'src/app/core/services/form.service';
 
 @Component({
   selector: "app-register-pet-general",
@@ -13,7 +14,8 @@ export class RegisterPetGeneralComponent implements OnInit {
   constructor(
     private countriesService: CountriesService,
     private dropdownService: DropdownService,
-    private router: Router
+    private router: Router,
+    private formService: FormService
     ) {}
   private petHealth: Array<Object>;
   private petAge: Array<Object>;
@@ -21,7 +23,7 @@ export class RegisterPetGeneralComponent implements OnInit {
   private petActivity: Array<Object>;
   private countries: Array<Object>;
   private cities: Array<Object>;
-  private pet: Pet = new Pet;
+  private pet: Pet;
   private dropdownCountrySettings: Object;
   private dropdownCitySettings: Object;
   private dropdownHealthSettings: Object;
@@ -33,6 +35,7 @@ export class RegisterPetGeneralComponent implements OnInit {
 
 
   ngOnInit() {
+    this.pet = new Pet ({});
     let dropdownSettings = {
       singleSelection: true,
       enableCheckAll: false,
@@ -83,7 +86,8 @@ export class RegisterPetGeneralComponent implements OnInit {
   }
 
   onSubmit(){
-    this.router.navigate(["sanitario"]);
+    this.formService.firstForm = this.pet;
+    this.router.navigate(["/adopcion/sanitario"]);
   }
 
 }
