@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfilePetComponent } from './profile-pet/profile-pet.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -9,7 +10,8 @@ import { ProfilePetComponent } from './profile-pet/profile-pet.component';
     ProfilePetComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
   ],
   exports: [
     ProfilePetComponent,

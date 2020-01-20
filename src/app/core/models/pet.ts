@@ -14,7 +14,7 @@ export class Pet {
   city: string;
   PPPlicense: boolean;
   description: string;
-  photo: string;
+  photos: Array<string>;
   videos: Array<string>;
   parasite: boolean;
   vaccined: boolean;
@@ -155,7 +155,7 @@ export class Pet {
     this.city = params ? params.city : "";
     this.PPPlicense = params ? params.PPPlicense : false ;
     this.description = params ? params.description : "";
-    this.photo = params ? params.photo : [];
+    this.photos = params ? params.photos : [];
     this.videos = params ? params.videos : "";
     this.parasite = params ? params.parasite : true;
     this.vaccined = params ? params.vacine :false;

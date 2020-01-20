@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy, Renderer2 } from "@angular/core";
 import { ModalService } from "src/app/core/services/modal.service";
 import { Subscription } from "rxjs";
+import { Pet } from 'src/app/core/models/pet';
 
 @Component({
   selector: "modal",
@@ -12,12 +13,15 @@ import { Subscription } from "rxjs";
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input() public nombre: string;
+  @Input () public pet: Pet;
+
+
   private isShow = false;
   private subscription: Subscription;
 
   constructor(
     private modalService: ModalService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +35,7 @@ export class ModalComponent implements OnInit, OnDestroy {
         }
       }
     });
+
   }
 
   ngOnDestroy(): void {

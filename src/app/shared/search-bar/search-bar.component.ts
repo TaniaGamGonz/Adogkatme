@@ -20,13 +20,16 @@ export class SearchBarComponent implements OnInit {
    private optionAdopcion: Array<Object>;
    private cities: Array<Object>;
    private formSearch: Object;
-   private dropdownSettings: Object;
+   private dropdownCitiesSettings: Object;
+   private dropdownCountriesSettings: Object;
+   private countries: Array<Object>
    private model: Object = {};
   ngOnInit() {
     this.cities = this.countriesService.getCities();
+    this.countries = this.countriesService.getCountries();
     this.optionAdopcion = this.dropdownService.getOptionAdoption();
 
-    this.dropdownSettings = {
+    this.dropdownCitiesSettings = {
       singleSelection: true,
       enableCheckAll: false,
       selectAllText: "Selecciona todos",
@@ -38,6 +41,8 @@ export class SearchBarComponent implements OnInit {
       text: 'Escoge tu ciudad',
       classes: 'form-group__control--search-bar'
     };
+    this.dropdownCountriesSettings =""
+
 
   }
 

@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   private password: string;
   private email: string;
   private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+  public modalToken: string = 'loginModal';
 
 
 
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   toggleModal() {
-    this.modalService.toggleModal("loginModal");
+    this.modalService.toggleModal(this.modalToken);
   }
 
   onSubmit(email, password) {
