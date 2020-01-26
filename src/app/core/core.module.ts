@@ -8,6 +8,7 @@ import { HeaderNoLoggedComponent } from './components/header/header-no-logged/he
 import { RouterModule } from '@angular/router';
 import { ErrorComponent } from './components/error/error.component';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -23,6 +24,7 @@ const COMPONENTS = [
 const MODULES = [
   SharedModule,
   RouterModule,
+  HttpClientModule,
 ]
 
 

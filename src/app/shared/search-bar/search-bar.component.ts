@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Output() searched = new EventEmitter<boolean>();
+  @Output() searched = new EventEmitter<Array<string>>();
 
   constructor(
     private countriesService: CountriesService,
@@ -21,13 +21,12 @@ export class SearchBarComponent implements OnInit {
    private cities: Array<Object>;
    private formSearch: Object;
    private dropdownCitiesSettings: Object;
-   private dropdownCountriesSettings: Object;
+   private dropdownPetSettings: Object;
    private countries: Array<Object>
    private model: Object = {};
   ngOnInit() {
     this.cities = this.countriesService.getCities();
     this.countries = this.countriesService.getCountries();
-    this.optionAdopcion = this.dropdownService.getOptionAdoption();
 
     this.dropdownCitiesSettings = {
       singleSelection: true,
@@ -41,14 +40,26 @@ export class SearchBarComponent implements OnInit {
       text: 'Escoge tu ciudad',
       classes: 'form-group__control--search-bar'
     };
-    this.dropdownCountriesSettings =""
+    this.dropdownPetSettings = {
+      ...this.dropdownCitiesSettings,
+      showCheckbox: true,
+      singleSelection: false,
+      enableCheckAll: true,
+    }
 
 
   }
 
   onSubmit(form: NgForm) {
-    if(form.valid)
-      this.searched.emit(form.value);
+    let searchParams: string[] = []
+
+      form.value.text ? searchParams.push(form.value.text) : searchParams.push(null);
+
+      form.value.country? searchParams.push(form.value.country[0].itemName) : searchParams.push(null);
+
+      form.value.city? searchParams.push(form.value.city[0].itemName) : searchParams.push(null);
+
+      this.searched.emit(searchParams);
 
   }
 

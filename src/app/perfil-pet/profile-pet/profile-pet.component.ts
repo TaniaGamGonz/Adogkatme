@@ -24,7 +24,7 @@ export class ProfilePetComponent implements OnInit, OnDestroy{
    private pet$: Observable<Pet>;
    private pet: Pet;
    private photo$: BehaviorSubject<number>;
-   public id: number;
+   public id: string;
    private subscriptionPet: Subscription;
    private subscriptionImages: Subscription;
    public modalToken: string = 'petImg-modal';
@@ -33,18 +33,30 @@ export class ProfilePetComponent implements OnInit, OnDestroy{
   ngOnInit() {
     this.pet$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.petsService.getPetById(parseInt(params.get('id'))))
+        this.petsService.getPetById(params.get('id')))
     );
 
     this.photo$ = new BehaviorSubject<number>(-1);
     this.subscriptionPet = this.pet$.subscribe( (pet: Pet) => {
+
       if(!pet){
         this.router.navigate(['/home']);
       }
-      else
-        this.pet = pet;
+      else{
+
+        this.pet = new Pet({...pet});
+        this.getPetPhotos(pet);
+
+      }
+
     })
-    this.subscriptionImages = this.photo$.subscribe((index: number) => this.imageSource=this.pet.photos[index])
+  }
+
+  getPetPhotos(pet: Pet){
+    this.subscriptionImages = this.photo$.subscribe((index: number) => {
+
+      this.imageSource=this.pet.photos[index];
+    })
   }
 
   onBeforeIndexPhoto(): void{

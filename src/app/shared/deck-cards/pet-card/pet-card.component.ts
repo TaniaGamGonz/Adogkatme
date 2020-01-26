@@ -43,6 +43,7 @@ export class PetCardComponent implements OnInit, OnDestroy{
     });
 
     this.logged();
+
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe;

@@ -1,23 +1,21 @@
 <main class="height-100">
   <div class="container container--home">
+
     <h1 class="h1 h1--home">¿Qué mascota buscas?</h1>
+
     <search-bar (searched)="onSearchBar($event)">
-      <angular2-multiselect
-      [data]="optionAdoption"
-      [(ngModel)]="selectedAdoption"
-      [settings]="dropdownSettings"
-      name="adoption">
-    </angular2-multiselect>
     </search-bar>
-    <deck-cards *ngIf="petsFounds$ | async">
+
+    <deck-cards>
       <h2 class="h2" title>Resultados</h2>
-      <a class="link" title>Ver más reclutas...</a>
-      <pet-card *ngFor="let pet of petsFounds$ | async" [mascota]="pet"></pet-card>
+      <pet-card *ngFor="let pet of petFounds" [mascota]="pet"></pet-card>
     </deck-cards>
+
     <deck-cards>
       <h2 class="h2" title>Nuevos reclutas</h2>
       <a class="link" title>Ver más reclutas...</a>
       <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet"></pet-card>
     </deck-cards>
+
   </div>
 </main>

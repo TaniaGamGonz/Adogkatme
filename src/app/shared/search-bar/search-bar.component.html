@@ -5,17 +5,20 @@
   name="text"
   class="form-group__control form-group__control--search-bar"
   placeholder="Busco un gato siamés...">
+
   <angular2-multiselect
-  [data]="countries"
-  [(ngModel)]="model.country"
-  [settings]="dropdownSettings"
-  name="country">
-</angular2-multiselect>
+    [data]="countries"
+    [(ngModel)]="model.country"
+    [settings]="dropdownCitiesSettings"
+    name="country">
+  </angular2-multiselect>
+
   <angular2-multiselect
-  [data]="cities"
-  [(ngModel)]="model.city"
-  [settings]="dropdownSettings"
-  name="city">
-</angular2-multiselect>
+    [data]="cities"
+    [(ngModel)]="model.city"
+    [settings]="dropdownCitiesSettings"
+    name="city">
+  </angular2-multiselect>
+
   <button type="submit" class="btn btn--search-bar">Buscar</button>
 </form>
