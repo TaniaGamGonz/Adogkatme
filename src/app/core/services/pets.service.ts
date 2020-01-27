@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Pet } from "../models/pet";
-import { PETS } from "./pets-false";
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -23,15 +22,18 @@ export class PetsService {
     return this.http.get<Pet[]>(getPetsUrl);
   }
   public getPetById(idPet: string): Observable<Pet> {
-    const getPetsUrl = `${environment.apiUrl}${environment.petsResource}/${idPet}`;
-    return this.http.get<Pet>(getPetsUrl);
-    //return of (Object.assign(new Pet({}), PETS.find((pet: Pet) => idPet === pet.id)));
+    const petUrl = `${environment.apiUrl}${environment.petsResource}/${idPet}`;
+    return this.http.get<Pet>(petUrl);
   }
-  public getPetPhotos(idPet: string): Array<string>{
-    return ["assets/svg/cloe.svg","assets/svg/cloe.svg","assets/svg/cloe.svg"];
+
+  public createPet(pet: Pet){
+    const petsUrl = `${environment.apiUrl}${environment.petsResource}`;
+    this.http.post(petsUrl, pet)
+   return this.http.post(petsUrl, pet);
   }
-  public removePetById(idPet: string): void{
-  //  PETS.splice((idPet-1), 1);
+  public removePetById(idPet: string){
+    const petUrl = `${environment.apiUrl}${environment.petsResource}/${idPet}`;
+     return this.http.delete(petUrl);
   }
 
 

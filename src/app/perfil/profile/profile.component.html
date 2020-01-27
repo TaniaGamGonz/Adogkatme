@@ -41,7 +41,7 @@
         <deck-cards>
           <h2 class="h2" title>Tus animales en adopción</h2>
           <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet">
-          <a removeButton class="link" (click)="removePet(pet.id)">Eliminar mascota</a>
+          <button type="button" removeButton class="link" (click)="removePet(pet._id)">Eliminar mascota</button>
           </pet-card>
         </deck-cards>
       </div>

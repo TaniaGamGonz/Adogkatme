@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   ngOnInit() {
     this.pets$ = this.petService.getPets();
-    console.log(this.pets$);
 
     this.dropdownSettings = {
       singleSelection: true,

@@ -26,22 +26,27 @@ export class ProfileComponent implements OnInit, OnDestroy {
   private isThisUser: boolean;
   private userId: string = "token";
   private person$: Observable<Person>;
-  public id: number;
+  public id: string;
   private subscriptionPerson: Subscription;
   public photos: Array<string>;
-  private pets$: Observable<Pet[]>
+  public pets$: Observable<Pet[]>;
+  private subscriptionPet: Subscription;
+
 
 
   private thisUser(){
     this.user = localStorage.getItem("user");
     this.isThisUser = this.user === this.userId ? true : false ;
   }
-  private clearLogin(){
+  private clearLogin(): void{
     this.loginService.clearLogin();
     this.thisUser();
   }
-  private removePet(idPet): void{
-    this.petService.removePetById(idPet);
+  private removePet(idPet: string): void{
+    console.log(idPet);
+    this.petService.removePetById(idPet).subscribe();
+    this.pets$ = this.petService.getPets();
+
   }
 
 

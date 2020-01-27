@@ -17,6 +17,7 @@
 
   &__body{
     position: relative;
+    user-select: none;
     max-height: 100vh;
     background-color: $grey-100;
     border-radius: 4px;

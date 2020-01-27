@@ -43,10 +43,8 @@ export class ProfilePetComponent implements OnInit, OnDestroy{
         this.router.navigate(['/home']);
       }
       else{
-
         this.pet = new Pet({...pet});
         this.getPetPhotos(pet);
-
       }
 
     })
@@ -54,7 +52,6 @@ export class ProfilePetComponent implements OnInit, OnDestroy{
 
   getPetPhotos(pet: Pet){
     this.subscriptionImages = this.photo$.subscribe((index: number) => {
-
       this.imageSource=this.pet.photos[index];
     })
   }
