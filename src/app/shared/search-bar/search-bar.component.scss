@@ -1,13 +1,36 @@
 @import '../../../scss/partials/variables';
 
 
+
+.search-bar{
+  display: block;
+  width: 100%;
+  border: 1px solid $color-primary;
+  margin: 0 auto;
+}
+
+.form-group__control--search-bar{
+  border: 0;
+  outline: none;
+  width: 100%;
+  border-radius: 0;
+}
+
+.btn--search-bar{
+  width: 100%;
+  border-radius: 0;
+}
+
+
+@media (min-width: 1024px) {
+
 .search-bar{
   display: inline-flex;
+  width: initial;
   flex-wrap: nowrap;
   align-items: stretch;
   justify-content: flex-end;
   max-width: 80%;
-  border: 1px solid $color-primary;
   border-radius: 4px;
   margin-bottom: 20px;
   padding: 0;
@@ -18,6 +41,7 @@
   border: 0;
   background-color: transparent;
   outline: none;
+  padding: 0 10px;
   border-radius: 0;
   border-right: 1px solid $color-primary;
   height: auto;
@@ -25,6 +49,7 @@
 }
 
 .btn--search-bar{
+  width: initial;
   border-radius: 0;
   transition: background-color 0.3s;
   &:hover{
@@ -32,3 +57,4 @@
   }
 }
 
+}

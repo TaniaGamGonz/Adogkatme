@@ -1,21 +1,42 @@
-.form--adopcion-sanitario{
-  display: flex;
-}
-.form-group--checkbox{
-  flex-basis: 49%;
-}
-.checkbox{
-  display: inline-block;
-  width: 50%;
+
+.form-group--checkbox + .form-group--checkbox{
+  margin-top: 20px;
 }
 
-.form-group--checkbox .textarea{
+.form-group--checkbox .textarea {
   margin-top: 10px;
   opacity: 0;
   transition: opacity 0.2s;
-  cursor: default;
 }
-input[name="allergy"]:checked ~.textarea{
+
+input[name="allergy"]:checked~.textarea {
   opacity: 1;
-  cursor: initial;
+}
+
+@media (min-width: 1024px) {
+
+  .form--adopcion-sanitario {
+    display: flex;
+  }
+
+  .form-group--checkbox {
+    flex-basis: 49%;
+  }
+  .form-group--checkbox + .form-group--checkbox{
+    margin-top: 0px;
+  }
+
+
+  .checkbox {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .form-group--checkbox .textarea {
+    cursor: default;
+  }
+
+  input[name="allergy"]:checked~.textarea {
+    cursor: initial;
+  }
 }

@@ -33,15 +33,15 @@ export class DropdownService {
     {  itemName: "Casa con campo" }
   ];
   private optionAdoption = [
-    {  itemName: "Adoptar" },
-    {  itemName: "Acoger" }
+    { id: 1, itemName: "Adoptar" },
+    { id: 2, itemName: "Acoger" }
   ];
   private otherPets = [
-    {  itemName: "Gato" },
-    {  itemName: "Perro" },
-    {  itemName: "Reptiles" },
-    {  itemName: "Pajaros" },
-    {  itemName: "Otros" }
+    { id:1, itemName: "Gato" },
+    { id:2, itemName: "Perro" },
+    { id:3, itemName: "Reptiles" },
+    { id:4, itemName: "Pajaros" },
+    { id:5, itemName: "Otros" }
   ];
   private petIndependence = [
     {  itemName: "Muy independiente" },

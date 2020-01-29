@@ -1,42 +1,32 @@
 @import '../../../scss/partials/variables';
 @import '../../../scss/partials/px-to-rem';
 
+
 .tooltip{
-  position: absolute;
-  right: 8px;
-  top: 30px;
-  min-height: 28px;
   display: flex;
   align-items: center;
+  min-height: 28px;
+
 
   &__msg{
-    display: none;
+    display: inline;
     border: 1px solid $color-danger;
     font-size: rem(12px);
     border-radius: 6px;
     padding: 5px;
     margin-right: 5px;
     color: lighten($color-danger, 15%);
-    opacity: 0;
+    opacity: 1;
     background-color: $grey-100;
   }
-
 }
 
 .icon--alert{
-  cursor: pointer;
-  order: 1;
+  margin-right: 4px;
+  animation-name: bubble;
+  animation-duration: 0.5s;
+}
 
-  &:hover{
-    animation-name: bubble;
-    animation-duration: 0.5s;
-  }
-}
-.icon--alert:hover~.tooltip__msg{
-  display: inline;
-  opacity: 1;
-  z-index: 5;
-}
 
 @keyframes bubble{
   from {
@@ -51,6 +41,38 @@
 }
 
 
+@media (min-width: 1024px) {
+
+.tooltip{
+  position: absolute;
+  right: 8px;
+  top: 30px;
+
+  &__msg{
+    display: none;
+    opacity: 0;
+  }
+
+}
+
+.icon--alert{
+  cursor: pointer;
+  order: 1;
+  animation: none;
+
+  &:hover{
+    animation-name: bubble;
+    animation-duration: 0.5s;
+  }
+}
+.icon--alert:hover~.tooltip__msg{
+  display: inline;
+  opacity: 1;
+  z-index: 5;
+}
+
+
+}
 
 
 

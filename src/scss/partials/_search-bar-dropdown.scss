@@ -1,33 +1,60 @@
- .form-group__control--search-bar  .cuppa-dropdown .selected-list .c-btn{
-  border-color: transparent;
-}
 
-.form-group__control--search-bar  .cuppa-dropdown .selected-list .c-angle-down,
-.form-group__control--search-bar  .cuppa-dropdown .selected-list .c-angle-up,
-.form-group__control--search-bar  .cuppa-dropdown .selected-list .c-remove
-{
-  position: relative;
-  top: 6px;
-  right: -5px;
-  margin-left: 5px;
-}
-.form-group__control--search-bar  .cuppa-dropdown .selected-list .c-remove{
-  top: 8px;
-  margin-left: 5px;
+    .form-group__control--search-bar .cuppa-dropdown .selected-list .c-btn {
+      border-color: $color-primary;
+      border-bottom: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
 
-}
-.form-group__control--search-bar  .cuppa-dropdown .dropdown-list .list-area{
-  border-color: $color-primary;
-}
-.form-group__control--search-bar  .arrow-2{
-  border-bottom-color: $color-primary;
-}
+    }
 
-.form-group__control--search-bar  .dropdown-list{
-  min-width: 200px;
-}
+    .form-group__control--search-bar .cuppa-dropdown .dropdown-list .list-area {
+      border-color: $color-primary;
+    }
+
+    .form-group__control--search-bar .arrow-2 {
+      border-bottom-color: $color-primary;
+    }
+
+    .form-group__control--search-bar .dropdown-list {
+      min-width: 200px;
+    }
 
 
 
 
+ @media (min-width: 1024px) {
 
+
+   .form-group__control--search-bar .cuppa-dropdown .selected-list .c-btn {
+     border-color: transparent;
+   }
+
+   .form-group__control--search-bar .cuppa-dropdown .selected-list .c-angle-down,
+   .form-group__control--search-bar .cuppa-dropdown .selected-list .c-angle-up,
+   .form-group__control--search-bar .cuppa-dropdown .selected-list .c-remove {
+     position: relative;
+     top: 6px;
+     right: -5px;
+     margin-left: 5px;
+   }
+
+   .form-group__control--search-bar .cuppa-dropdown .selected-list .c-remove {
+     top: 8px;
+     margin-left: 5px;
+
+   }
+
+   .form-group__control--search-bar .cuppa-dropdown .dropdown-list .list-area {
+     border-color: $color-primary;
+   }
+
+   .form-group__control--search-bar .arrow-2 {
+     border-bottom-color: $color-primary;
+   }
+
+   .form-group__control--search-bar .dropdown-list {
+     min-width: 200px;
+   }
+
+ }

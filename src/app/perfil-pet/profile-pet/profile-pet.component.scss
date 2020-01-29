@@ -1,32 +1,32 @@
 @import '../../../scss/partials/px-to-rem';
 @import '../../../scss/partials/variables';
 
-.perfil-pet {
-  display: flex;
-}
 
 .container--pet .h3 {
-  display: inline;
+  margin-right: 20px;
 }
 
 .pet {
   &__media {
     flex-grow: 1;
     flex-basis: 0;
-    width: 30%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   &-contact{
-    min-width: 25%;
+  flex-grow: 1;
+
+    & .link{
+      position: absolute;
+    }
   }
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    cursor: pointer;
     &--container{
       margin-top: 2px;
       align-self: flex-start;
@@ -35,7 +35,7 @@
     }
     &--l{
     display: block;
-    max-width: rem(395px);
+    max-width: rem(300px);
     max-height: rem(300px);
     }
     &--modal{
@@ -66,13 +66,10 @@
   }
 
   &__list {
-    padding: 15px 20px;
+    padding: 15px 0;
     line-height: 1.3;
     max-width: rem(272px);
 
-    &:first-of-type {
-      margin-left: -20px;
-    }
 
     &__item {
       padding-bottom: 5px;
@@ -137,10 +134,49 @@
   &--right{
     right: 10px;
   }
-
 }
-
 .container__img--modal{
   height: calc(100vh - 50px);
+
+}
+@media (min-width: 1024px) {
+
+.perfil-pet {
+  display: flex;
+}
+
+.container--pet .h3 {
+  display: inline;
+  margin-right: 0;
+}
+
+.pet {
+  &__media {
+    width: 30%;
+  }
+  &-contact{
+    min-width: 25%;
+    flex-grow: initial;
+
+    & .link{
+      position: initial;
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    &--l{
+    max-width: rem(395px);
+    }
+  }
+
+  &__list {
+    padding: 15px 20px;
+
+    &:first-of-type {
+      margin-left: -20px;
+    }
+  }
+}
 
 }

@@ -2,57 +2,84 @@
 @import '../../../../scss/partials/px-to-rem';
 
 
- .nav{
+
+.nav {
   border-bottom: 1px solid $color-primary;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
+
+  & .container{
+    width: 100%;
+  }
+
+
   &__list{
-    display:flex;
+    width: 100%;
   }
-  &__item{
-    display:flex;
-    height: rem(40px);
-    border-right: 1px solid $color-primary;
+
+  &__item {
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid $color-primary;
+
+    &:last-of-type{
+      border-bottom: 0;
+    }
   }
-  &__link{
-    display:flex;
-    align-items: center;
-    padding: 0 20px;
+
+  &__link {
     text-transform: uppercase;
-    color:$color-primary;
-    transition: background-color 0.3s;
-    &:hover{
-      color: $grey-100;
-      background-color: $color-primary;
-  }
-  &--selected{
-    color: $grey-100;
-    background-color: $color-primary;
-  }
+    color: $color-primary;
+    transition: color 0.3s;
 
-}
-}
-.btn--search{
- background-color: transparent;
-  height: rem(40px);
-  color:  $color-primary;
-  transition: color 0.2s;
-  position: relative;
-  padding-left: 35px;
+    &--selected {
+      color: $color-secondary;
+    }
 
-  &::after{
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 2px;
-    height: rem(30px);
-    width: rem(30px);
-    background-image: url(../../../../assets/svg/magnifier-tool.svg);
   }
 }
 
-.btn--search:hover{
-   color:  $color-secondary;
- }
 
+
+
+@media (min-width: 1024px) {
+
+
+  .nav {
+    width: initial;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__list {
+      width: initial;
+      display: flex;
+    }
+
+    &__item {
+      display: flex;
+      height: rem(40px);
+      border-bottom: 0;
+      padding: 0;
+      text-align: initial;
+      border-right: 1px solid $color-primary;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        color: $grey-100;
+        background-color: $color-primary;
+      }
+
+      &--selected {
+        color: $grey-100;
+        background-color: $color-primary;
+      }
+
+    }
+  }
+}

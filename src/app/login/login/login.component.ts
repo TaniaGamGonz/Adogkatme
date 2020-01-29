@@ -1,25 +1,29 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ModalService } from "src/app/core/services/modal.service";
 import { Router } from "@angular/router";
 import { User } from 'src/app/core/models/user';
+import { LoginService } from 'src/app/core/services/login.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: "login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   public login;
   private password: string;
   private email: string;
-  private passwordRegExp: RegExp= /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+  private subscriptionLogin: Subscription;
+  private passwordRegExp: RegExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
   public modalToken: string = 'loginModal';
 
 
 
   constructor(
     private modalService: ModalService,
-    private router: Router)
+    private router: Router,
+    private loginService: LoginService)
     { }
   ngOnInit() {
     this.login = new User({});
@@ -30,7 +34,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(email, password) {
+    const user = {
+      email: this.login.email,
+      password: this.login.password
+    }
     if (email.valid && password.valid) {
+    this.subscriptionLogin = this.loginService.signIn(user).subscribe();
+console.log(this.subscriptionLogin);
       localStorage.setItem("user", "token");
       this.router.navigate(["/"]);
     }
@@ -41,4 +51,10 @@ export class LoginComponent implements OnInit {
       alert('Se te ha enviado un correo de verificacion');
     }
   }
+
+  ngOnDestroy(): void {
+  }
+
+
+
 }

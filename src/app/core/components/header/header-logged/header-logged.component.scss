@@ -1,37 +1,61 @@
 @import '../../../../../scss/partials/variables';
 
-.header__link--logged{
-  color:$grey-100;
+.header__link--logged {
+  color: $grey-100;
   font-size: 1rem;
-  transition: background-color 0.3s;
 
-  &::after{
+  &::after {
     margin-left: 5px;
     content: '▼';
   }
 }
-.logged{
-  position: relative;
 
-  &__dropdown{
+.logged {
+
+  &__dropdown {
     border: 1px solid $color-primary;
     position: absolute;
     z-index: 5;
+    top: 60px;
     left: 0;
     right: 0;
     box-shadow: $box-shadow;
   }
 }
-.dropdown__item{
+.dropdown__item {
   background-color: $grey-100;
-  padding: 10px;
+  padding: 25px 0;
   display: block;
   color: $color-primary;
   transition: all 0.2s;
-  cursor: pointer;
+  text-align: center;
 
-  &:hover{
-    background-color: $grey-95;
-    color: $color-secondary;
+}
+
+@media (min-width: 1024px) {
+
+
+  .header__link--logged {
+    transition: background-color 0.3s;
+  }
+
+  .logged {
+    position: relative;
+
+    &__dropdown {
+      top: initial;
+    }
+  }
+
+  .dropdown__item {
+    padding: 10px;
+    color: $color-primary;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $grey-95;
+      color: $color-secondary;
+    }
   }
 }

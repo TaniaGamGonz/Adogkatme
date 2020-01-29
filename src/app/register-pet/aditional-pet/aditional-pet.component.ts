@@ -3,6 +3,7 @@ import { Pet } from "src/app/core/models/pet";
 import { DropdownService } from "src/app/core/services/dropdown.service";
 import { FormService } from 'src/app/core/services/form.service';
 import { PetsService } from 'src/app/core/services/pets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-aditional-pet",
@@ -13,7 +14,9 @@ export class AditionalPetComponent implements OnInit {
   constructor(
     private drodpdownService: DropdownService,
     private formService: FormService,
-    private petsService: PetsService) {}
+    private petsService: PetsService,
+    private router: Router,
+    ) {}
   private petIndependence: Array<Object>;
   private petNoise: Array<Object>;
   private reasonAdoption: Array<Object>;
@@ -58,8 +61,9 @@ export class AditionalPetComponent implements OnInit {
   onSubmit(): void{
     console.log(this.pet);
     this.petsService.createPet(this.pet).subscribe();
-    //this.formService.firstForm = null;
-   // this.formService.secondForm = null;
+    this.router.navigate(["/home"]);
+    this.formService.firstForm = null;
+    this.formService.secondForm = null;
   }
 
 }

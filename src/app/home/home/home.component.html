@@ -6,7 +6,7 @@
     <search-bar (searched)="onSearchBar($event)">
     </search-bar>
 
-    <deck-cards>
+    <deck-cards *ngIf="petFounds">
       <h2 class="h2" title>Resultados</h2>
       <pet-card *ngFor="let pet of petFounds" [mascota]="pet"></pet-card>
     </deck-cards>

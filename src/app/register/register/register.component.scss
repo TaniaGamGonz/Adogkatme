@@ -1,27 +1,47 @@
-.height-100{
-  height: 100vh;
+.height-100 {
+  min-height: 100vh;
 }
-.align--row{
-  height: 70%;
-  align-items: center;
+
+.align--row {
+  display: block;
 }
+
 .protective,
 .user {
-  flex: 1 0 50%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.user-icon,
-.protective-icon{
-  cursor: pointer;
-  transition: filter 0.3s;
-}
-.user-icon:hover,
-.protective-icon:hover{
-  filter: brightness(120%);
-
+  margin-bottom: 20px;
 }
 
+
+@media (min-width: 1024px) {
+
+
+  .align--row {
+    display: flex;
+    height: 70%;
+    align-items: center;
+  }
+
+  .protective,
+  .user {
+    flex: 1 0 50%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .user-icon,
+  .protective-icon {
+    cursor: pointer;
+    transition: filter 0.3s;
+  }
+
+  .user-icon:hover,
+  .protective-icon:hover {
+    filter: brightness(120%);
+
+  }
+
+}

@@ -1,40 +1,68 @@
 @import '../../../../scss/partials/variables';
 
+.container{
+  width: initial;
+}
+.footer {
+  margin-top: 20px;
+  padding: 20px 25px ;
+  background-color: $color-primary;
+  color: $grey-100;
 
-.footer{
-  padding: 20px 25px;
-   background-color: $color-primary;
-   color:$grey-100;
+  & .align--row {
+    justify-content: space-around;
+  }
 
-  & .align--row{
-    justify-content:space-around;
+  &__list {
+    margin: 15px 0 15px 20px;
   }
-  &__list{
-    margin: 10px 0;
-    display:flex;
-  }
-  &__item{
+
+  &__item {
     padding: 15px;
 
-    &:first-of-type{
-      padding-left: 0px;
-    }
-    &:last-of-type{
-      padding-right: 0px;
-    }
   }
-  &__link{
+
+  &__link {
     font-family: $ff-title;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: 1px;
-    cursor: pointer;
-    color:$grey-100;
-    transition: color 0.2s;
+    color: $grey-100;
 
-    &:hover{
-      color: $color-secondary;
+  }
+}
+
+
+@media (min-width: 1024px) {
+
+  .footer {
+
+
+    &__list {
+      margin: 10px 0;
+      display: flex;
+    }
+
+    &__item {
+
+      &:first-of-type {
+        padding-left: 0px;
+      }
+
+      &:last-of-type {
+        padding-right: 0px;
+      }
+    }
+
+    &__link {
+      cursor: pointer;
+      color: $grey-100;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-secondary;
+      }
     }
   }
 }

@@ -1,15 +1,34 @@
 @import '../../../scss/partials/px-to-rem';
 
+
+.result-search .align--row{
+  display: block;
+  margin-bottom: 20px;
+}
+
+.cards--container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem(265px), 1fr));
+  justify-items: center;
+  row-gap: 20px;
+}
+
+
+@media (min-width: 1024px) {
+
 .h2{
-    margin-right: 10px;
     margin-bottom: 30px;
+}
+
+.result-search .align--row{
+  display: flex;
+  margin-bottom: 0;
 }
 
 .result-search{
   margin-bottom: 30px;
 }
 .cards--container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(rem(265px), 1fr));
-  row-gap: 20px;
+  row-gap: 40px;
+}
 }

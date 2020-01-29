@@ -9,6 +9,10 @@
   & .align--column {
     align-items: flex-start;
   }
+
+  & .align--row{
+    margin-top: 20px;
+  }
 }
 
 .form__login {

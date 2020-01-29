@@ -1,30 +1,48 @@
 @import '../../../scss/partials/variables';
 
-.bread-crumbs{
-  width: 60%;
+
+.bread-crumbs {
   margin: 0 auto;
 }
-.bread-crumbs__list{
+
+.bread-crumbs__list {
   display: flex;
   justify-content: space-around;
   padding-bottom: 5px;
 }
-.bread-crumbs__item{
-  color:$color-default;
+
+.bread-crumbs__item {
+  color: $color-default;
   position: relative;
   outline: 0;
-  cursor: default;
   pointer-events: none;
 }
 
-.bread-crumbs__item--selected{
-  color:$color-primary;
+.bread-crumbs__item--selected {
+  color: $color-primary;
 }
 
-.paw{
+.paw {
   position: absolute;
-  top: -10px;
-  right: -38px;
   fill: currentColor;
   transform: rotate(85deg);
+}
+
+
+@media (min-width: 1024px) {
+
+
+  .bread-crumbs {
+    width: 60%;
+  }
+
+  .bread-crumbs__item {
+    pointer-events: none;
+  }
+
+
+  .paw {
+    top: -10px;
+    right: -38px;
+  }
 }

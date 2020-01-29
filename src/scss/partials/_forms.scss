@@ -3,15 +3,7 @@
   color: $color-text-disabled;
 }
 
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
 .form-group {
-  max-width: rem(250px);
-  flex: 1 0 30%;
   margin-bottom: 20px;
   margin-right: 20px;
   position: relative;
@@ -39,14 +31,6 @@
 }
 
 
-
-.form-group--xl{
-  max-width: none;
-}
-.form-group--content{
-  max-width: max-content;
-}
-
 .form-group__label {
   display: block;
   margin-bottom: 8px;
@@ -68,9 +52,6 @@
   margin-bottom: 15px;
 }
 
-.form-btn--container {
-  width: 100%;
-}
 
 /*Checkbox and radio button custom*/
 
@@ -161,7 +142,7 @@
 /*Fin custom*/
 
 .textarea {
-  min-height: 100px;
+  min-height: 80px;
 }
 
 
@@ -170,3 +151,40 @@
   border-right: 1px solid $color-primary;
 }
 
+@media (min-width: 1024px) {
+
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.form-group {
+  max-width: rem(250px);
+  flex: 1 0 30%;
+}
+
+.form-group--xl{
+  max-width: none;
+}
+.form-group--content{
+  max-width: max-content;
+}
+
+.form-group__title {
+  font-family: $ff-title;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.form-btn--container {
+  width: 100%;
+}
+.textarea {
+  min-height: 100px;
+}
+
+
+}

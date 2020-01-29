@@ -22,6 +22,7 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
   private person: Person;
   private phonePattern: RegExp = /(6|9)\d{8}/;
   private dropdownSettings: Object;
+  private dropdownPetSettings: Object;
   private dropdownLivingPlaceSettings: Object;
 
 
@@ -43,6 +44,19 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
       showCheckbox: true,
       text: 'Selecciona una o varias'
     };
+
+    this.dropdownPetSettings = {
+      singleSelection: false,
+      enableCheckAll: true,
+      selectAllText: "Selecciona todos",
+      unSelectAllText: "Deshacer toda la seleccion",
+      enableSearchFilter: false,
+      searchPlaceholderText: "Buscar",
+      position: "bottom",
+      showCheckbox: true,
+      text: 'Selecciona una o varias'
+    };
+
     this.dropdownLivingPlaceSettings = {
       ...this.dropdownSettings,
       singleSelection: true,

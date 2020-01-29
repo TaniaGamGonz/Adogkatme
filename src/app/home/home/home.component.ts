@@ -49,20 +49,17 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.petsFoundsSubscription = this.petService.getPets().subscribe(
       pets =>{
         this.petList = pets;
-        console.log(pets);
 
       } );
      const text: string = event[0];
      const country: string = event[1];
      const  city: string = event[2];
 
-
-
     this.petFounds = this.petList.filter(pet => {
-      let arrayPropiedadesPet : Array<Pet> = Object.values(pet).filter( petProperty => petProperty === text  || petProperty === country || petProperty === city)
+      let arrayPropiedadesPet : Array<Pet> = Object.values(pet).filter( petProperty => petProperty === text);
       return arrayPropiedadesPet.length>0;
+
     });
-    this.petsFoundsSubscription.unsubscribe();
 
   }
   ngOnDestroy(): void {

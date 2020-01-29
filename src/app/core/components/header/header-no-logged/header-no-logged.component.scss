@@ -1,36 +1,50 @@
 @import '../../../../../scss/partials/variables';
 
 
-.header__link{
-   color:$grey-100;
-   font-size: 1rem;
-   padding: 0;
-   border: 1px solid transparent;
-   transition: border 0.3s ease-in-out;
-   padding-bottom: 5px;
-   border-radius: 0;
-
-
-
-  &:hover{
-    background-color: transparent;
-    border-bottom: 1px solid $grey-100;
-  }
+.header__link {
+  color: $grey-100;
+  font-size: 1rem;
+  padding: 0;
+  border: 1px solid transparent;
+  padding-bottom: 5px;
+  border-radius: 0;
 }
 
 
-.btn--header{
+.btn--header {
   background-color: $grey-100;
-  color:$color-primary;
-  border:1px solid $grey-100;
+  color: $color-primary;
+  border: 1px solid $grey-100;
   font-family: $ff-title;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1rem;
-  margin-left: 10px;
-  transition: background 0.3s;
-  &:hover{
-    background-color:$color-primary;
-    color: $grey-100;
+  margin-left: 25px;
+
+}
+
+
+
+@media (min-width: 1024px) {
+
+  .header__link {
+    transition: border 0.3s ease-in-out;
+    padding-bottom: 5px;
+    border-radius: 0;
+
+    &:hover {
+      background-color: transparent;
+      border-bottom: 1px solid $grey-100;
+    }
+  }
+
+  .btn--header {
+    margin-left: 10px;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $grey-100;
+    }
   }
 }

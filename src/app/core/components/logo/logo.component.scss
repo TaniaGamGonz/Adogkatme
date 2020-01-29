@@ -1,7 +1,7 @@
-
 @import '../../../../scss/partials/variables';
 
-.logo{
+
+.logo {
   position: relative;
   font-family: $ff-title;
   font-size: 1.7rem;
@@ -10,14 +10,42 @@
   margin-left: 19px;
   margin-top: 8px;
 
-  &__icon{
+  &__icon {
     position: absolute;
-    left: -20px;
-    top: -10px;
+    left: -18px;
+    top: -24px;
     transform: rotate(30deg);
   }
-  &__text{
-    position: relative;
-    z-index: 5;
+
+  &__text {
+    position: absolute;
+    visibility: hidden;
   }
+}
+
+
+@media (min-width: 1024px) {
+  :host{
+    margin-left: 0;
+  }
+
+
+  .logo{
+    font-size: 1.5rem;
+
+    &__icon {
+      position: absolute;
+      left: -20px;
+      top: -10px;
+      transform: rotate(30deg);
+    }
+
+    &__text {
+      position: relative;
+      visibility: visible;
+      z-index: 5;
+    }
+
+  }
+
 }

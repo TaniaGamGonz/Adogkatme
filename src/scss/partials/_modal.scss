@@ -1,5 +1,6 @@
 .modal {
   &__title {
+    margin-top: 20px;
     font-size: 1.5rem;
     font-family: $ff-title;
     font-weight: 700;
@@ -24,6 +25,15 @@
       font-size: 4rem;
       position: fixed;
       top: 5px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .modal{
+    &__title{
+      margin-top: 0;
     }
   }
 }

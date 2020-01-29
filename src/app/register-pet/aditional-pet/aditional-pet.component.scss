@@ -1,10 +1,26 @@
-.form-group--checkbox{
-  width: 49%;
-}
-.checkbox{
-  display: inline-block;
-  width: 50%;
-}
-.motivoAdopcion{
-  margin-top: 20px;
+
+  .form-group--checkbox .align--row{
+    display: block;
+  }
+
+  .motivoAdopcion {
+    margin-top: 20px;
+  }
+
+@media (min-width: 1024px) {
+
+
+  .form-group--checkbox {
+    width: 49%;
+  }
+  .form-group--checkbox .align--row{
+    display: flex;
+  }
+
+
+  .checkbox {
+    display: inline-block;
+    width: 50%;
+  }
+
 }
