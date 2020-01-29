@@ -53,6 +53,20 @@ export class Pet {
       return "Necesita licencia PPP";
     }
   }
+  getEat():string {
+
+    if(this.eat){
+      return "Es muy glotón/a";
+    }
+    return "No come mucho";
+  }
+
+  getPlay(): string{
+    if(this.play){
+      return "Juguetón/a";
+    }
+    return "Es muy tranquilo/a";
+  }
 
   getParasite():string{
     if(this.parasite){
@@ -182,23 +196,6 @@ export class Pet {
     this.eat = params ? params.eat : false;
     this.takeAWalk = params ? params.takeAWalk : false;
     this.car = params ? params.car : false;
-    this.getDescription();
-    this.getPPP();
-    this.getParasite();
-    this.getParasite();
-    this.getSterilized();
-    this.getVaccined();
-    this.getPrimer();
-    this.getChip();
-    this.getSociableWithKids();
-    this.getSociableWithOtherAnimals();
-    this.getSociableWithPeople();
-    this.getSociableWithOtherPets();
-    this.getTreatment();
-    this.getLeukemia();
-    this.getLeishmania();
-    this.getInmunodecifiency();
-    this.getAllergies();
 
   }
 }

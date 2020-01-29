@@ -10,7 +10,7 @@ export const PROTECTIVES: any[] = [
     password: "asaddas",
     country: "Madrid",
     city: "Madrid",
-    photo: "a",
+    photo: "https://www.airbetter.org/wp-content/uploads/2014/12/pet-and-air-purifier.jpg",
     id: 1
   },
   {
@@ -23,7 +23,7 @@ export const PROTECTIVES: any[] = [
     password: "asaddas",
     country: "Parla",
     city: "Parla",
-    photo: "a",
+    photo: "https://www.pethealthnetwork.com/sites/default/files/dogs-cats-birds-and-bunnies-one-house-1-167580013.jpg",
     id: 2
   }
 

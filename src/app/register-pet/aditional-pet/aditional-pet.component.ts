@@ -4,6 +4,7 @@ import { DropdownService } from "src/app/core/services/dropdown.service";
 import { FormService } from 'src/app/core/services/form.service';
 import { PetsService } from 'src/app/core/services/pets.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-aditional-pet",
@@ -58,10 +59,13 @@ export class AditionalPetComponent implements OnInit {
       text: '¿Motivo de la adopción?'
     };
   }
-  onSubmit(): void{
-    console.log(this.pet);
+  onSubmit(form: NgForm): void{
+
+    this.pet.independence = form.value.independence ? form.value.independence[0].itemName : null ;
+    this.pet.noisy = form.value.noisy ? form.value.noisy[0].itemName : null ;
+    this.pet.adoptionReason = form.value.adoptionReason ? form.value.adoptionReason[0].itemName : null ;
     this.petsService.createPet(this.pet).subscribe();
-    this.router.navigate(["/home"]);
+    this.router.navigate(["/registro-exitoso"]);
     this.formService.firstForm = null;
     this.formService.secondForm = null;
   }

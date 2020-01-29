@@ -3,7 +3,7 @@
     <h1 class="h1">Perfil</h1>
     <div class="container--protectora" *ngIf="protective$ | async as protective">
       <aside class=" perfil-datos">
-        <div class="img"> </div>
+       <div class="container__img"> <img class="protective__img" [src]="protective.photo"> </div>
         <ul class="perfil__list">
           <li class="perfil__item">{{protective.name}}</li>
           <li class="perfil__item"> {{protective.country}}, {{protective.city}}</li>

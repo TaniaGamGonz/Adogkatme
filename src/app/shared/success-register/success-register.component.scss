@@ -1,0 +1,21 @@
+.success-register{
+  background-image: url('/assets/images/toshi2.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text{
+    margin-left: 30%;
+    margin-top: -20%;
+    font-size: 2rem;
+
+    &--l{
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+  }
+
+}

@@ -12,6 +12,9 @@ import { ProtectiveProfileComponent } from './protective/protective-profile/prot
 import { ProfilePetComponent } from './perfil-pet/profile-pet/profile-pet.component';
 import { RegisterUserComponent } from './register/register-user/register-user.component';
 import { RegisterProtectiveComponent } from './register/register-protective/register-protective.component';
+import { SuccessRegisterComponent } from './shared/success-register/success-register.component';
+import { IsLoggedGuard } from './core/guards/is-logged.guard';
+
 
 
 
@@ -21,7 +24,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'protectoras', component: ProtectiveSearchComponent},
   { path: 'adopcion', component: RegisterPetComponent,
-    loadChildren: () => import('./register-pet/register-pet.module').then(mod => mod.RegisterPetModule), },
+    loadChildren: () => import('./register-pet/register-pet.module').then(mod => mod.RegisterPetModule), canActivate: [IsLoggedGuard] },
   { path: 'registro', component: RegisterComponent},
   { path: 'registro-usuario', component: RegisterUserComponent},
   { path: 'registro-protectora', component: RegisterProtectiveComponent},
@@ -29,6 +32,7 @@ const routes: Routes = [
   { path: 'perfil/:id', component: ProfileComponent},
   { path: 'mascota/:id', component: ProfilePetComponent},
   { path: 'protectora/:id', component: ProtectiveProfileComponent},
+  { path: 'registro-exitoso', component: SuccessRegisterComponent},
   { path: '**', component: ErrorComponent },
 ];
 

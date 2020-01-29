@@ -4,6 +4,7 @@ import { Pet } from 'src/app/core/models/pet';
 import { DropdownService } from 'src/app/core/services/dropdown.service';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/core/services/form.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-register-pet-general",
@@ -85,7 +86,15 @@ export class RegisterPetGeneralComponent implements OnInit {
     this.countries = this.countriesService.getCountries();
   }
 
-  onSubmit(){
+  onSubmit(form: NgForm){
+    this.pet.health = form.value.health[0].itemName;
+    this.pet.age = form.value.ageAnimal+" "+form.value.age[0].itemName;
+    this.pet.size = form.value.size[0].itemName;
+    this.pet.activity = form.value.activity[0].itemName;
+    this.pet.country = form.value.country[0].itemName;
+    this.pet.city = form.value.city[0].itemName;
+    this.pet.photos = ["assets/images/aslan.jpg"];
+
     this.formService.firstForm = this.pet;
     this.router.navigate(["/adopcion/sanitario"]);
   }

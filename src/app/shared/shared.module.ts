@@ -11,6 +11,8 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { FormsModule } from '@angular/forms';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
+import { SuccessRegisterComponent } from './success-register/success-register.component';
+
 
 const COMPONENTS = [
   DeckCardsComponent,
@@ -20,6 +22,7 @@ const COMPONENTS = [
   ProtectiveCardComponent,
   DropdownComponent,
   TooltipComponent,
+  SuccessRegisterComponent,
 ];
 
 
@@ -33,6 +36,7 @@ const COMPONENTS = [
     RouterModule,
     FormsModule,
     AngularMultiSelectModule,
+
   ],
   exports: [
     ...COMPONENTS,

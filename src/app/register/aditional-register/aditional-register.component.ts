@@ -68,7 +68,7 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
 
   onSubmit(): void{
     let twoForms =  this.formsService.mergePersonForms(this.person);
-    this.router.navigate(["/home"]);
+    this.router.navigate(["/registro-exitoso"]);
 
   }
 

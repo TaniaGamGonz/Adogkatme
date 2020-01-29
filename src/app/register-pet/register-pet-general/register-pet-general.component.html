@@ -1,5 +1,5 @@
       <h2 class="h2">Datos generales del animal</h2>
-      <form #petForm="ngForm" class="form form--adopcion" (ngSubmit)="onSubmit()">
+      <form #petForm="ngForm" class="form form--adopcion" (ngSubmit)="onSubmit(petForm)">
         <div class="form-group">
           <label for="nameAnimal" class="form-group__label">Nombre</label>
             <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
@@ -40,14 +40,14 @@
           [data]="petHealth"
           [(ngModel)]="pet.health"
           [settings]="dropdownHealthSettings"
-          name="heatlh">
+          name="health">
         </angular2-multiselect>
         </div>
         <div class="form-group form-group--sm">
           <label for="ageAnimal" class="form-group__label" >Edad
             (aproximadamente)</label>
           <div class="d-flex">
-            <input type="number" id="ageAnimal" class="form-group__control  form-group__control--sm">
+            <input type="number" id="ageAnimal" [(ngModel)]="pet.agePet" class="form-group__control  form-group__control--sm" name ="ageAnimal">
             <angular2-multiselect
             [data]="petAge"
             [(ngModel)]="pet.age"
@@ -76,7 +76,7 @@
         </div>
         <div class="form-group">
           <label for="weight" class="form-group__label">Peso</label>
-          <input type="number" name="weight" id="weight" class="form-group__control" [(ngModel)]="pet.height" #height="ngModel" name="height">
+          <input type="number" name="weight" id="weight" class="form-group__control" [(ngModel)]="pet.weight" #weight="ngModel" >
         </div>
         <div class="form-group">
           <label for="comunidad" class="form-group__label">Comunidad</label>

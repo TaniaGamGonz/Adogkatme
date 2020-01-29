@@ -49,17 +49,29 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.petsFoundsSubscription = this.petService.getPets().subscribe(
       pets =>{
         this.petList = pets;
+        const text: string = event[0].trim();
+        const country: string = event[1];
+        const  city: string = event[2];
+       this.petFounds = this.petList.filter(pet => {
+          let coincidence=false;
 
+         let arrayPropiedadesPet : Array<Pet> = Object.values(pet).filter( petProperty => {
+          if(typeof petProperty === "string"){
+             return petProperty.toLowerCase().includes(text.toLowerCase())
+          }else{
+            return false;
+          }
+          });
+
+          if (country &&  pet.country.toLowerCase() === country.toLowerCase()){
+            pet.country.toLowerCase() === country.toLowerCase() ? coincidence = true : coincidence = false;
+          }
+          if (city){
+              pet.city.toLowerCase() === city.toLowerCase() ? coincidence = true : coincidence = false;
+           }
+         return arrayPropiedadesPet.length>0 && coincidence;
+       });
       } );
-     const text: string = event[0];
-     const country: string = event[1];
-     const  city: string = event[2];
-
-    this.petFounds = this.petList.filter(pet => {
-      let arrayPropiedadesPet : Array<Pet> = Object.values(pet).filter( petProperty => petProperty === text);
-      return arrayPropiedadesPet.length>0;
-
-    });
 
   }
   ngOnDestroy(): void {

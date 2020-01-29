@@ -1,5 +1,5 @@
     <h2 class="h2">Datos adicionales</h2>
-    <form #petAditionalForm="ngForm" class="form form--adopcion-adicional" (ngSubmit)="onSubmit()">
+    <form #petAditionalForm="ngForm" class="form form--adopcion-adicional" (ngSubmit)="onSubmit(petAditionalForm)">
       <fieldset class="from-group form-group--checkbox">
         <legend class="form-group__title">Carácter</legend>
         <span class="form-group__label">Sociable con</span>
@@ -35,9 +35,9 @@
           </label>
           <angular2-multiselect
           [data]="petNoise"
-          [(ngModel)]="pet.noise"
+          [(ngModel)]="pet.noisy"
           [settings]="dropdownNoiseSettings"
-          name="noise">
+          name="noisy">
         </angular2-multiselect>
         </div>
         </div>

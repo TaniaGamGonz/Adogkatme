@@ -67,6 +67,8 @@ export class CountriesService {
     { itemName: "Reus"},
     { itemName: "Madrid"},
     { itemName: "Valls"},
+    { itemName: "Parla"},
+
   ]
 
   public getCountries(){

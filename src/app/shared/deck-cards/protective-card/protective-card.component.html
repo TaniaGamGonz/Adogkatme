@@ -1,6 +1,6 @@
 <a [routerLink]="['/protectora', protectora.id]">
   <article class="card">
-    <div class="card__img--div" width="250" alt="Animal en adopción"></div>
+    <img class="card__img" [src]="protectora.photo" alt="Animal en adopción">
     <div class="card__header">
       <h3 class="h3 card__title">{{protectora.name}}</h3>
       <span class="ubic-card">

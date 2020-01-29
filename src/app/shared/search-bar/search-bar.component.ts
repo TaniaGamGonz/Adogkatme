@@ -61,6 +61,7 @@ export class SearchBarComponent implements OnInit {
 
       this.searched.emit(searchParams);
 
+
   }
 
 }

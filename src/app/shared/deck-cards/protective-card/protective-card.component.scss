@@ -23,6 +23,13 @@
     position: relative;
     background-color: $grey-100;
   }
+  &__img {
+    width: 250px;
+    height: rem(165px);
+    cursor: pointer;
+    background-color: #c9c9c9;
+  }
+
   &__title{
     font-size: 1.2rem;
   }
