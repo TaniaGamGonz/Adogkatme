@@ -42,6 +42,8 @@ export class RegisterPetGeneralComponent implements OnInit {
       enableCheckAll: false,
       selectAllText: "Selecciona todos",
       unSelectAllText: "Deshacer toda la seleccion",
+      filterSelectAllText: "Selecciona todos",
+      filterUnSelectAllText: "Deshacer toda la seleccion",
       enableSearchFilter: false,
       searchPlaceholderText: "Buscar",
       position: "bottom",
@@ -87,15 +89,29 @@ export class RegisterPetGeneralComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this.pet.health = form.value.health[0].itemName;
-    this.pet.age = form.value.ageAnimal+" "+form.value.age[0].itemName;
-    this.pet.size = form.value.size[0].itemName;
-    this.pet.activity = form.value.activity[0].itemName;
-    this.pet.country = form.value.country[0].itemName;
-    this.pet.city = form.value.city[0].itemName;
-    this.pet.photos = ["assets/images/aslan.jpg"];
-
+    if(this.pet.health){
+      this.pet.health = form.value.health[0].itemName
+    }
+    if(this.pet.age){
+      this.pet.age = form.value.ageAnimal+" "+form.value.age[0].itemName;
+    }
+    if(this.pet.size){
+      this.pet.size = form.value.size[0].itemName;
+    }
+    if(this.pet.activity){
+      this.pet.activity = form.value.activity[0].itemName;
+    }
+    if(this.pet.country){
+      this.pet.country = form.value.country[0].itemName;
+    }
+    if(this.pet.city){
+      this.pet.city = form.value.city[0].itemName;
+    }
+    if(!this.pet.photos){
+      this.pet.photos = ["https://cdn140.picsart.com/280000500012211.png?r1024x1024"];
+    }
     this.formService.firstForm = this.pet;
+    console.log('holaa');
     this.router.navigate(["/adopcion/sanitario"]);
   }
 

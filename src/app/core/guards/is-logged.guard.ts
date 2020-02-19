@@ -14,7 +14,7 @@ export class IsLoggedGuard implements CanActivate, CanActivateChild, CanLoad {
         if(user && user !== ''){
           return true;
         }else{
-          this.router.navigate(['/registro']);
+          this.router.navigate(['/login']);
           return false;
         }
     }

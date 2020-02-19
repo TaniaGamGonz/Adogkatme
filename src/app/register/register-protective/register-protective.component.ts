@@ -31,6 +31,8 @@ export class RegisterProtectiveComponent implements OnInit {
     let dropdownSettings = {
       singleSelection: true,
       enableCheckAll: false,
+      filterSelectAllText: "Selecciona todos",
+      filterUnSelectAllText: "Deshacer toda la seleccion",
       selectAllText: "Selecciona todos",
       unSelectAllText: "Deshacer toda la seleccion",
       enableSearchFilter: true,

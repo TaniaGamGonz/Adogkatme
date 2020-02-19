@@ -41,6 +41,8 @@ export class AditionalPetComponent implements OnInit {
       enableCheckAll: false,
       selectAllText: "Selecciona todos",
       unSelectAllText: "Deshacer toda la seleccion",
+      filterSelectAllText: "Selecciona todos",
+      filterUnSelectAllText: "Deshacer toda la seleccion",
       enableSearchFilter: false,
       searchPlaceholderText: "Buscar",
       position: "bottom",
@@ -61,11 +63,14 @@ export class AditionalPetComponent implements OnInit {
   }
   onSubmit(form: NgForm): void{
 
-    this.pet.independence = form.value.independence ? form.value.independence[0].itemName : null ;
-    this.pet.noisy = form.value.noisy ? form.value.noisy[0].itemName : null ;
-    this.pet.adoptionReason = form.value.adoptionReason ? form.value.adoptionReason[0].itemName : null ;
+    this.pet.independence = form.value.independence ? form.value.independence[0].itemName : "Desconocido/a" ;
+    this.pet.noisy = form.value.noisy ? form.value.noisy[0].itemName : "Desconocido/a" ;
+    this.pet.adoptionReason = form.value.adoptionReason ? form.value.adoptionReason[0].itemName : "Desconocido/a" ;
+
     this.petsService.createPet(this.pet).subscribe();
+
     this.router.navigate(["/registro-exitoso"]);
+
     this.formService.firstForm = null;
     this.formService.secondForm = null;
   }

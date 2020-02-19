@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Person } from 'src/app/core/models/person';
 import { DropdownService } from 'src/app/core/services/dropdown.service';
 import { FormService } from 'src/app/core/services/form.service';
+import { PersonService } from 'src/app/core/services/person.service';
 
 @Component({
   selector: 'aditional-register',
@@ -15,6 +16,7 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
     private router: Router,
     private dropdownService: DropdownService,
     private formsService: FormService,
+    private personService: PersonService,
   ) { }
   private livingPlace: Array<Object>;
   private optionAdopcion: Array<Object>;
@@ -37,6 +39,8 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
       singleSelection: false,
       enableCheckAll: true,
       selectAllText: "Selecciona todos",
+      filterSelectAllText: "Selecciona todos",
+      filterUnSelectAllText: "Deshacer toda la seleccion",
       unSelectAllText: "Deshacer toda la seleccion",
       enableSearchFilter: false,
       searchPlaceholderText: "Buscar",
@@ -50,6 +54,8 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
       enableCheckAll: true,
       selectAllText: "Selecciona todos",
       unSelectAllText: "Deshacer toda la seleccion",
+      filterSelectAllText: "Selecciona todos",
+      filterUnSelectAllText: "Deshacer toda la seleccion",
       enableSearchFilter: false,
       searchPlaceholderText: "Buscar",
       position: "bottom",
@@ -67,7 +73,7 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void{
-    let twoForms =  this.formsService.mergePersonForms(this.person);
+    this.personService.createUser(this.person);
     this.router.navigate(["/registro-exitoso"]);
 
   }

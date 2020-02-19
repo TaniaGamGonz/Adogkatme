@@ -42,6 +42,7 @@
       display: block;
       margin-top: 10px;
       height: 100%;
+      width: 100%;
     }
   }
 
@@ -167,6 +168,9 @@
     cursor: pointer;
     &--l{
     max-width: rem(395px);
+    }
+    &--modal{
+      width: inherit;
     }
   }
 

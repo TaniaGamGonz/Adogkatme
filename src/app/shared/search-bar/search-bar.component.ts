@@ -33,6 +33,8 @@ export class SearchBarComponent implements OnInit {
       enableCheckAll: false,
       selectAllText: "Selecciona todos",
       unSelectAllText: "Deshacer toda la seleccion",
+      filterSelectAllText: "Selecciona todos",
+      filterUnSelectAllText: "Deshacer toda la seleccion",
       enableSearchFilter: true,
       searchPlaceholderText: "Buscar",
       position: "bottom",

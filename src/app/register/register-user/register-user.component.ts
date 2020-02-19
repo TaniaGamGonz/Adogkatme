@@ -30,6 +30,8 @@ export class RegisterUserComponent implements OnInit {
       singleSelection: true,
       enableCheckAll: false,
       selectAllText: "Selecciona todos",
+      filterSelectAllText: "Selecciona todos",
+      filterUnSelectAllText: "Deshacer toda la seleccion",
       unSelectAllText: "Deshacer toda la seleccion",
       enableSearchFilter: true,
       searchPlaceholderText: "Buscar",

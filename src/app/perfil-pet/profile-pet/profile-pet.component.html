@@ -1,10 +1,10 @@
 <main class="height-100">
-  <div class="container container--pet" *ngIf="pet">
+  <div class="container container--pet" *ngIf="pet" >
     <h1 class="h1">Perfil Mascota</h1>
     <div class="perfil-pet">
       <div class="pet__media">
         <video class="video" controls  *ngIf="pet.videos" [src]="pet.videos[0]"></video>
-          <img [src]="pet.photos[0]"  *ngIf="!pet.videos" alt="imagen principal de la mascota" class="pet__img--l">
+          <img [src]="pet.photos[0]" *ngIf="!pet.videos" alt="imagen principal de la mascota" class="pet__img--l">
           <div class="pet__img--container" *ngFor="let photo of pet.photos; let photoIndex = index" class="pet__img--container">
             <img  [src]="photo" alt="foto de mascota" class="pet__img" (click)="toggleModal(photoIndex)">
           </div>
