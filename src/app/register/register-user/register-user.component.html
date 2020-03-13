@@ -18,7 +18,8 @@
       <div class="form-group form-group--age">
         <tooltip *ngIf="age?.touched && !age?.valid">La edad es incorrecta!</tooltip>
         <label autocomplete="off"  for="age" class="form-group__label">Edad</label>
-        <input type="number" [pattern]="regExpAge" id="age" name="age" class="form-group__control form-group__control--age"
+        <input type="number" min="0" max="100"
+        [pattern]="regExpAge" id="age" name="age" class="form-group__control form-group__control--age"
           [(ngModel)]="person.age"  #age="ngModel" required [ngClass]="{'form-group__control--success': age?.touched && age?.valid, 'form-group__control--danger': age?.touched && !age?.valid }"  >
         <p class="info">Debes ser mayor de edad para poder registrarte</p>
       </div>
