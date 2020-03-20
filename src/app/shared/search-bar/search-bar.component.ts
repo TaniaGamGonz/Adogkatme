@@ -21,6 +21,7 @@ export class SearchBarComponent implements OnInit {
    private cities: Array<Object>;
    private formSearch: Object;
    private dropdownCitiesSettings: Object;
+   private dropdownCountriesSettings: Object;
    private dropdownPetSettings: Object;
    private countries: Array<Object>
    private model: Object = {};
@@ -40,7 +41,7 @@ export class SearchBarComponent implements OnInit {
       position: "bottom",
       showCheckbox: false,
       text: 'Escoge tu ciudad',
-      classes: 'form-group__control--search-bar'
+      classes: 'form-group__control--search-bar',
     };
     this.dropdownPetSettings = {
       ...this.dropdownCitiesSettings,
@@ -48,21 +49,27 @@ export class SearchBarComponent implements OnInit {
       singleSelection: false,
       enableCheckAll: true,
     }
-
-
+    this.dropdownCountriesSettings = {
+      ...this.dropdownCitiesSettings,
+      text: 'Escoge tu comunidad',
+    }
   }
 
+  onDeSelectAll( model, item){
+    model[item] = null;
+  }
+
+
   onSubmit(form: NgForm) {
-    let searchParams: string[] = []
+    let searchParams: any[] = []
 
-      form.value.text ? searchParams.push(form.value.text) : searchParams.push(null);
+    form.value.text ? searchParams.push(form.value.text) : searchParams.push(null);
 
-      form.value.country? searchParams.push(form.value.country[0].itemName) : searchParams.push(null);
+    form.value.country? searchParams.push(form.value.country[0].itemName) : searchParams.push(null);
 
-      form.value.city? searchParams.push(form.value.city[0].itemName) : searchParams.push(null);
+    form.value.city? searchParams.push(form.value.city[0].itemName) : searchParams.push(null);
 
-      this.searched.emit(searchParams);
-
+    this.searched.emit(searchParams);
 
   }
 

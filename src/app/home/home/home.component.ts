@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit, OnDestroy{
   }
 
   onSearchBar(event){
-
+    console.log(`En home ${event}`)
     this.petsFoundsSubscription = this.petService.getPets().subscribe(
       pets =>{
         this.petList = pets;
@@ -64,12 +64,17 @@ export class HomeComponent implements OnInit, OnDestroy{
             return false;
           }
           });
-
-          if (country &&  pet.country.toLowerCase() === country.toLowerCase()){
-            pet.country.toLowerCase() === country.toLowerCase() ? coincidence = true : coincidence = false;
+          if (country !== null){
+            if (country &&  pet.country.toLowerCase() === country.toLowerCase()){
+              pet.country.toLowerCase() === country.toLowerCase() ? coincidence = true : coincidence = false;
+            }
+          }else {
+            coincidence = true;
           }
-          if (city){
+          if (city !== null){
               pet.city.toLowerCase() === city.toLowerCase() ? coincidence = true : coincidence = false;
+           }else{
+             coincidence = true;
            }
          return arrayPropiedadesPet.length>0 && coincidence;
        });

@@ -10,7 +10,8 @@
   <angular2-multiselect
     [data]="countries"
     [(ngModel)]="model.country"
-    [settings]="dropdownCitiesSettings"
+    [settings]="dropdownCountriesSettings"
+    (onDeSelectAll)="onDeSelectAll(model, 'country')"
     name="country">
   </angular2-multiselect>
 
@@ -18,6 +19,7 @@
     [data]="cities"
     [(ngModel)]="model.city"
     [settings]="dropdownCitiesSettings"
+    (onDeSelectAll)="onDeSelectAll(model, 'city')"
     name="city">
   </angular2-multiselect>
 
