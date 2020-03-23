@@ -3,7 +3,7 @@
 
     <h1 class="h1 h1--home">¿Qué mascota buscas?</h1>
 
-    <search-bar (searched)="onSearchBar($event)">
+    <search-bar (searched)="onSearchBar($event)" [placeholder]="'Busco un gato siamés...'">
     </search-bar>
 
     <deck-cards *ngIf="petFounds">

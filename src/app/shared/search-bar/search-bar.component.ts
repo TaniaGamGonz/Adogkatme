@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { CountriesService } from 'src/app/core/services/countries.services/countries.service';
 import { DropdownService } from 'src/app/core/services/dropdown.service';
 import { NgForm } from '@angular/forms';
@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
 export class SearchBarComponent implements OnInit {
 
   @Output() searched = new EventEmitter<Array<string>>();
+  @Input() placeholder: String;
 
   constructor(
     private countriesService: CountriesService,
