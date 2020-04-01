@@ -26,6 +26,12 @@ export class SearchBarComponent implements OnInit {
    private dropdownPetSettings: Object;
    private countries: Array<Object>
    private model: Object = {};
+   public typingNow: string = " ";
+   private positionType: number = 0;
+   private finishedTyping: boolean = false;
+
+
+
   ngOnInit() {
     this.cities = this.countriesService.getCities();
     this.countries = this.countriesService.getCountries();
@@ -54,11 +60,46 @@ export class SearchBarComponent implements OnInit {
       ...this.dropdownCitiesSettings,
       text: 'Escoge tu comunidad',
     }
+
+    setInterval(()=> {
+      this.typeAndDeletePlaceholder(this.placeholder); },100);
+
   }
 
   onDeSelectAll( model, item){
     model[item] = null;
   }
+
+
+
+  typeAndDeletePlaceholder(sentence){
+   this.typingAlone(sentence);
+
+    if(!this.finishedTyping && this.positionType === sentence.length+1){
+      this.finishedTyping = true;
+    }
+    if(this.finishedTyping && this.positionType !== 1){
+      this.deleteAlone();
+    }
+    if(this.finishedTyping && this.positionType === 1){
+      this.finishedTyping = false;
+      this.positionType = 0;
+    }
+  }
+
+  typingAlone(sentence){
+    if(!this.finishedTyping && this.positionType <= sentence.length){
+      this.typingNow = this.typingNow + sentence.charAt(this.positionType);
+      this.positionType++;
+    }
+  }
+
+  deleteAlone(){
+    this.typingNow = this.typingNow.substring(0, this.typingNow.length-1);
+    this.positionType--
+  }
+
+
 
 
   onSubmit(form: NgForm) {

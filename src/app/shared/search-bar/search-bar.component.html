@@ -1,10 +1,11 @@
 <form  action="" #formSearch="ngForm" (ngSubmit)="onSubmit(formSearch)" class="form search-bar">
   <input
+  *ngIf="typingNow"
   type="text"
   [(ngModel)]="model.text"
   name="text"
   class="form-group__control form-group__control--search-bar"
-  placeholder={{placeholder}}
+  placeholder={{typingNow}}
   autocomplete="off">
 
   <angular2-multiselect
