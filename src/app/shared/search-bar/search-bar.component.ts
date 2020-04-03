@@ -29,6 +29,7 @@ export class SearchBarComponent implements OnInit {
    public typingNow: string = " ";
    private positionType: number = 0;
    private finishedTyping: boolean = false;
+   private typingTimes: number = 0;
 
 
 
@@ -73,18 +74,22 @@ export class SearchBarComponent implements OnInit {
 
 
   typeAndDeletePlaceholder(sentence){
+
+
    this.typingAlone(sentence);
 
     if(!this.finishedTyping && this.positionType === sentence.length+1){
       this.finishedTyping = true;
     }
-    if(this.finishedTyping && this.positionType !== 1){
+    if(this.finishedTyping && this.positionType !== 1 && this.typingTimes <= 1){
       this.deleteAlone();
     }
     if(this.finishedTyping && this.positionType === 1){
       this.finishedTyping = false;
       this.positionType = 0;
+      this.typingTimes++;
     }
+    console.log(this.typingTimes)
   }
 
   typingAlone(sentence){
