@@ -16,14 +16,19 @@ export class LoginService {
   public isLogged$ = new BehaviorSubject<boolean>(false);
 
  public signIn(user){
-  const apiKeyToken = {"apiKeyToken" : "f2a0f46b0f4804093193b6d5102e5ce5c60ab1d1f46ce94ace9328e9237dcab9"};
   const httpOptions = {
     headers: new HttpHeaders({
-      'Authorization':  [user.email , user.password ]
+      'Authorization':  "Basic "+btoa(`${user.email}:${user.password}`),
+      "Content-Type": "application/json; charset=utf-8"
+
     })
   };
+
+  const body = JSON.stringify({"email":user.email,"password":user.password,"apiKeyToken":"f2a0f46b0f4804093193b6d5102e5ce5c60ab1d1f46ce94ace9328e9237dcab9"});
+
+
   const signInUrl = `${environment.apiUrl}${environment.signIn}`;
- return this.http.post(signInUrl, apiKeyToken, httpOptions);
+ return this.http.post(signInUrl, body, httpOptions);
  }
 
   public logged() {

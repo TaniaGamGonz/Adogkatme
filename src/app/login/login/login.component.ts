@@ -40,9 +40,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
     if (email.valid && password.valid) {
     this.subscriptionLogin = this.loginService.signIn(user).subscribe();
-console.log(this.subscriptionLogin);
-      localStorage.setItem("user", "token");
-      this.router.navigate(["/"]);
+/*       localStorage.setItem("user", "token");
+      this.router.navigate(["/"]); */
     }
   }
 
