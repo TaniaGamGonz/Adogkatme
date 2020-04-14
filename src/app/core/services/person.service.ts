@@ -24,13 +24,15 @@ export class PersonService {
     return of (PEOPLE);
   }
 
-  public getPersonById(idPerson: number): Observable<Person> {
-    return of (Object.assign(new Person({}), PEOPLE.find((person: Person) => idPerson === person.id)));
+  public getPersonById(idPerson: string): Observable<Person> {
+    const personUrl = `${environment.apiUrl}${environment.usersResource}/${idPerson}`;
+    return this.http.get<Person>(personUrl);
   }
 
 
   public createUser(person: Person){
     const personsUrl = `${environment.apiUrl}${environment.signUpResource}`;
+    this.http.post(personsUrl, person);
    return this.http.post(personsUrl, person);
   }
 

@@ -31,7 +31,7 @@ export class ProtectiveProfileComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.protective$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.protectiveService.getProtectiveById(parseInt(params.get('id'))))
+        this.protectiveService.getProtectiveById(params.get('id')))
     );
     this.subscriptionProtective = this.protective$.subscribe( (protective: Protective) => {
       if(!protective){

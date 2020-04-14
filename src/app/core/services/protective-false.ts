@@ -11,7 +11,7 @@ export const PROTECTIVES: any[] = [
     country: "Madrid",
     city: "Madrid",
     photo: "https://www.airbetter.org/wp-content/uploads/2014/12/pet-and-air-purifier.jpg",
-    id: 1
+    id: "1"
   },
   {
     entityDocs: "",
@@ -24,7 +24,7 @@ export const PROTECTIVES: any[] = [
     country: "Parla",
     city: "Parla",
     photo: "https://www.pethealthnetwork.com/sites/default/files/dogs-cats-birds-and-bunnies-one-house-1-167580013.jpg",
-    id: 2
+    id: "2"
   }
 
 ]

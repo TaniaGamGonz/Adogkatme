@@ -7,7 +7,8 @@ export const environment = {
   apiUrl: 'http://localhost:3000/api',
   petsResource: '/pets',
   signIn: '/auth/sign-in',
-  signUpResource: 'auth/sign-up',
+  signUpResource: '/auth/sign-up',
+  usersResource: '/user'
 };
 
 /*

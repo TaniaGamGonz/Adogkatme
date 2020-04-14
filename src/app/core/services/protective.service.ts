@@ -19,7 +19,7 @@ export class ProtectiveService {
   public getProtectives(): Observable<Protective[]> {
     return of (PROTECTIVES);
   }
-  public getProtectiveById(idProtective: number): Observable<Protective> {
+  public getProtectiveById(idProtective: string): Observable<Protective> {
     console.log( PROTECTIVES);
     return of (Object.assign(new Protective({}), PROTECTIVES.find((protective: Protective) => idProtective === protective.id)));
   }

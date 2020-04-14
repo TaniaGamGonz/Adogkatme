@@ -1,4 +1,3 @@
-import { Person } from '../models/person';
 
 export const PEOPLE: any[] = [
   {
@@ -19,7 +18,7 @@ export const PEOPLE: any[] = [
     "city": "Parla",
     "photo": "assets/images/tania.jpg",
     "inAdoption": [1],
-    "id": 1
+    "id": "1"
   },
   {
     "name": "Soraya",
@@ -39,7 +38,7 @@ export const PEOPLE: any[] = [
     "city": "Parla",
     "photo": "a",
     "inAdoption": [1],
-    "id": 1
+    "id": "1"
   }
 
 

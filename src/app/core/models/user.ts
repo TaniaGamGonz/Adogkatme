@@ -6,7 +6,7 @@ export class User {
   country : any;
   city: any;
   photo: string;
-  id: number;
+  id: string;
 
 
   constructor(params) {
@@ -16,6 +16,5 @@ export class User {
     this.country  = params.country ? params.country : "";
     this.city = params.city? params.city : "";
     this.photo = params.photo ? params.photo : "";
-    this.id = params.id ? params.id : "";
   }
 }

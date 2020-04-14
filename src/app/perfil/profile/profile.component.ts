@@ -54,11 +54,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.thisUser();
     this.person$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.personService.getPersonById(parseInt(params.get('id'))))
+        this.personService.getPersonById(params.get('id')))
     );
     this.subscriptionPerson = this.person$.subscribe( (person: Person) => {
       if(!person){
-        this.router.navigate(['/home']);
+       // this.router.navigate(['/home']);
       }
     })
     this.pets$ = this.petService.getPets();

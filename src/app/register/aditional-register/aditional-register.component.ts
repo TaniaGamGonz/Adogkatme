@@ -73,8 +73,10 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void{
-    this.personService.createUser(this.person);
-    this.router.navigate(["/registro-exitoso"]);
+    this.person.photo = "https://picsum.photos/200/300";
+    this.personService.createUser(this.person).subscribe();
+    console.log(this.person);
+    // this.router.navigate(["/registro-exitoso"]);
 
   }
 
