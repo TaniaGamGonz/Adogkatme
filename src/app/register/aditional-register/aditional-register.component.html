@@ -1,7 +1,7 @@
 <main class="height-100">
   <div class="container">
     <h1 class="h1">Datos Adicionales</h1>
-    <form class="form form--aditional-register" #aditionalForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="form form--aditional-register" #aditionalForm="ngForm" (ngSubmit)="onSubmit(aditionalForm)">
       <div class="form-group">
         <span>Sexo</span>
         <div class="form-group">
@@ -50,8 +50,8 @@
         [data]="otherPets"
         [(ngModel)]="person.pets"
         [settings]="dropdownPetSettings"
-        name="otherPets"
-        id="otherPets">
+        name="pets"
+        id="pets">
       </angular2-multiselect>
       </div>
       <div class="form-group form-group--content">

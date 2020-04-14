@@ -1,7 +1,7 @@
 <main class="height-100">
   <div class="container container--register">
     <h1 class="h1 h1--register">Nuevo usuario</h1>
-    <form class="form form--register" #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="form form--register" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
       <div class="form-group">
         <tooltip *ngIf="name?.touched && !name?.valid">El nombre es obligatorio!</tooltip>
         <label for="name" class="form-group__label">Nombre</label>
@@ -18,7 +18,7 @@
       <div class="form-group form-group--age">
         <tooltip *ngIf="age?.touched && !age?.valid">La edad es incorrecta!</tooltip>
         <label autocomplete="off"  for="age" class="form-group__label">Edad</label>
-        <input type="number" [pattern]="regExpAge" id="age" name="age" class="form-group__control form-group__control--age"
+        <input type="text" [pattern]="regExpAge" id="age" name="age" class="form-group__control form-group__control--age"
           [(ngModel)]="person.age"  #age="ngModel" required [ngClass]="{'form-group__control--success': age?.touched && age?.valid, 'form-group__control--danger': age?.touched && !age?.valid }"  >
         <p class="info">Debes ser mayor de edad para poder registrarte</p>
       </div>

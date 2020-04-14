@@ -3,6 +3,7 @@ import { CountriesService } from 'src/app/core/services/countries.services/count
 import { Person } from 'src/app/core/models/person';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/core/services/form.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-register-user",
@@ -61,7 +62,10 @@ export class RegisterUserComponent implements OnInit {
 
 
 
-  onSubmit(){
+  onSubmit(form: NgForm){
+    this.person.city =  form.value.city[0].itemName;
+    this.person.country =  form.value.country[0].itemName;
+    console.log(this.person);
     this.formsService.firstForm = this.person;
     this.router.navigate(["/registro-adicional"]);
   }

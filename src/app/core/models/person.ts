@@ -17,7 +17,7 @@ export class Person extends User {
   constructor(params){
     super(params)
     this.surname = params.surname ? params.surname : "";
-    this.age = params.age ? params.age : 0;
+    this.age = params.age ? params.age : "";
     this.gender = params.gender ? params.gender: "";
     this.interestedIn = params.interestedIn ? params.interestedIn: [];
     this.phone = params.phone ? params.phone: null;

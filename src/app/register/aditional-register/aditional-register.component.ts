@@ -4,6 +4,7 @@ import { Person } from 'src/app/core/models/person';
 import { DropdownService } from 'src/app/core/services/dropdown.service';
 import { FormService } from 'src/app/core/services/form.service';
 import { PersonService } from 'src/app/core/services/person.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'aditional-register',
@@ -72,11 +73,22 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
     };
   }
 
-  onSubmit(): void{
-    this.person.photo = "https://picsum.photos/200/300";
-    this.personService.createUser(this.person).subscribe();
-    console.log(this.person);
-    // this.router.navigate(["/registro-exitoso"]);
+  onSubmit(form: NgForm): void{
+    this.person.livingPlace = form.value.livingPlace ? form.value.livingPlace[0].itemName : "Desconocido/a" ;
+    this.person.pets = [];
+    this.person.interestedIn = []
+    if(form.value.pets){
+      form.value.pets.forEach(element => {
+        this.person.pets.push(element.itemName)
+      });
+    }
+    if(form.value.interestedIn){
+      form.value.interestedIn.forEach(element => {
+        this.person.interestedIn.push(element.itemName)
+      });
+    }
+   this.personService.createUser(this.person).subscribe();
+  // this.router.navigate(["/registro-exitoso"]);
 
   }
 
