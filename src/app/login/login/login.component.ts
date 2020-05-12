@@ -39,9 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: this.login.password
     }
     if (email.valid && password.valid) {
-    this.subscriptionLogin = this.loginService.signIn(user).subscribe();
-/*       localStorage.setItem("user", "token");
-      this.router.navigate(["/"]); */
+ this.loginService.signIn(user).subscribe();
     }
   }
 
