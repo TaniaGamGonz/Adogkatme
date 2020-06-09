@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   private subscriptionLogin: Subscription;
   private passwordRegExp: RegExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
   public modalToken: string = 'loginModal';
+  private loginError: boolean = false;
 
 
 
@@ -39,9 +40,13 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: this.login.password
     }
     if (email.valid && password.valid) {
-      this.loginService.signIn(user).subscribe();
-/*       localStorage.setItem("user", "token");
-      this.router.navigate(["/"]); */
+      this.loginService.signIn(user).subscribe(res =>{
+        if(res)
+          this.router.navigate(['/home'])},
+        error => {
+          if(error)
+            this.loginError = true;
+      });
     }
   }
 

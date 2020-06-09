@@ -18,8 +18,10 @@ export class PetsService {
   ngOnInit() {}
 
   public getPets():Observable<Pet[]> {
+
+
     const getPetsUrl = `${environment.apiUrl}${environment.petsResource}`;
-    return this.http.get<Pet[]>(getPetsUrl);
+    return this.http.get<Pet[]>(getPetsUrl,{withCredentials:true});
   }
   public getPetById(idPet: string): Observable<Pet> {
     const petUrl = `${environment.apiUrl}${environment.petsResource}/${idPet}`;

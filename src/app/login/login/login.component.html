@@ -35,8 +35,10 @@
         >
         <label for="password" class="form-group__label form-group__label--inside">Introduce tu
           contraseña</label>
-
       </div>
+      <p class="loginError" *ngIf="loginError">
+        Error en las credenciales
+      </p>
       <div class="align--column">
         <a class="link" (click)="toggleModal()">¿Has olvidado tu contraseña?</a>
         <button type="submit" class="btn btn--sm" [disabled]="!loginForm.valid">Inicia sesión</button>

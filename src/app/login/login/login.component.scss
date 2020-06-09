@@ -13,8 +13,14 @@
   & .align--row{
     margin-top: 20px;
   }
+
+
 }
 
+.loginError{
+  color: $color-danger;
+  margin-bottom: 10px;
+}
 .form__login {
   border-bottom: 1px solid $color-border-bottom;
 }
