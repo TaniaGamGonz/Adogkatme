@@ -58,7 +58,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     );
     this.subscriptionPerson = this.person$.subscribe( (person: Person) => {
       if(!person){
-       // this.router.navigate(['/home']);
+        this.router.navigate(['/error']);
       }
     })
     this.pets$ = this.petService.getPets();
