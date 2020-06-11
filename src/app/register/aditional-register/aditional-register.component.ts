@@ -87,10 +87,11 @@ export class AditionalRegisterComponent implements OnInit, OnDestroy {
         this.person.interestedIn.push(element.itemName)
       });
     }
-   this.personService.createUser(this.person).subscribe(resp =>{
-     if(resp.created){
+   this.personService.createUser(this.person).subscribe(res =>{
+     if(res){
       this.router.navigate(["/registro-exitoso"]);
-     }else{
+     }},error =>{
+     if(error){
       this.router.navigate(["/error"])
      }
    });

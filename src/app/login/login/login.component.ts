@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { User } from 'src/app/core/models/user';
 import { LoginService } from 'src/app/core/services/login.service';
 import { Subscription } from 'rxjs';
+import { SignInResponse } from '../../core/models/signInResponse'
 
 @Component({
   selector: "login",
@@ -42,7 +43,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     if (email.valid && password.valid) {
       this.loginService.signIn(user).subscribe(res =>{
         if(res)
-          this.router.navigate(['/home'])},
+         res = Object.assign(res, SignInResponse);
+          this.loginService.user.name = res.user.name;
+          this.loginService.user.id = res.user.id;
+          this.loginService.user.logged = true;
+          this.router.navigate(['/home'])
+        },
         error => {
           if(error)
             this.loginError = true;

@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { LoginService } from '../services/login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IsLoggedGuard implements CanActivate, CanActivateChild, CanLoad {
 
-    constructor(private router: Router) { }
+    constructor(
+      private router: Router,
+      private loginService: LoginService
+      )
+       { }
+      private user = this.loginService.user;
 
     canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ) {
-        const user = localStorage.getItem('user');
-        if(user && user !== ''){
+        if(this.user.logged){
           return true;
         }else{
           this.router.navigate(['/login']);
