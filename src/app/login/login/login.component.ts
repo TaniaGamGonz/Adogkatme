@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   private passwordRegExp: RegExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
   public modalToken: string = 'loginModal';
   private loginError: boolean = false;
+  private response : SignInResponse;
 
 
 
@@ -41,13 +42,17 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: this.login.password
     }
     if (email.valid && password.valid) {
-      this.loginService.signIn(user).subscribe(res =>{
-        if(res)
-         res = Object.assign(res, SignInResponse);
-          this.loginService.user.name = res.user.name;
-          this.loginService.user.id = res.user.id;
+      this.loginService.signIn(user).subscribe( (res : any) =>{
+        if(res){
+
+          const response : SignInResponse = res;
+          this.loginService.user.name = response.user.name;
+          this.loginService.user.id = response.user.id;
           this.loginService.user.logged = true;
           this.router.navigate(['/home'])
+
+        }
+
         },
         error => {
           if(error)

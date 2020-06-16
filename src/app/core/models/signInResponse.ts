@@ -1,6 +1,7 @@
 import { UserSession } from './userSession'
 
-export class SignInResponse{
+export interface SignInResponse{
   token: string
   user: UserSession
+
 }
