@@ -21,12 +21,12 @@
       <ng-content select="[removeButton]"></ng-content>
     </div>
     <div *ngIf="isLogged">
-    <svg (click)="setFavourite()" class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos"
+    <svg (click)="setFavourite(userId,mascota._id)" class="card__icon icon--heart" width="40" height="40" alt="Corazón de favoritos activado"
     *ngIf="isFavourite else elseBlock">
       <use xlink:href="/assets/svg/sprite.svg#heart-color"></use>
     </svg>
     <ng-template #elseBlock>
-      <svg (click)="setFavourite()" class="card__icon icon--heart icon--heart-grey" width="40" height="40" alt="Corazón de favoritos">
+      <svg (click)="setFavourite(userId, mascota._id)" class="card__icon icon--heart icon--heart-grey" width="40" height="40" alt="Corazón de favoritos no activado">
         <use xlink:href="/assets/svg/sprite.svg#heart"></use>
       </svg>
     </ng-template>

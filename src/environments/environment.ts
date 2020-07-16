@@ -8,7 +8,8 @@ export const environment = {
   petsResource: '/pets',
   signIn: '/auth/sign-in',
   signUpResource: '/auth/sign-up',
-  usersResource: '/user'
+  usersResource: '/user',
+  userFavsResource: '/user/favorites'
 };
 
 /*

@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
 import { FavouritesService } from 'src/app/core/services/favourites.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Pet } from 'src/app/core/models/pet';
 import { PetsService } from 'src/app/core/services/pets.service';
 @Component({
@@ -9,7 +9,7 @@ import { PetsService } from 'src/app/core/services/pets.service';
   templateUrl: './pet-card.component.html',
   styleUrls: ['./pet-card.component.scss']
 })
-export class PetCardComponent implements OnInit, OnDestroy{
+export class PetCardComponent implements OnInit, OnDestroy, OnChanges{
   @Input( ) mascota: Pet;
 
   constructor(
@@ -21,32 +21,53 @@ export class PetCardComponent implements OnInit, OnDestroy{
 
   public selectedId: number;
   private isLogged: boolean;
-  private isFavourite: boolean;
-  private subscription: Subscription;
+  private isFavourite:boolean;
   private loginSubscription: Subscription;
-  private logged(){
+  public userId: string;
+  private logged(): void{
     this.loginService.logged();
   }
 
-  private setFavourite(){
-    this.favouriteService.setFavourite();
+  public setFavourite(idPerson : string, idPet: string): void{
+    this.favouriteService.setFavourites(idPerson, idPet)
+                         .subscribe(()=>this.checkFavourite(idPet, idPerson));
+
   }
-  private getFavourite(){
-    this.favouriteService.getFavourite();
+  private checkFavourite(idPet: string, idUser: string): void{
+    let favourites : Array<Pet>;
+    let isFavourite;
+    const favouriteSubscription =  this.favouriteService.getFavouritesById(idUser).subscribe(( data)=>{
+      favourites = data;
+    let existFavourite = favourites.find( (pet: Pet)=> pet._id == this.mascota._id);
+     if(existFavourite){
+      this.isFavourite = true;
+    }else{
+      this.isFavourite = false;
+    }
+    });
+
+
   }
+
 
 
   ngOnInit() {
     this.loginSubscription = this.loginService.isLogged$.subscribe(data =>{ this.isLogged = data});
-    this.subscription = this.favouriteService.isFavourite$.subscribe(data =>{
-      this.isFavourite = data;
-    });
-
     this.logged();
 
+
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.mascota){
+      this.userId = this.loginService.user.id;
+      this.checkFavourite(this.mascota._id, this.userId)
+      }
+    }
+
+
   ngOnDestroy(): void {
-    this.subscription.unsubscribe;
+    this.loginSubscription.unsubscribe;
   }
 
 

@@ -1,24 +1,33 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { Observable } from "rxjs";
 import { Pet } from "../models/pet";
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: "root"
 })
 export class FavouritesService {
-  constructor() {}
-  public isFavourite$ = new BehaviorSubject<boolean>(false);
-  private petName: Pet; //Se cambiara el fav por el nombre de la mascota?
+  constructor(
+    private http: HttpClient,
+  ) { }
 
-  public setFavourite() {
-    let fav = localStorage.getItem("fav");
-    let favNew = fav ? "" : "cloe";
 
-    localStorage.setItem("fav", favNew);
-    this.isFavourite$.next(favNew === "cloe" ? true : false);
-    this.getFavourite();
+  public getFavouritesById(idPerson: string): Observable<Pet[]> {
+    const favsUrl = `${environment.apiUrl}${environment.userFavsResource}/${idPerson}`;
+    return this.http.get<Pet[]>(favsUrl);
   }
-  public getFavourite() {
-    this.isFavourite$.getValue();
+  public setFavourites(idPerson: string, petId: string): Observable <String[]>{
+    const favsUrl = `${environment.apiUrl}${environment.userFavsResource}/${idPerson}`;
+    const body = JSON.stringify({ "petId" : petId });
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json; charset=utf-8"
+      })
+    };
+    return this.http.put<String[]>(favsUrl, body, httpOptions)
   }
+
+
 }

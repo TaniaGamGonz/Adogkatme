@@ -1,7 +1,7 @@
 import { User } from './user';
 
 export class Person extends User {
-
+ _id : string
   surname: string;
   age: number;
   gender: string;

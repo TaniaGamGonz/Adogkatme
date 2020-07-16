@@ -7,6 +7,7 @@ import { switchMap } from 'rxjs/operators';
 import { ParamMap, Router, ActivatedRoute } from '@angular/router';
 import { PetsService } from 'src/app/core/services/pets.service';
 import { Pet } from 'src/app/core/models/pet';
+import { FavouritesService } from 'src/app/core/services/favourites.service';
 
 @Component({
   selector: 'profile',
@@ -21,6 +22,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private petService: PetsService,
     private router: Router,
     private route: ActivatedRoute,
+    private favoritesService: FavouritesService,
   ) { }
   private user: string;
   private isThisUser: boolean;
@@ -30,7 +32,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
   private subscriptionPerson: Subscription;
   public photos: Array<string>;
   public pets$: Observable<Pet[]>;
+  public favouritesPets$: Observable<String[]>;
+  private favouritesPets: Pet[];
   private subscriptionPet: Subscription;
+  private subscriptionFav: Subscription;
 
 
 
@@ -49,19 +54,32 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   }
 
+  private getFavourites(userId: string): Observable<Pet[]>{
+   return this.favoritesService.getFavouritesById(userId);
+  }
 
   ngOnInit() {
+
     this.thisUser();
+
     this.person$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.personService.getPersonById(params.get('id')))
     );
+
     this.subscriptionPerson = this.person$.subscribe( (person: Person) => {
       if(!person){
         this.router.navigate(['/error']);
       }
+      this.subscriptionFav = this.getFavourites(person._id).subscribe( data => {
+        this.favouritesPets = data;
+      });
+
+
     })
     this.pets$ = this.petService.getPets();
+
+
 
 
   }

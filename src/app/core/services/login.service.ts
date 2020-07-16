@@ -33,10 +33,9 @@ export class LoginService {
       "Content-Type": "application/json; charset=utf-8"
 
     })};
-
   const body = JSON.stringify({"email":user.email,"password":user.password,"apiKeyToken":"f2a0f46b0f4804093193b6d5102e5ce5c60ab1d1f46ce94ace9328e9237dcab9"});
   const signInUrl = `${environment.apiUrl}${environment.signIn}`;
- return this.http.post(signInUrl, body, httpOptions);
+  return this.http.post(signInUrl, body, httpOptions);
  }
 
   public logged() {

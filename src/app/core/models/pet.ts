@@ -1,5 +1,5 @@
 export class Pet {
-  id: string;
+  _id: string;
   name: string;
   type: string;
   race: string;
@@ -154,7 +154,7 @@ export class Pet {
   }
 
   constructor(params) {
-    this.id = params ? params.id : 0;
+    this._id = params ? params.id : 0;
     this.name = params ? params.name : "";
     this.type = params ? params.type : "";
     this.race = params ? params.race : "";

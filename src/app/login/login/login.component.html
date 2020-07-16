@@ -8,6 +8,7 @@
         <input
         type="email"
         name="email"
+        autocomplete="on"
         [(ngModel)]="login.email"
         #email="ngModel"
         required
@@ -26,7 +27,7 @@
         name="password"
         [(ngModel)]="login.password"
         #password="ngModel"
-
+        autocomplete="on"
         required
         id="password"
         placeholder=" "

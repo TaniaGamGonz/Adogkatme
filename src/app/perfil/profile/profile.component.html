@@ -35,7 +35,7 @@
         <div class="favoritos">
           <deck-cards>
             <h2 class="h2" title>Favoritos</h2>
-            <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet"></pet-card>
+            <pet-card *ngFor="let pet of favouritesPets" [mascota]="pet"></pet-card>
           </deck-cards>
         </div>
         <deck-cards>

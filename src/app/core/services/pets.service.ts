@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Pet } from "../models/pet";
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -18,8 +18,6 @@ export class PetsService {
   ngOnInit() {}
 
   public getPets():Observable<Pet[]> {
-
-
     const getPetsUrl = `${environment.apiUrl}${environment.petsResource}`;
     return this.http.get<Pet[]>(getPetsUrl,{withCredentials:true});
   }
