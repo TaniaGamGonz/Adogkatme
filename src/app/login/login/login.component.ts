@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.loginService.user.name = response.user.name;
           this.loginService.user.id = response.user.id;
           this.loginService.user.logged = true;
+          this.loginService.logged();
           this.router.navigate(['/home'])
 
         }

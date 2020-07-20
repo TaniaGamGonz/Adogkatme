@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
 import { FavouritesService } from 'src/app/core/services/favourites.service';
-import { Subscription, Observable } from 'rxjs';
 import { Pet } from 'src/app/core/models/pet';
 import { PetsService } from 'src/app/core/services/pets.service';
 @Component({
@@ -9,7 +8,7 @@ import { PetsService } from 'src/app/core/services/pets.service';
   templateUrl: './pet-card.component.html',
   styleUrls: ['./pet-card.component.scss']
 })
-export class PetCardComponent implements OnInit, OnDestroy, OnChanges{
+export class PetCardComponent implements OnInit, OnDestroy{
   @Input( ) mascota: Pet;
 
   constructor(
@@ -22,11 +21,7 @@ export class PetCardComponent implements OnInit, OnDestroy, OnChanges{
   public selectedId: number;
   private isLogged: boolean;
   private isFavourite:boolean;
-  private loginSubscription: Subscription;
   public userId: string;
-  private logged(): void{
-    this.loginService.logged();
-  }
 
   public setFavourite(idPerson : string, idPet: string): void{
     this.favouriteService.setFavourites(idPerson, idPet)
@@ -52,22 +47,15 @@ export class PetCardComponent implements OnInit, OnDestroy, OnChanges{
 
 
   ngOnInit() {
-    this.loginSubscription = this.loginService.isLogged$.subscribe(data =>{ this.isLogged = data});
-    this.logged();
-
-
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if(changes.mascota){
+    this.isLogged = this.loginService.user.logged;
+    if ( this.isLogged && this.mascota){
       this.userId = this.loginService.user.id;
       this.checkFavourite(this.mascota._id, this.userId)
-      }
     }
+  }
 
 
   ngOnDestroy(): void {
-    this.loginSubscription.unsubscribe;
   }
 
 

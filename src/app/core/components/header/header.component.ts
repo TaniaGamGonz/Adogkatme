@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { LoginService } from '../../services/login.service';
 import { Subscription } from 'rxjs';
 
@@ -7,22 +7,26 @@ import { Subscription } from 'rxjs';
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private loginService: LoginService,
   ) { }
 
   private isLogged: boolean;
   private loginSubscription: Subscription;
-  private logged() {
-    this.loginService.logged();
-  }
+
 
   ngOnInit() {
 
-    this.loginSubscription = this.loginService.isLogged$.subscribe(data =>{ this.isLogged = data});
-    this.logged();
+    this.loginSubscription = this.loginService.isLogged$.subscribe(data =>{
+       this.isLogged = data
+      });
   }
+
+  ngOnDestroy(): void {
+    this.loginSubscription.unsubscribe;
+  }
+
 
 
 }
