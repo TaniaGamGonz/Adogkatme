@@ -24,13 +24,13 @@ export class LoginService {
     id: '',
     logged: false,
   }
+  public token: string;
 
 
  public signIn(user){
   const httpOptions = {
     headers: new HttpHeaders({
       'Authorization':  "Basic "+btoa(`${user.email}:${user.password}`),
-      "Content-Type": "application/json; charset=utf-8"
 
     })};
   const body = JSON.stringify({"email":user.email,"password":user.password,"apiKeyToken":"f2a0f46b0f4804093193b6d5102e5ce5c60ab1d1f46ce94ace9328e9237dcab9"});

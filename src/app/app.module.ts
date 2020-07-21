@@ -11,13 +11,14 @@ import { PerfilModule } from './perfil/perfil.module';
 import { PerfilPetModule } from './perfil-pet/perfil-pet.module';
 import { RegisterModule } from './register/register.module';
 import { RegisterPetModule } from './register-pet/register-pet.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProtectiveModule } from './protective/protective.module';
 import { PetsService } from './core/services/pets.service';
 import { LoginService } from './core/services/login.service';
 import { ModalService } from './core/services/modal.service';
 import { DropdownService } from './core/services/dropdown.service';
 import { FavouritesService } from './core/services/favourites.service';
+import { InterceptorService } from './core/services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,11 @@ import { FavouritesService } from './core/services/favourites.service';
     ModalService,
     DropdownService,
     FavouritesService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

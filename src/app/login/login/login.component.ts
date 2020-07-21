@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         if(res){
 
           const response : SignInResponse = res;
+          this.loginService.token = response.token;
           this.loginService.user.name = response.user.name;
           this.loginService.user.id = response.user.id;
           this.loginService.user.logged = true;
