@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   private subscriptionPerson: Subscription;
   public photos: Array<string>;
   public pets$: Observable<Pet[]>;
-  public favouritesPets$: Observable<String[]>;
+  public favouritesPets$: Observable<Pet[]>;
   private favouritesPets: Pet[];
   private subscriptionPet: Subscription;
   private subscriptionFav: Subscription;
