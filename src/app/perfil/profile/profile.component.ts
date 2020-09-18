@@ -32,7 +32,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
   private subscriptionPerson: Subscription;
   public photos: Array<string>;
   public pets$: Observable<Pet[]>;
-  public favouritesPets$: Observable<Pet[]>;
   private favouritesPets: Pet[];
   private subscriptionPet: Subscription;
   private subscriptionFav: Subscription;
@@ -73,6 +72,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
       }
       this.subscriptionFav = this.getFavourites(person._id).subscribe( data => {
         this.favouritesPets = data;
+        console.log(data);
+
       });
 
 
