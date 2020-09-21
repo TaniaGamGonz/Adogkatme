@@ -14,7 +14,7 @@
     <deck-cards>
       <h2 class="h2" title>Nuevos reclutas</h2>
       <a class="link" title>Ver más reclutas...</a>
-      <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet"></pet-card>
+      <pet-card *ngFor="let pet of pets$ | async" [mascota]="pet" [showHeart]="true"></pet-card>
     </deck-cards>
 
   </div>

@@ -10,6 +10,7 @@ import { PetsService } from 'src/app/core/services/pets.service';
 })
 export class PetCardComponent implements OnInit, OnDestroy{
   @Input( ) mascota: Pet;
+  @Input( ) showHeart: boolean;
 
   constructor(
     private loginService: LoginService,
@@ -22,6 +23,7 @@ export class PetCardComponent implements OnInit, OnDestroy{
   private isLogged: boolean;
   private isFavourite:boolean;
   public userId: string;
+
 
   public setFavourite(idPerson : string, idPet: string): void{
     this.favouriteService.setFavourites(idPerson, idPet)
@@ -52,6 +54,8 @@ export class PetCardComponent implements OnInit, OnDestroy{
       this.userId = this.loginService.user.id;
       this.checkFavourite(this.mascota._id, this.userId)
     }
+
+    console.log(this.showHeart)
   }
 
 
