@@ -72,7 +72,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
       }
       this.subscriptionFav = this.getFavourites(person._id).subscribe( data => {
         this.favouritesPets = data;
-        console.log(data);
 
       });
 

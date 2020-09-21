@@ -55,7 +55,6 @@ export class PetCardComponent implements OnInit, OnDestroy{
       this.checkFavourite(this.mascota._id, this.userId)
     }
 
-    console.log(this.showHeart)
   }
 
 
